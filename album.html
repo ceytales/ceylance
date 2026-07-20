@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albüm | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            animation: fadeInPage 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MENÜ (HEADER) --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: 0.3s ease;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .logo:hover {
+            transform: scale(1.1) rotate(-3deg);
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.4s ease;
+        }
+        .nav-links a:hover { letter-spacing: 4px; color: #ccc; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.4s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .social-icons { display: flex; gap: 15px; align-items: center; }
+        .social-icons a { display: inline-block; transition: 0.3s; }
+        .social-icons img { width: 22px; transition: 0.3s; opacity: 0.8; }
+        .social-icons a:hover { transform: translateY(-5px); }
+        .social-icons a:hover img { opacity: 1; filter: drop-shadow(0 0 8px #fff); }
+
+        /* --- ALBÜM İÇERİĞİ --- */
+        .page-title {
+            text-align: center;
+            margin: 60px 0;
+            animation: slideUpFade 1s ease-out forwards;
+        }
+        .page-title h1 {
+            font-size: 3rem;
+            letter-spacing: 15px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .gallery-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+            column-count: 3;
+            column-gap: 25px;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #0a0a0a;
+            opacity: 0;
+            animation: slideUpFade 1.2s ease-out forwards;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            filter: grayscale(30%);
+            transition: 0.8s ease;
+            cursor: zoom-in;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* --- LIGHTBOX (BÜYÜTME) STİLLERİ --- */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            animation: fadeInPage 0.3s ease;
+        }
+
+        .lightbox-modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+            object-fit: contain;
+        }
+
+        /* Gecikmeler */
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+        .gallery-item:nth-child(n+7) { animation-delay: 0.7s; }
+
+        /* --- FOOTER --- */
+        footer { padding: 50px; text-align: center; font-size: 0.7rem; opacity: 0.2; letter-spacing: 2px; width: 100%; }
+
+        /* ==========================================================================
+           📱 MOBİL VE TABLET UYUMLULUK AYARLARI (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 30px;
+                flex-direction: column;
+                gap: 15px;
+                background: rgba(0,0,0,0.8);
+            }
+            .logo { font-size: 2.8rem; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            
+            .gallery-container { column-count: 2; column-gap: 15px; padding-bottom: 60px; }
+            .gallery-item { margin-bottom: 15px; }
+            .page-title { margin: 40px 0; }
+            .page-title h1 { font-size: 2.3rem; letter-spacing: 8px; }
+        }
+
+        @media (max-width: 600px) { 
+            .gallery-container { column-count: 1; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
+            .page-title h1 { font-size: 2rem; letter-spacing: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div class="nav-links">
+        <a href="denemeler.html">DENEMELER</a>
+        <a href="hakkimda.html">HAKKIMDA</a>
+        <a href="album.html">ALBÜM</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ceylance13" target="_blank">
+                <img src="instagram-logo.png" alt="Instagram">
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb6ljN6FcowBLg3qWW2S" target="_blank">
+                <img src="whatsapp-logo.png" alt="WhatsApp">
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="page-title">
+    <h1>ALBÜM</h1>
+</div>
+
+<div class="gallery-container">
+    <div class="gallery-item"><img src="album1.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album2.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album3.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album4.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album5.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album6.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album7.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album8.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album9.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album10.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album11.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album12.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album13.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album14.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album15.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album16.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album17.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album18.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album19.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album20.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album21.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+    <div class="gallery-item"><img src="album22.png" alt="Albüm Görseli" onclick="openLightbox(this)"></div>
+</div>
+
+<!-- Lightbox Modal Yapısı -->
+<div id="imageLightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Büyük Görsel">
+</div>
+
+<footer>© 2024 CEREN CEYLAN | TÜM HAKLARI SAKLIDIR</footer>
+
+<script>
+    function openLightbox(imgElement) {
+        const modal = document.getElementById('imageLightbox');
+        const modalImg = document.getElementById('lightboxImg');
+        modal.style.display = 'flex';
+        modalImg.src = imgElement.src;
+    }
+
+    function closeLightbox() {
+        document.getElementById('imageLightbox').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
