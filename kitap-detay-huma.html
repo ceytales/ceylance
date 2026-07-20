@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüma Kuşu | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #ccc;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.8);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .back-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; }
+        .back-link:hover { text-shadow: 0 0 10px #fff; }
+        .logo { font-family: 'Mrs Saint Delafield', cursive; font-size: 2.5rem; color: #fff; text-decoration: none; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 20px 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .book-cover-large {
+            width: 320px;
+            border-radius: 6px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            margin-bottom: 25px;
+        }
+
+        .direct-back-cover {
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #ddd;
+            max-width: 750px;
+            margin-bottom: 30px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .author-name {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .stats-box {
+            display: flex;
+            gap: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 30px;
+            margin-bottom: 40px;
+        }
+        .stat-item { font-size: 0.9rem; letter-spacing: 1px; color: #aaa; }
+        .stat-item span { color: #fff; font-weight: bold; }
+
+        .book-title-main {
+            font-size: 2.5rem;
+            letter-spacing: 6px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .chapters-section {
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .chapters-title {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            color: #ccc;
+            transition: 0.3s;
+        }
+        .chapter-item:hover { color: #fff; background: rgba(255,255,255,0.02); padding-left: 15px; }
+        .chapter-name { font-size: 1rem; letter-spacing: 1px; }
+        .chapter-right { display: flex; gap: 20px; align-items: center; }
+        .chapter-date { font-size: 0.8rem; opacity: 0.5; font-family: monospace; }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; width: 100%; }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 25px; }
+            .container { padding-top: 120px; }
+            .book-cover-large { width: 240px; }
+            .book-title-main { font-size: 1.8rem; }
+            .stats-box { gap: 20px; padding: 10px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-link">❮ ANA SAYFA</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 80px;"></div>
+</header>
+
+<div class="container">
+    <img src="huma-kusu.JPG" alt="Hüma Kuşu" class="book-cover-large">
+    
+    <div class="direct-back-cover">
+        Bir zamanlar iki çocuk vardı; biri kitaplara, diğeri duvarlara sığındı. Maral, yaralarını hayallerle sararken, Alaz kara harp okulunda kendini sertleştirdi. Yolları üniversitede kesişti; Maral, Alaz'ın karanlığına ışık oldu, Alaz ise Maral'ın renklerini keşfetti. İki yıl boyunca birbirlerinin yaralarını sardılar... ta ki Alaz bir gün sessizce kaybolana kadar.<br><br>
+        Yıllar sonra, Türkiye'nin en büyük savunma projesi Bürküt uçaklarının başmühendisi olan Maral, hayatının en büyük sınavıyla karşılaşır. Projeyi korumakla görevlendirilen özel kuvvetler timinin başında, yıllar önce ardında sorular bırakan Alaz vardır.<br><br>
+        Maral, içindeki aşk ve kırgınlıkla yüzleşirken, Alaz'ın kayboluşunun ardındaki gerçekler birer birer ortaya çıkacaktır. Kader, ikiliyi yeniden bir araya getirirken, geçmişin yaraları ve bugünün mücadeleleri arasında hangi duygular galip gelecektir?<br><br>
+        Bu, yarım kalmış bir aşkın ve iyileşmeye çalışan iki ruhun hikayesi... Gökyüzündeki yıldızlar kadar parlak, yeryüzündeki insanlar kadar gerçek.
+    </div>
+
+    <div class="author-info">
+        <img src="profil-fotografin.jpg" alt="Ceren Ceylan" class="author-avatar">
+        <span class="author-name">Ceren Ceylan</span>
+    </div>
+
+    <div class="stats-box">
+        <div class="stat-item"><span>5</span> Bölüm</div>
+    </div>
+
+    <h1 class="book-title-main">Hüma Kuşu</h1>
+
+    <div class="chapters-section">
+        <div class="chapters-title">Bölümler</div>
+        
+        <a href="giris.html" class="chapter-item">
+            <span class="chapter-name">GİRİŞ</span>
+            <div class="chapter-right">
+                <span class="chapter-date">05.01.2026</span>
+            </div>
+        </a>
+        <a href="huma-bolum1.html" class="chapter-item">
+            <span class="chapter-name">"GÜNEŞ DOĞDU DİYE KABUSLAR NEDEN BİTSİN"</span>
+            <div class="chapter-right">
+                <span class="chapter-date">12.01.2026</span>
+            </div>
+        </a>
+        <a href="huma-bolum2.html" class="chapter-item">
+            <span class="chapter-name">"29 NİSAN'DA NEREDEYDİM BİLMEK İSTİYOR MUSUN"</span>
+            <div class="chapter-right">
+                <span class="chapter-date">19.01.2026</span>
+            </div>
+        </a>
+        <a href="huma-bolum3.html" class="chapter-item">
+            <span class="chapter-name">"KIZLAR ANNELERİNİN KADERİNİ YAŞAR"</span>
+            <div class="chapter-right">
+                <span class="chapter-date">26.01.2026</span>
+            </div>
+        </a>
+        <a href="huma-bolum4.html" class="chapter-item">
+            <span class="chapter-name">"YÜKSEKTEN Mİ YOKSA DÜŞMEKTEN Mİ?"</span>
+            <div class="chapter-right">
+                <span class="chapter-date">02.02.2026</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+</body>
+</html>

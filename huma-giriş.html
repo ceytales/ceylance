@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüma Kuşu | Giriş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('arka-plan.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ccc;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- HEADER --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            box-sizing: border-box;
+        }
+        .back-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .back-link:hover { text-shadow: 0 0 10px #fff; opacity: 0.8; }
+        .logo-small { font-family: 'Mrs Saint Delafield', cursive; font-size: 2.2rem; color: #fff; text-decoration: none; }
+
+        /* --- OKUMA KONTEYNERI --- */
+        .read-container {
+            max-width: 750px;
+            width: 90%;
+            padding: 80px 0;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .chapter-header { text-align: center; margin-bottom: 60px; }
+        .chapter-header h1 { font-size: 2.2rem; letter-spacing: 6px; color: #fff; font-weight: normal; text-transform: uppercase; margin-bottom: 5px; }
+        .view-counter { font-size: 0.75rem; color: #666; letter-spacing: 1px; font-family: sans-serif; }
+
+        /* --- PARAGRAF VE YORUM YAPISI --- */
+        .p-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+            padding-right: 40px;
+        }
+        
+        .comment-trigger {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.2s;
+            color: rgba(255,255,255,0.4);
+            user-select: none;
+        }
+        
+        .p-wrapper:hover .comment-trigger {
+            opacity: 1;
+        }
+        
+        .comment-trigger:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        /* --- ŞİİR & METİN --- */
+        .poem-line {
+            text-align: center;
+            font-style: italic;
+            color: #fff;
+            font-size: 1.1rem;
+            line-height: 2.2;
+        }
+        
+        .poem-container {
+            margin: 50px 0;
+        }
+
+        .paragraph {
+            text-align: justify;
+            font-size: 1.1rem;
+            color: #bbb;
+            margin: 0;
+        }
+
+        /* --- NAVİGASYON BUTONLARI --- */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+        }
+
+        .nav-btn {
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            padding: 12px 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 2px;
+            transition: 0.5s;
+            background: transparent;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background: #fff;
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+            border-color: #fff;
+        }
+
+        .nav-btn.hidden { visibility: hidden; pointer-events: none; }
+
+        footer { padding: 80px 0; text-align: center; font-size: 0.7rem; opacity: 0.2; letter-spacing: 2px; }
+
+        /* Mobil Optimizasyon */
+        @media (max-width: 768px) {
+            header { padding: 20px 25px; }
+            .p-wrapper { padding-right: 30px; }
+            .comment-trigger { opacity: 0.6; right: 5px; }
+            .paragraph { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="kitap-detay-huma.html" class="back-link">❮ BÖLÜMLER</a>
+    <a href="index.html" class="logo-small">Ceren Ceylan</a>
+    <div style="width: 80px;"></div>
+</header>
+
+<div class="read-container">
+    <div class="chapter-header">
+        <h1>GİRİŞ</h1>
+        <div class="view-counter">👁 <span id="view-count">0</span> okuma</div>
+    </div>
+
+    <!-- ŞİİR BÖLÜMÜ (Her satır ayrı yorumlanabilir) -->
+    <div class="poem-container">
+        <div class="p-wrapper" data-p-id="siir-baslik"><p class="poem-line" style="font-weight: bold;">Son Bakış</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s1"><p class="poem-line">Ve sen benim güzel yârim</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s2"><p class="poem-line">Ay bakışlım, ak dudaklım, al yanaklım,</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s3"><p class="poem-line">Sivri bakışlım, dik başlım, hür fikirlim,</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s4"><p class="poem-line">Sevdiceğim, seveceğim</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s5"><p class="poem-line">Geçmişim, bugünüm, geleceğim</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s6"><p class="poem-line">Saadetin sonsuz olsun</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s7"><p class="poem-line">Varsın bensiz olsun</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s8"><p class="poem-line">Kara toprak beni kendine yoldaş eylediğinde</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s9"><p class="poem-line">Mahşer seni bana kavuştursun</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s10"><p class="poem-line">Rabbimden cennet diye seni istediğimde</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s11"><p class="poem-line">Duam bir kez olsun kabul görsün</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s12"><p class="poem-line">Güzel gözlerini son bir kez gördüm ya</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s13"><p class="poem-line">Artık ölüm benden korksun</p><span class="comment-trigger">💬</span></div>
+        <div class="p-wrapper" data-p-id="siir-s14"><p class="poem-line">Alaz, sadece Alaz</p><span class="comment-trigger">💬</span></div>
+    </div>
+
+    <!-- METİN BÖLÜMÜ -->
+    <div class="content">
+        <div class="p-wrapper" data-p-id="p1">
+            <p class="paragraph">Bir his arkamı dönmemi söylediğinde o hissi dinledim. Yanımdakiler ilerlemeye devam ederken ben önce durdum sonra arkama baktım. Yedi kişilik timden iki asker diğerlerinden birkaç adım daha öndeydi ve bir tanesinin eli diğerinin kolundaydı. Kavramamıştı, öylece dokunuyordu. Varlığını hissettirmeye çalışıyordu. O hissin bana ne demeye çalıştığını anladığımda minik bir tebessüm yüzümde yer etti. Ben kardeşliği nerede görsem hissederdim.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p2">
+            <p class="paragraph">Ankara Hava Üssü hep olduğu gibi rüzgarlıydı. Bir elim karnımdayken diğeriyle önüme gelen, açık kahverengiye boyattığım uzun saçlarımı kulağımın arkasına sıkıştırdım.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p3">
+            <p class="paragraph">Onlara baktığımı anladıklarında ikisi de vücudunu bana taraf çevirdiler ve bir tanesi, kısa boylu olan, geri adım atıp diğerlerinin yanına döndü. Bıraktığı asker ise yavaş adımlarla bana doğru ilerlemeye başladı. Ben olduğum yerde dikilmeye devam ettim. Gözlerim dolmuştu ama kötü hiçbir duygu yoktu. Minnet ve büyük bir hasret vardı, belki bir de ukdeler ve pişmanlık… Öfkesi geçince insan her şeyi ne de güzel hatırlıyordu.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p4">
+            <p class="paragraph">Tebessümüm büyüdü ve dişlerim görünecek şekilde güldüm. Bir gün bunun tekrar olacağını tahmin etmemiştim ama olursa ne tepki veririm diye düşünmüştüm. Böyle bir tepki düşüncelerim arasında değildi çünkü nedense onu tekrar görme ihtimalimin hep birimizin son nefesinde olacağını düşünürdüm. Ama buradaydık işte. Tekrar. Kader kendini bir arada olmasını istediği insanlara, onlar onun inadına birbirinden gitse de, kendini bu şekilde hatırlatıyordu işte. Evet, artık kadere inanıyordum.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p5">
+            <p class="paragraph">Karnımdaki elim daha fazla ilerlemesini istemediğimden “dur” dercesine kalktı.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p6">
+            <p class="paragraph">Durdu. Olduğu yere mıhlanmış gibi durdu. Ne gözlerini okuyabildim ne sesini duyabildim. Öylece durdu. Garip olansa artık karşımda dikilen bu adama bakarken ölmek istemiyordum. Sadece belkiler dolanıyordu aklımda ve biraz keşkeler ve nihayetinde neyseler. Gizli saklı iyi kiler de vardı. Ve artık baktığım adam ev gibi de hissettirmiyordu. Çünkü benim bir evim vardı ve benim evim hiçbir zaman o olmamıştı.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p7">
+            <p class="paragraph">Ufak bir kıkırtı kaçtı dudaklarımdan. O maskenin arkasında kim olduğunu biliyordum, hep bilirdim, hep hissederdim.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p8">
+            <p class="paragraph">Başını selam verircesine hafifçe salladım. Bir süre bekledikten sonra o da aynı şekilde başını salladı. Konuşmak isterdi belki de ama ben istemedim. Onun sesinden duyduğum son cümlenin değişmesini istemedim.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p9">
+            <p class="paragraph">Bakışlarım arkada kalan timi bulduğunda az önce onun yanında dikilen ve kim olduğunu çok iyi bildiğim kişi de bana el salladı. Daha büyükçe güldüm. Bir damla yaş sağ yanağıma süzüldü. Tekrar ona baktığımda elindeki güneşin vuruşuyla parlayan zinciri fark ettim.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p10">
+            <p class="paragraph">Lotuslar bataklıklarda açarlar. Çamurun ve kirin eksik olmadığı o ekosistemde kendini tüm pisliklerden korur ve pirüpak, parlak ve ışıl ışıl olmaya devam eder. Birine Lotus çiçeği imgesiyle hediyeler almak ona “Bu kirli dünyada temiz kalan tek yanım sensin.” Demektir.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p11">
+            <p class="paragraph">Dünya kirli ve ben temiz kalamadım.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p12">
+            <p class="paragraph">Akan yaşı sildim ve adımın seslenilmesiyle tekrar gerçek dünyaya döndüm. Akan tek yaşı silen elim tekrar karnıma sarıldı. Arkamı döndüm ve geride bıraktıklarımın yanına doğru ilerlemeye başladım. Yanlarına vardığımda son kez döndüm onlara. Kuzgun’a.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p13">
+            <p class="paragraph">Haksızlıktı, son kez görmek istiyordum.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p14">
+            <p class="paragraph">Arkamı dönüp de son kez en büyük aşkı üniformasının içindeki adama baktığımda o benim gözlerimi görüyordu ama ben taktığı maskeden ve gözlükten dolayı görmüyordum.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+
+        <div class="p-wrapper" data-p-id="p15">
+            <p class="paragraph">Son bakıştı, bilmiyordum.</p>
+            <span class="comment-trigger">💬</span>
+        </div>
+    </div>
+
+    <div class="chapter-nav">
+        <!-- İlk sayfa olduğu için Önceki butonunu gizledik -->
+        <a href="#" class="nav-btn hidden">❮ ÖNCEKİ</a>
+        <a href="huma-bolum1.html" class="nav-btn">SONRAKİ ❯</a>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<!-- SAYAÇ VE HAFIZALI PARAGRAF YORUM SCRIPT BLOĞU -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Okunma Sayacı (Giriş Bölümüne Özel Anahtar)
+        let currentViews = parseInt(localStorage.getItem("views_huma_giris")) || 0;
+        currentViews++;
+        localStorage.setItem("views_huma_giris", currentViews);
+        document.getElementById("view-count").innerText = currentViews;
+
+        // 2. Paragraf Arası Yorum Tetikleyici
+        const triggers = document.querySelectorAll('.comment-trigger');
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const wrapper = this.closest('.p-wrapper');
+                const paragraphId = wrapper.getAttribute('data-p-id');
+                
+                const existingBox = wrapper.querySelector('.paragraph-comment-box');
+                if (existingBox) {
+                    existingBox.remove();
+                    return;
+                }
+                
+                document.querySelectorAll('.paragraph-comment-box').forEach(box => box.remove());
+                
+                const commentBox = document.createElement('div');
+                commentBox.className = 'paragraph-comment-box';
+                commentBox.style.cssText = `
+                    background: rgba(10, 10, 10, 0.98);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    padding: 20px;
+                    margin-top: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+                `;
+                
+                commentBox.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:0.8rem; color:#888; font-family:sans-serif; user-select:none;">
+                        <span>💬 Satır Arası Yorumlar</span>
+                        <span style="cursor:pointer; color:#fff; font-weight:bold;" onclick="this.closest('.paragraph-comment-box').remove()">Kapat ✕</span>
+                    </div>
+                    <div id="cusdis_thread"
+                      data-host="https://cusdis.com"
+                      data-app-id="2a4b0743-a3ed-45b4-8eb1-96ce01e93637"
+                      data-page-id="huma_giris_${paragraphId}"
+                      data-page-url="${window.location.href.split('#')[0]}#${paragraphId}"
+                      data-page-title="Hüma Kuşu Giriş - Satır ${paragraphId}"
+                      data-theme="dark"
+                    ></div>
+                `;
+                
+                wrapper.appendChild(commentBox);
+
+                if (window.CUSDIS) {
+                    window.CUSDIS.initial();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cusdis.com/js/cusdis.es.js";
+                    script.async = true;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                }
+
+                // Nickname Hafıza Sistemi
+                setTimeout(() => {
+                    const iframe = commentBox.querySelector('iframe');
+                    if (iframe) {
+                        iframe.addEventListener('load', () => {
+                            try {
+                                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                const nameInput = iframeDoc.querySelector('input[type="text"]') || iframeDoc.querySelector('input');
+                                const submitBtn = iframeDoc.querySelector('button[type="submit"]') || iframeDoc.querySelector('button');
+                                
+                                if (nameInput) {
+                                    const savedNickname = localStorage.getItem('okur_nickname');
+                                    if (savedNickname) {
+                                        nameInput.value = savedNickname;
+                                        nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+                                    }
+
+                                    if (submitBtn) {
+                                        submitBtn.addEventListener('click', () => {
+                                            if (nameInput.value.trim() !== "") {
+                                                localStorage.setItem('okur_nickname', nameInput.value.trim());
+                                            }
+                                        });
+                                    }
+                                }
+                            } catch (error) {
+                                console.log("Iframe kısıtlaması (Canlı sitede kaydeder):", error);
+                            }
+                        });
+                    }
+                }, 800);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

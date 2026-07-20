@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceren Ceylan | Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- TEMEL AYARLAR --- */
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0; padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            scroll-behavior: smooth;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+        }
+
+        header {
+            position: fixed; top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 60px; z-index: 1000;
+            background: rgba(0,0,0,0.3); backdrop-filter: blur(5px);
+            transition: 0.3s ease;
+        }
+        .logo { font-family: 'Mrs Saint Delafield', cursive; font-size: 3rem; text-decoration: none; color: #fff; transition: 0.5s; }
+        .logo:hover { transform: scale(1.1) rotate(-3deg); text-shadow: 0 0 15px #fff; }
+        
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; position: relative; transition: 0.4s; }
+        .nav-links a:hover { letter-spacing: 4px; color: #ccc; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background: #fff; transition: 0.4s; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons img { width: 22px; transition: 0.3s; opacity: 0.8; }
+        .social-icons a:hover img { transform: translateY(-5px); opacity: 1; filter: drop-shadow(0 0 8px #fff); }
+
+        section { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative; background-size: cover; background-position: center; background-attachment: fixed; padding: 40px 0; }
+        #hero { background-image: url('arka-plan.jpg'); }
+        #announcements { background-image: url('arka-plan-2.png'); }
+        #music-section { background-image: url('arka-plan-3.jpeg'); }
+
+        /* --- SLIDER & TILT --- */
+        .slider-content { display: flex; align-items: center; width: 85%; z-index: 10; padding-top: 80px; position: relative; }
+        .quote-side { flex: 1; padding-right: 50px; text-align: left; max-height: 70vh; overflow-y: auto; }
+        .quote-side::-webkit-scrollbar { width: 5px; }
+        .quote-side::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        
+        .quote-container { display: none; animation: fadeIn 1s; }
+        .quote-container.active { display: block; }
+        .quote-container p { font-size: 1.1rem; font-style: italic; opacity: 0.9; line-height: 1.7; white-space: pre-line; margin: 0; }
+        
+        .book-side { flex: 1; display: flex; justify-content: center; align-items: center; perspective: 1000px; position: relative; min-height: 500px; }
+        .book-wrapper { display: none; text-align: center; text-decoration: none; color: #fff; transition: transform 0.1s ease-out; transform-style: preserve-3d; cursor: pointer; }
+        .book-wrapper.active { display: block; }
+        .book-cover { width: 280px; max-width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.8); border-radius: 4px; transition: 0.3s; }
+        .book-title { margin-top: 15px; letter-spacing: 4px; font-size: 1rem; }
+
+        .nav-arrow { background: none; border: none; color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.4; position: absolute; top: 50%; z-index: 20; transform: translateY(-50%); transition: 0.3s; }
+        .nav-arrow:hover { opacity: 1; }
+        .prev-arrow { left: -50px; } .next-arrow { right: -50px; }
+
+        /* --- DUYURULAR --- */
+        .announcement-container { width: 85%; max-width: 1100px; z-index: 10; display: flex; gap: 30px; }
+        .announcement-box { flex: 1; background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(8px); padding: 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .announcement-box h2 { font-family: 'Mrs Saint Delafield', cursive; font-size: 3rem; margin-bottom: 20px; font-weight: normal; }
+        .news-item { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; opacity: 0.9; }
+
+        /* --- SPOTIFY (SABİTLEYİCİ) --- */
+        .spotify-container { width: 80%; max-width: 800px; z-index: 10; background: rgba(0,0,0,0.4); backdrop-filter: blur(15px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; width: 100%; }
+
+        /* ==========================================================================
+           📱 MOBİL VE TABLET UYUMLULUK AYARLARI (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 30px;
+                flex-direction: column;
+                gap: 15px;
+                background: rgba(0,0,0,0.8);
+            }
+            .logo { font-size: 2.5rem; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+            .slider-content {
+                flex-direction: column;
+                width: 90%;
+                padding-top: 140px;
+                gap: 40px;
+            }
+            .quote-side {
+                padding-right: 0;
+                text-align: center;
+                max-height: none;
+            }
+            .quote-container p { font-size: 1rem; }
+            
+            .book-side {
+                min-height: 400px;
+                width: 100%;
+            }
+            .book-cover { width: 220px; }
+            
+            .nav-arrow { font-size: 2rem; top: auto; bottom: -20px; transform: none; }
+            .prev-arrow { left: 20%; }
+            .next-arrow { right: 20%; }
+
+            .announcement-container {
+                flex-direction: column;
+                width: 90%;
+                gap: 20px;
+            }
+            .announcement-box { padding: 25px; }
+            .announcement-box h2 { font-size: 2.5rem; }
+
+            .spotify-container { width: 90%; padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
+            .prev-arrow { left: 10%; }
+            .next-arrow { right: 10%; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div class="nav-links">
+        <a href="denemeler.html">DENEMELER</a>
+        <a href="hakkimda.html">HAKKIMDA</a>
+        <a href="album.html">ALBÜM</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ceylance13" target="_blank"><img src="instagram-logo.png"></a>
+            <a href="https://whatsapp.com/channel/0029Vb6ljN6FcowBLg3qWW2S" target="_blank"><img src="whatsapp-logo.png"></a>
+        </div>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="slider-content">
+        <div class="quote-side">
+            <!-- GÜNEŞ ARKA KAPAK YAZISI -->
+            <div class="quote-container active">
+                <p>Işığı ne kadar seviyorsak o kadar yaşamıyor muyuzdur hayatı?
+
+Bazen bir yaz, sadece yaz değildir.
+Bazen denize girerken değil, birine bakarken nefesin kesilir.
+Ve bazen, güneşin doğuşu bir adamın bakışına gizlenir.
+
+Gün, geçirdiği kazadan sonra geçmişiyle arasına bir duvar örerken tanıdık ama yabancı yüzler arasında kendini bulmaya çalışır. Çocukluğunu geçirdiği İzmir'e anılarını geri kazanmak için döndüğünde bulduğu tek şey geçmiş değildir.
+
+Partiler, grupça çıkılan tekne turları, gece yarısı yürüyüşleri ve kamplar, uykusuz sabahlar ve şezlonglarda yaşanan itiraflar...
+Gün, gençliğin tam ortasında yeniden nefes almayı öğrenirken Doğu ile arasındaki gizli ama bir o kadar derin bağ, Gün'ün sahilde güneşi beklediği bir anda yeniden karşısına çıkar. 
+
+Güneşi Beklerken, hafızasını arayan bir kızın, kalbinin çoktan hatırladığı bir aşka tutulma hikayesi. İzmir'in güneşi, denizi, rüzgarı ve gençlik ateşiyle bezeli, unutulmaz bir yaz hikayesi.</p>
+            </div>
+            <!-- HÜMA KUŞU ARKA KAPAK YAZISI -->
+            <div class="quote-container">
+                <p>Bir zamanlar iki çocuk vardı; biri kitaplara, diğeri duvarlara sığındı. Maral, yaralarını hayallerle sararken, Alaz kara harp okulunda kendini sertleştirdi. Yolları üniversitede kesişti; Maral, Alaz'ın karanlığına ışık oldu, Alaz ise Maral'ın renklerini keşfetti. İki yıl boyunca birbirlerinin yaralarını sardılar... ta ki Alaz bir gün sessizce kaybolana kadar.
+
+Yıllar sonra, Türkiye'nin en büyük savunma projesi Bürküt uçaklarının başmühendisi olan Maral, hayatının en büyük sınavıyla karşılaşır. Projeyi korumakla görevlendirilen özel kuvvetler timinin başında, yıllar önce ardında sorular bırakan Alaz vardır. 
+
+Maral, içindeki aşk ve kırgınlıkla yüzleşirken, Alaz'ın kayboluşunun ardındaki gerçekler birer birer ortaya çıkacaktır. Kader, ikiliyi yeniden bir araya getirirken, geçmişin yaraları ve bugünün mücadeleleri arasında hangi duygular galip gelecektir?
+
+Bu, yarım kalmış bir aşkın ve iyileşmeye çalışan iki ruhun hikayesi... Gökyüzündeki yıldızlar kadar parlak, yeryüzündeki insanlar kadar gerçek.</p>
+            </div>
+        </div>
+        <div class="book-side">
+            <button class="nav-arrow prev-arrow" onclick="changeSlide(-1)">❮</button>
+            <a href="kitap-detay-gunes.html" class="book-wrapper active" onmousemove="handleTilt(event)" onmouseleave="resetTilt()">
+                <img src="gunesi-beklerken.jpg" class="book-cover" alt="Güneşi Beklerken">
+                <div class="book-title">GÜNEŞİ BEKLERKEN</div>
+            </a>
+            <a href="kitap-detay-huma.html" class="book-wrapper" onmousemove="handleTilt(event)" onmouseleave="resetTilt()">
+                <img src="huma-kusu.JPG" class="book-cover" alt="Hüma Kuşu">
+                <div class="book-title">HÜMA KUŞU</div>
+            </a>
+            <button class="nav-arrow next-arrow" onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+</section>
+
+<section id="announcements">
+    <div class="announcement-container">
+        <div class="announcement-box">
+            <h2>Havadisler</h2>
+            <div class="news-item">"Mila Mi Sestro" okurlarla buluştu.</div>
+            <div class="news-item">"Güneş Doğdu Diye Kabuslar Neden Bitsin" yayında.</div>
+        </div>
+        <div class="announcement-box">
+            <h2>Pek Yakında</h2>
+            <p style="font-style:italic; opacity:0.7;">Kelimelerin sessizce büyüdüğü yeni bir hikaye yolda...</p>
+        </div>
+    </div>
+</section>
+
+<section id="music-section">
+    <div class="spotify-container" id="spotify-box">
+        <div class="spotify-title" style="font-family:'Mrs Saint Delafield', cursive; font-size:3rem; margin-bottom:20px;">Kelimelerin Melodisi</div>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0u8dxs0s6IEkHZzi3jiKUw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <footer style="position:absolute; bottom:0;">© 2026 CEREN CEYLAN</footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', { "particles": { "number": { "value": 60 }, "color": { "value": "#ffffff" }, "opacity": { "value": 0.2 }, "size": { "value": 2 }, "move": { "enable": true, "speed": 0.8, "direction": "top" } } });
+
+    let currentSlide = 0;
+    const books = document.querySelectorAll('.book-wrapper');
+    const quotes = document.querySelectorAll('.quote-container');
+
+    function showSlide(index) {
+        books[currentSlide].classList.remove('active');
+        quotes[currentSlide].classList.remove('active');
+        currentSlide = (index + books.length) % books.length;
+        books[currentSlide].classList.add('active');
+        quotes[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(n) { showSlide(currentSlide + n); }
+    let slideInterval = setInterval(() => { changeSlide(1); }, 6000);
+
+    function handleTilt(e) {
+        if (window.innerWidth <= 900) return;
+        const item = document.querySelector('.book-wrapper.active');
+        const box = item.getBoundingClientRect();
+        const x = e.clientX - box.left;
+        const y = e.clientY - box.top;
+        const rotateX = (box.height / 2 - y) / 10;
+        const rotateY = (x - box.width / 2) / 10;
+        item.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    }
+
+    function resetTilt() {
+        const item = document.querySelector('.book-wrapper.active');
+        if(item) item.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    }
+</script>
+</body>
+</html>
