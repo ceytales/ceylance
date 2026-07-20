@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiç Gitmeyecek Sandıklarımız | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* Yumuşak sayfa açılış animasyonu */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ddd;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInPage 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s;
+        }
+        .logo:hover { transform: scale(1.05) rotate(-2deg); text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(-3px);
+        }
+
+        .essay-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .essay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+            opacity: 0.9;
+        }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+            .essay-container { padding: 30px 20px; margin: 30px auto; }
+            h1 { font-size: 1.5rem; }
+            .essay-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="denemeler.html" class="back-btn">❮ DENEMELERE DÖN</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 130px;"></div>
+</header>
+
+<div class="essay-container">
+    <h1>HİÇ GİTMEYECEK SANDIKLARIMIZ</h1>
+    
+    <div class="essay-content">
+        <p>Kendimi bildim bileli arkadaş çevresi hep çok geniş bir kız oldum. Herkesçe sevilmekten ziyade herkesle belli noktaya kadar ilişki kurabilmek en büyük yeteneklerimden biriydi. Girdiğim ortamlarda yeni insanlarla tanışmaktan çekinmez kendimi gururla tanıtmaktan geri durmazdım. Şimdilerde fark ediyorum, bunun sebebi o zamanlar “kendimle arkadaş olmayı çok isterdim” diyebilmekti.</p>
+
+        <p>Daha yedi yaşında, okul sıralarına oturduğumuz ilk günlerde, ne kadar hevesli ve mutlu olduğumu hatırlıyorum. Bir sürü yeni insan, bir sürü arkadaş demekti bu ve evden uzakta geçireceğim saatler de demekti aynı zamanda.</p>
+
+        <p>Bir kız vardı. 
+        İlk arkadaşım ve bütün ilklerim.</p>
+
+        <p>Küçük bir ilçe olduğundan hep birlikte gider gelirdik okula. O hep geç kaldığı için bazen sinirlenip beklemezdim onu. Beklemeyi de bekletmeyi de sevmezdim çünkü. Ama şimdiki aklım olsaydı her seferinde onu bekler ve onunla geç kalırdım.</p>
+
+        <p>Harika bir arkadaş grubum vardı. Her şeyi birlikte yapıyorduk. Birlikte gülüyorduk, birlikte ağlıyorduk, birlikte çalışıyorduk ve en önemlisi birlikte büyüyorduk. Büyürken de hiçbir şey asla değişmeyecekmiş gibi geliyordu bana. Onlar benim evimdi, insanların evim sandıkları yerden kaçıp onlara sığınırdım. Bilmezlerdi tabi bunu, her ne kadar çok sevsem de zaaflarımı saklamayı daha çocukken bile biliyordum ben. Bir adaptasyon gibi doğuştan yüklüydü bu bana. Bana ve kardeşime.</p>
+
+        <p>Koskoca sekiz sene. 
+        Hayatımın en güzel yılları.</p>
+
+        <p>Bundan yıllar sonra da onları asla unutmayacağım çünkü biri bana hayatımın en güzel zamanlarını sorduğunda onlar her daim tablonun içinde olacaklar.</p>
+
+        <p>Şimdi ne oldu derseniz liseye geçişimizle birlikte dağıldık… Bunu bize söyleyen herkese “hayır biz hiç ayrılamayacağız” naraları attığımızı hatırladıkça sadece gülümsüyorum çünkü bazı vedaların artık gereklilik olduğunu biliyorum.</p>
+
+        <p>Beş kişiydik. Önce yanımda sadece “ilk arkadaşım” dediğim kız kaldı. Sonra onu da kaybettim, bana söylemeden diğerleriyle barıştığı gerekçesiyle. Barışması değildi de bana söylememesiydi o zaman zoruma giden. Yine bugün düşününce o kadar da büyük bir olay değilmiş. Değmezmiş ilk arkadaşımı kaybetmeye diyorum ama bir yandan onu kaybetmemin tek sebebinin o olay olmadığını hatırlıyorum. Bilirsiniz, çoğu veda gelişini önceden belli eder ve siz sadece beklersiniz… gelmesini.</p>
+
+        <p>Ama güzel haber, hepsiyle tekrar iletişime geçtim, diğer dördü ortaokul yıllarımızdaki kadar olmasa da zaten birliktelerdi. Lise için başka bir şehire gidince kopmak zorunda kalan ben olmuştum. Bizi yeniden bir araya getiren şey bu hayatta benim için en kıymetli kişinin ölümü olsa da gelmiştik işte.</p>
+
+        <p>Bugün sosyal medyadan ekliyiz. Hepsinin telefon numaraları rehberimde kayıtlı ve arayıp yardım istesem hepsinin koşacağını biliyorum. Çünkü onlar benim kurduğum en masum arkadaşlıklardı, onlar benim çocukluk arkadaşlarımdı. Kardeşlerimdi. Bir çocuk ne kadar kötü bir şey yapmış olabilir ki değil mi?</p>
+
+        <p>Yine de hiç gitmeyecekler sanmama rağmen ilk giden onlardı.</p>
+
+        <p>Hayatımın ikinci yarısı biraz daha kırıcı. Dediğim gibi lise için başka bir şehri seçmiştim. Bu benim için iyi bir lise, iyi bir eğitim ve iyi bir üniversite aynı zamanda yurtta kalmak demekti. Ve yurt arkadaşlıkları… En az çocukluk arkadaşlıkları kadar hayatımızda yer eden arkadaşlıklara sahipler.</p>
+
+        <p>Lisenin o stres dolu ilk günlerinde herkes arkadaş edinmeye çalışıyorken biz zaten odalarımızda tanışmıştık. Bambaşka dört kızdık, farklıydık ama birbirimizin elini tutarak girdik o okula. Yediğinin içtiğinin ayrı gitmediği deyimini dibine kadar yaşıyorduk. Bazen aç kalıyorduk, bazen patlayana kadar yiyorduk, bazen günlerce yurttan çıkmıyorduk, bazen çarşının altını üstüne getiriyorduk.</p>
+
+        <p>Her biriyle bağım apayrıydı. Biri benim gibi haftasonları eve gitmiyordu, o günleri hiç unutamam. Birlikte güldüğümüzü ama en çok birlikte ağladığımızı. Bir tanesi benimle aynı şehirden geliyordu. Eve gittiğim haftasonlarında otobüste yan yana oturuyorduk. Şanslıysak abisi bizi almaya geliyordu. Diğeriyleyse zevklerimiz benziyordu. Benzer müzikler, benzer diziler ama en çok Taylor Swift.</p>
+
+        <p>En derin yaralarımızı açmıştık birbirimize. En gizli arzularımızı, kalp kırıklılıklarımızı, sırlarımızı ve platonik olduklarımızı :)</p>
+
+        <p>Ortaokuldaki arkadaşlarımla bu kadar derin şeyler paylaşmadığım için lisedekileri bambaşka bir yere koydum. Oysa bunun sebebi ortaokul tayfaya güvenmemem değil çocukluğun getirdiği pervasızlıkla hiçbir şeyi umursamayışımdı. Ama lise öyle miydi? Lise benim acılarımın altın çağıydı.</p>
+
+        <p>Bu arkadaşlık on birinci sınıfa, 2023’e girmemize çok kısa bir zaman kalana kadar sürdü. Okuldaki gözde gruplardan biriydik o zamana kadar, yurt grubuyduk…</p>
+
+        <p>O dönemin başında abimin kanser olduğunu öğrenmiştik. Annem, durumu öğrendiği günün gecesinde ameliyat için İstanbul’a giderken ben ertesi sabah yurda yerleşmeye gitmiştim. Ve biliyorlardı, tabi ki biliyorlardı. Hatta haberi alırken onlardan biriyle görüntülü konuşuyordum. O zamanları düşünmek içimde hep garip bir his uyandırıyor.</p>
+
+        <p>Sonra okulun en enerjik kızı olan ben biraz duruldum, eskisi kadar komik şakalar yapamadım, arkadaşlarımı güldüremedim ve biraz daha az sohbet ettim. Çünkü korkuyordum. Annemden her telefon aldığımda başka bir kötü haber geliyordu ve ben artık telefonumu bile elime almak istemiyordum. Yanlarında olmak istiyordum ama olamıyordum.</p>
+
+        <p>O kadar da enerjik olamıyordum kısaca.</p>
+
+        <p>Ve aniden, her şeyin gayet normal olduğu bir gecenin sabahında bana kimse günaydın demedi. Okula giderken beklemedi, kantine giderken çağırmadı ve kimse benimle iletişime geçmedi. Evet gerçekten, ne bir kavga oldu ne de başka kötü bir olay. Önceki gün ara öğünde sevdiğimiz bir şey çıktı diye birlikte sevindiğim kızlarla bir sabahta vedalaştım ve aslında vedalaşamadım bile.</p>
+
+        <p>Öylece vazgeçtiler benden.</p>
+
+        <p>Hayatımda yerleri o kadar büyüktü ki geçirdiğim ilk bir ayın nasıl bir cehennem olduğunu hatırlamıyorum bile. Canımı asıl yakan şeylerden biri onlar iyiydi, çok iyilerdi. Birliktelerdi, gülüyorlardı, sınıftaki herkesle aralarını düzeltmişlerdi ve sorun yoktu onlar için. Sanki sorun başından beri bendim.</p>
+
+        <p>Okulun en sosyal kızıyken birdenbire en yalnız insanına dönüştüm. Her teneffüsü sohbet ederek geçiriyorken kitap okumaya başladım. Öğlen araları bahçedeki en güzel bankı kapmaya çalışıyorken ders çalışmaya başladım. Yalnızdım, gerçekten yalnızdım. O yalnızlık bugünkü beni daha güçlü kıldı belki ama o zaman sadece arkadaşlarımı istiyordum.</p>
+
+        <p>Onlara en çok ihtiyaç duyduğum zamandı. Ölüm ilk defa bu kadar yanı başımdaydı ve benim birilerinin elini tutmaya ihtiyacım vardı. Ben de tutmak istemediğim ellere tutunmayı düşmeye reva gördüm. Yanlış insanlara tutundum. Beni daha çok kıracak insanlara dost dedim. Dost olmadıklarını bile bile.</p>
+
+        <p>Yazdığım kitaplardan birinde şöyle diyor karakterim: İnsanlar giderdi ama vedasız her bir gidişin sonu da geri dönüşle biterdi. Kaderde üç noktayla biten olaylara yer yoktu. Biz edemedik o vedayı. Cümlenin sonuna nokta koymak yerine virgül koymayı seçtik. Bir yılı aşkın süren küslükten sonra en sonunda oturup konuşmayı başarabildik.</p>
+
+        <p>O koca bir sene boyunca elini tutmamam gereken insanlarla gülme yarışı yaparken zihnimin bir köşesinde hep dönüp duran soruyu sordum onlara.</p>
+
+        <p>Neden?</p>
+
+        <p>Neden yaptınız bunu bana? Neden bir şafakla vazgeçtiniz benden? Ben size asla böyle bir şey yapmazdım, neden üçünüz birden yalnız bıraktı beni? Neden bıraktınız elimi?</p>
+
+        <p>İçimi rahatlatan bir cevap aldım mı onlardan? Hayır. Hayatım boyunca aşabilecek miyim bunu? Hayır. Pişmanlıkları inandırıcı mıydı? Evet. Pişmanlıkları gerçek mi? Bunu asla bilemeyeceğiz.</p>
+
+        <p>Ve yıllarca birbirine nefret kusan B şubesi kızları bizim ateşkesimize katılarak bir barış sağladı. Yıllarca birbirimize demediğimizi bırakmadığımız kızlarla el ele tutuştuk. Hiçbirimiz geçmişi unutmadı, yapılanları ve söylenenleri unutmadı ama hepimiz geride bırakmayı seçtik.</p>
+
+        <p>Sınıfa girdiğinde günaydın diyebilmek, koca bir dönem kendi odamda yabancı gibi hissetmeme sebep olsalar bile yemekhanede birbirimizi gördüğümüzde düşmanca bakmak yerine selam verebilmek, keplerimizi atıp vedalaşırken daha fazla kin gütmemekti amaç.</p>
+
+        <p>Onlarla barıştıktan sonra çok daha kötü şeyler öğrendim. O dönem elini tutmaktan pişman olmadığım sadece birkaç üst dönem arkadaşım vardı. Ben onlara bile haklarında kötü konuşmalarına asla izin vermezken onların beni aralarında alay malzemesi yaptığını öğrendim. Kendi alt dönemime öyle anlatılmıştım ki koca bir yurdun düşmanı gibiydim. WhatsApp gruplarında fotoğraflarıma shoplar yapıldığını, her gün okuldaki hareketlerimi yurttaki diğer kızlara anlatıp güldüklerini ve artık hatırlamadığım başka kötü şeyleri öğrendim.</p>
+
+        <p>Her şeyi geride bırakacağımı söyledikten sonra bunları öğrenmek ağır gelmişti, yalan yok. Ama o sınıfta kimse benim kadar geride bırakmamıştı bir şeyleri. Kimse haftasonlarını paylaştığı kızın okulun koridorunda “seni öldürürüm” diye bağırışını, beraber yolculuk ettikleri kızın onu öldürmek ister gibi baktığını geride bırakmadı.</p>
+
+        <p>Alt dönemlerinden birinin gelip benden özür dileyişini geride bırakmadı mesela. Biz seni çok yalnız bıraktık, hiçbirini hak etmemiştin deyişini bırakmadı. Bahçeyi su bastığında ve etüt odasında toplandığımızda onlarla gülüşüp şaka yapınca alt dönemimin içinden “bu kız o kadar da kötü değilmiş ki” deyişini bırakmadı.</p>
+
+        <p>Kimse bir yakını ölüm döşeğindeyken terk edilişini geride bırakmadı.</p>
+
+        <p>Şimdi bugün konuşuyorum hepsiyle. Bazen araşıyoruz bazen yazışıyoruz. Kalpli yorumlar atıyoruz birbirlerimizin gönderilerine ve ne zaman birine anlatsam bunları, benim yerime sinirleri bozuluyor. Nasıl diyor, nasıl devam edebiliyorsun.</p>
+
+        <p>Nasıl affettin demişti bugünkü en yakın arkadaşlarımdan biri. Çünkü onları çok seviyordum yazmışım cevap olarak.</p>
+
+        <p>Affettim mi? Affetmesem konuşamazdım onlarla. Unuttum mu peki? Bu yazıyı yazmış olmam bile bir cevap bence.</p>
+
+        <p>İşte hiç gitmeyeceklerini sanmama rağmen giden ikinci tayfa da onlardı.</p>
+
+        <p>Bir daha hiçbiriyle yollarım asla kesişmez zannediyorken günlerce duymak istediğim özür dileklerini herkesten duydوم. Giden herkes eninde sonunda pişmanlıkla geri döndü. Ama en büyük yarayı alan, kalbi yara izleriyle dolup taşan da hep ben oldum.</p>
+
+        <p>Ne kadar anlam yüklediğinle alakalı bazı şeyler. Arkadaşlık benim için hep böyleydi. Hep biraz daha aşırıydı işte. Çünkü hepsi aslında sahip olmaya çalıştığım evimdi. Çünkü aslında benim hiç gitmeyeceğini sanmama rağmen giden ilk insan ailemden biriydi ve ben bu terk edilmişliğimi dost bildiklerimle kapatmaya çalışmıştım.</p>
+
+        <p>Hepsine karşı kalbimde iyi duygular var. Kimseyle kavgalı değilim artık. Değil onlar, en kıymetlimi kaybettim, hem de alelade bir kaybediş değildi bu. Onlarınki gibi geri dönüşü mümkün bir gidiş değildi. Toprağın altından kimi çıkarabildik sonuçta değil mi :)</p>
+
+        <p>Artık kimsenin gidişinden korkmuyorum. Şu an sadece istediğim insanların elini tutuyorum, hepsini çok seviyorum ama kimseye bağımlı olmuyorum artık. Ya da ellerimin boş kalmasını düşecek olsam bile tercih edebiliyorum çünkü her düşüşün bir kalkışı vardır ama tuttuğunuz elleri bırakmak unutulmaz izler de bırakır.</p>
+
+        <p>Bir cümle gördüm. Artık arkadaş olmamamız seninle düşman olduğum anlamına gelmiyor, hala çiçek açmanı istiyorum sadece artık benim bahçemde değil. Sanırım hayatım boyunca arkadaşlık konusunda bana liderlik edecek cümle bu. Çünkü ben artık terk edilmekten yoruldum. Çünkü ben hiç giden değil hep kalan taraf oldum.</p>
+
+        <p>Eski dostlarıma sevgilerimle…</p>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<script>
+    // Tıklandığında sayfa geçişini yumuşatan minik dokunuş
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", e => {
+                const target = link.getAttribute("href");
+                if (target && !target.startsWith("#") && !target.startsWith("http")) {
+                    e.preventDefault();
+                    document.body.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                    document.body.style.opacity = "0";
+                    document.body.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüma Kuşu - Bölüm 2 | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('arka-plan.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ccc;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInPage 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeInPage { to { opacity: 1; } }
+
+        /* --- HEADER --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s ease;
+        }
+        .back-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .back-link:hover { text-shadow: 0 0 10px #fff; opacity: 0.8; }
+        .logo-small { font-family: 'Mrs Saint Delafield', cursive; font-size: 2.2rem; color: #fff; text-decoration: none; }
+
+        /* --- OKUMA KONTEYNERI --- */
+        .read-container {
+            max-width: 750px;
+            width: 90%;
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chapter-header { text-align: center; margin-bottom: 50px; }
+        .chapter-header h1 { font-size: 2.2rem; letter-spacing: 6px; color: #fff; font-weight: normal; text-transform: uppercase; line-height: 1.4; }
+
+        /* --- ŞİİR & METİN ALANI --- */
+        .text-block {
+            font-size: 1.15rem;
+            color: #bbb;
+            white-space: pre-line;
+            text-align: justify;
+        }
+
+        /* --- PARAGRAF VE YORUM ALTYAPISI --- */
+        .p-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-right: 40px;
+        }
+        
+        .comment-trigger {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            opacity: 0.2;
+            transition: 0.3s ease;
+            user-select: none;
+            color: #fff;
+        }
+
+        .p-wrapper:hover .comment-trigger {
+            opacity: 0.8;
+        }
+
+        .comment-trigger:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 8px #fff;
+        }
+
+        /* --- NAVİGASYON BUTONLARI --- */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+        }
+
+        .nav-btn {
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            padding: 12px 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 2px;
+            transition: 0.5s;
+            background: transparent;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background: #fff;
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+            border-color: #fff;
+        }
+
+        footer { padding: 60px 0; text-align: center; font-size: 0.7rem; opacity: 0.2; letter-spacing: 2px; width: 100%; }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 30px; }
+            .logo-small { font-size: 1.8rem; }
+            .read-container { width: 92%; padding: 40px 0; }
+            .chapter-header h1 { font-size: 1.6rem; letter-spacing: 4px; }
+            .text-block { font-size: 1.05rem; line-height: 1.7; text-align: left; }
+            .p-wrapper { padding-right: 30px; }
+            .comment-trigger { opacity: 0.4; right: 0; }
+            .nav-btn { padding: 10px 18px; font-size: 0.65rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="kitap-detay-huma.html" class="back-link">❮ BÖLÜMLER</a>
+    <a href="index.html" class="logo-small">Ceren Ceylan</a>
+    <div style="width: 80px;" class="desktop-spacer"></div>
+</header>
+
+<div class="read-container">
+    <div class="chapter-header">
+        <h1>"29 NİSAN'DA NEREDEYDİM BİLMEK İSTİYOR MUSUN"</h1>
+    </div>
+
+    <div class="text-block">
+        <div class="p-wrapper" data-p-id="huma2-p1" style="text-align: center; font-style: italic; color: #fff;">Hiç bir insanı unutmak, bir insandan vazgeçmek,
+Bir insanı hayatından sonsuza kadar çıkarmak zorunda kaldın mı hiç?
+Hani ölmüş gibi,
+Hani uzatsan elini tutamayacağını bilmek gibi,
+Her an kapıdan içeri gülümseyerek gireceğini bekleyip
+Ama aslında hiç gelemeyeceğini de bilmen gibi.
+~Nazım Hikmet<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p2" style="text-align: center; font-weight: bold; letter-spacing: 2px; margin-top: 30px; margin-bottom: 30px;">29 Nisan 2024<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p3">Bir an sadece hayatla ölüm arasındaki o ince çizgi. Nefes aldığın ve almadığın bir an.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p3">Bir an sadece hayatla ölüm arasındaki o ince çizgi. Nefes aldığın ve almadığın bir an.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p4">İşte o bir anı ilk kez o kadar yakından görmekti hayat öte yandan. Durmuş öylece bakıyordu Utku Aydemir’in heykeline.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p5">Yaşanan her ne olursa olsun acının tarifi yoktu. Hele de gencecik yaşta kayıp giden bir canın arkasından… Oldukça fazla üniformalı asker ve sivil insan vardı hangarda şu an. Bir tören yapılıyordu belli ki. Bu tabut al bayrağa sarılmış, üzerinde şehidin resmi duruyordu. Maral ise bu kalabalığın en önündeydi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p6">Bu önemli bir insanın cenazesi miydi, hayır. Bu Maral’ın babasının yol arkadaşıydı. Maral, babasını kaybettiğinde de bu kadar ağlamamıştı. Ya da ağlayamamıştı bilmiyorum. Asla mutlu görünmüyordu Maral ama şu an gözlerindeki o saf acı içimi sızlatmıştı benim bile.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p7">Bir an için kafasını kaldırdı ve gökyüzüne baktı. Yağmur çiseliyordu. Sonrasındaysa bakışları yine tabuta kaydı. Başının umutsuzca iki yana salladı ve ellerini yüzüne kapattı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p8">“…Hayat kahkahaların arkasındaki saklı hüzünler, parlak bakışların arkasındaki karanlıklarla doludur. Sizi kimse sizden daha iyi tanıyamaz. Ne sevgiliniz ne arkadaşınız ne de aileniz, belki yalnızca kardeşiniz. Hayatlarımlz zor. Okula gelip, gülüp buradan gidiyorsunuz ve sonrasını çoğumuz bilmiyoruz. Bazen kırılıyoruz, görülmek istiyoruz. Sarılacak bir omuz arıyoruz ama çoğu zaman da insanlardan kaçıyoruz. Sizden bunun için bir şey istiyorum.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p9">Bir süre bekledi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p10">“Anlatın, anlatmadan anlaşılmak zordur. Güvenmek de zor, yargılanmaktan korkuyor insan anlıyorum ama şunu da hatırlatmak istiyorum: insanız, kusurlarımız var. Kusursuz olanı herkes sever. Herkes tarafından onaylanmak zorunda değilsiniz. Günün sonunda yanınızda olan tek kişi kendiniz, kalbinizi sevgiye açın, aşık olun ama teslim olmayın. Ve son olarak biri size yirmi dokuz nisanda neredeydin diye sorduğunda vereceğiniz cevaba dikkat edin, iyi eğlenceler herkese!”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p11">Bunları Maral mı söyledi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p12">Akustik gitarıyla arkadan bir melodi çalarak yaptığı konuşmasını tellere daha da coşkulu vurarak bitirdi Maral ve geceyi başlattı tüm ODTÜ’lüler için. Ardındansa ilk şarkısını çalmaya başladı: Taylor Swift-High infidelity<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p13">“You know there’s manny different ways that you kill the one you love. The slowest way is never loving them enough.” (Aslında sevdiğini öldürmek için onlarca yol var, en kolayıysa onları asla yeterince sevmemek.) Herkes ciğerleri patlayacakmışçasına bağırarak eşlik ediyordu şarkıya. Misafir olan belli bir kesim hariç.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p14">Tunç ile geldikleri ilk seneden tüm etkinliklere ve şenliklere katılmaya başlamışlardı. Yıllardır içlerinde büyüttükleri enerjiyi ve bastırdıkları duyguları fırsatı bulmuş olmakla beraber her bir yerden taşıyordu. ODTÜ tarihine bir yeni şenlik de onlar eklediler.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p15">Tunç çok iyi elektro gitar çalardı, Maral ise hem çalar hem de söylerdi ve onlarda müzikli bir gece yapmak istediler. Bahar şenlikleriyle eş zamanlı olarak gerçekleştireceklerdi. Devrimde büyük bir sahne kurarak Maral’ın seslendirdiği şarkıdan da yola çıkarak “29 Nisan’da Neredeydin?” koymuşlardı şenliklerinin adını. Gece boyu eskilerden söyleyip, eğlenirlerdi. Yılın en sevdikleri günü bugün olmuştu ikisinin de.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p16">“Do you really wanna know where ı was at april 29th?” (29 Nisan’da neredeydim, gerçekten bilmek istiyor musun?) ‘ODTÜ’deydim!’ diye bağırdı kalabalık.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p17">“Do ı really have to tell you how he brought me back to life?” (Gerçekten beni hayata nasıl döndürdüğünü anlatmalı mıyım?) Tunç’a kaydı bakışları.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p18">Mimikleriyle şarkıyı söylerken aynı zamanda sanki bir tiyatroyu oynuyordu Maral. İçi sanat aşkıyla yanıp tutuşan bir genç kadındı. Şiirlerle ve kitaplarla büyümüş, kimi zaman hiç uyumadan sadece şarkılar dinlemişti. Annesi de piyona çalar ve şiir yazardı. Birlikte vakit geçirdikleri tek zaman dilimi annesinin ona şiir okuduğu ve piyano çalmayı öğrettiği anlardı. Okuduğu bölümünü de seviyordu ama buraya aitti. Şiirlere, kitaplara, şarkılara, piyanoya, sahneye ve sanata…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p19">“The slowest way is never loving them enough.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p20">Ardı ardına şarkılar söylenmeye devam ederken Maral tekrardan bir konuşma arası verdi. Dört gün önce bir sempozyum gerçekleştirmişti ve dekanlıktan aldığı geri bildiriye göre de epey beğenilmişti. Keyfinin daha da yerinde olmasının sebeplerinden biri buydu. Bu güzel ortaklığın şerefine yapılan etkinlikğe hava harp akademisinin öğrencilerini davet etmişlerdi. Ne yazık ki İstanbul’dan buraya gelmeleri mümkün değildi. Üzümü yiyip bağını sormamak da buradakilere kalmıştı. Bugün ağırladıkları misafirlerini takdim etmesi gerekiyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p21">“Eğleniyoruz umuyorum ki?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p22">Evet sesi yükseldi kalabalıktan ve Maral gülerek devam etti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p23">“Güzel güzel evet o zaman size başka güzel bir hediyemizi sunalım. Biliyorsunuz okulumuz uzay ve havacılık bölümünün- ki benim bölümüm oluyor- milli savunma üniversitesiyle yürüttüğü ortak bir proje vesilesiyle bugün Harbiyeli arkadaşlarımızı misafir ediyoruz.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p24">Kalabalıktan kocaman bir alkış tufanı koptuğundan Maral bir iki saniye gülerek alkışın bitmesini bekledi. Alkış sesi dinince tekrar konuşmaya başladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p25">“Kara Harp Okulu’ndan arkadaşlarımız bizimle, havacıları İstanbul’dan getiremedik, ne yazık ki. Kendilerine bol bol moral verip yuvalarına geri göndereceğiz. Anlaştık mı?” diye sorduğunu “tamam” işareti yapan elles havaya kalktı ve kalabalıktan sözünü aldı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p26">“Lakin şöyle bir durum var, bu durum benim Harbiyeli arkadaşlarıma moralden ziyade ODTÜ’lü kızlarımıza moral oldu gibi.” Dedi büyük bir ima ve cilveyle. Bu sefer kalabalıktan kahkaha sesi yükseldi. Etkinliğin başında sopsoğuk duran Harbiyeliler dahi şu an gülüyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p27">Maral esprili tavrıyla devam etti. Bu espritüel tavrında çakırkeyif olmasının da etkisi yok değildi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p28">“Erkek milleti egosu okşanınca nasıl gülüyorlar, az önce nereden geldik der gibi bakıyorlardı.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p29">Zira haklılardı da. Buradan olmadıkları o kadar belli oluyordu ki. ODTÜ’lülerde çeşit çeşit insan vardı. Kimi rengarenk giyinmiş kimi simli makyajlar yapmış kimi elinde pankart getirmiş-mesleki deformasyon-kimiyse sadece müziğe ve alkole vermişti kendini.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p30">Harbiyeli gençler ise ODTÜ’lü gençlerin yanında rahatça seçiliyorlardı. Uzun boyları, cüsseli yapıları ve öldürecekmiş gibi duran keskin bakışlarından… Siyah bir kot pantolon ve siyah bir tişört, farklı giyinen yok. Aslında onlar da enerji dolular hatta herkesten daha coşkulular, uğruna inandıkları aşk ve meslek karakterlerini bastırabilir mi? Belki de ODTÜ’lüler fazla delidir, kim bilir?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p31">Aralarından biri arkadaşının omuzuna çıkmış bağırarak, ki bu arkadaşın sesi baya gürdü, “Güzelliğinizden gülüyoruz Maral Hanım.” Dedi. Maral kocaman bir kahkaha atarak “Oldukça da romantikler.” Dedi. Ardından bakışlarını daha taze bir Harbiyeli olduğunu belli eden gence dikmiş Tunç’u göstererek tekrar konuştu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p32">“Yalnız abim olur.” Dediğinden arkadaşının omuzuna çıkıp bağıran çocuk yere hızlı bir iniş yaptı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p33">“Ben de şimdi tüm ODTÜ’lü arkadaşlarımın iç sesini dışa vurarak ki bence buna erkekler de dahil...” uzun bir “Aa!” sesi yükseldi kalabalıktan. Güldü Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p34">“Sezen Aksu’dan seni yerler diyelim.” Büyük bir alkış tufanı tekrar koptuğunda şarkının o enerjik girişi Devrimde yankılanmaya başladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p35">“Sen bizim mahalleye geldin geleli canım, biz de ne akıl kaldı ne de fikir bittik.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p36">“O endam eda nedir öyle hey yavrum? Kaç yıllık arkadaşlar birbirimizi sattık.” Maral bu satırları söylerken rastgele tanımadığı Harbiyelileri eliyle işaret ediyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p37">“Hey seni yerler, yerler.” Bir Harbiyeliyi parmağıyla gösterdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p38">“Seni ham bu zilliler” önce bir kız grubunu ardından başka bir Harbiyeliyi gösterdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p39">“Yaylanmadan yürü.” Kendisine bağıran Harbiyeliyi işaret etti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p40">“Yoksa günah bizden gider.” Şarkısını söylerken dans etmeyi de ihmal etmiyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p41">Maral iki kesim arasındaki duvarı yıkmış olmanın mutluluğuyla tüm gece bütün şarkılarını büyük bir hevesle seslendirdi. Tüm sahne boyunca herkes şarkılara eşlik etti, dans etti, her Harbiyeli en az bir kıza numarasını verdi ve eğlencenin dibine vuruldu. Gösteri Maral’ın “Seneye Yirmi Dokuz Nisan’da görüşmek üzere, iyi geceler.” Demesiyle son buldu, gece Maral için yeni başlıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p42" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p43">Kader denen şey gerçekten vardı. Kâinatta bir şeyin yaşanması isteniyorsa üzerinden dört yıl da geçse kırk yıl da geçse o şey yaşanırdı. Hiçbyr problem çözümüne kavuşmadan yok olmazdı. Her insan kendi kontrolünde olmadan aldığı her yara için hesap sormadan tamamen iyileşemezdi. Pişmanlıklar itiraf edilmeden geçmez, iyi kiler söylenmeden bir lütfa dönüşmezdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p44">İnsanlar giderdi ama vedasız her bir gidişin sonu da geri dönüşle biterdi. Kaderde üç noktayla biten olaylara yer yoktu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p45">Dört sene üstüne, 7 Ocak 2032’de vedasız bir gidiş geri dönüşle son bulmuşti. “Beni bir daha asla görmeyeceksin.” Diyen Alaz bu cümleyi yalanlar şekilde tam karşımda dikiliyordu. Omuzları dik, başı beni görebilmek için boy hizama göre eğilmiş ve duygudan tamamen yoksun gözlerle dolduğundan ötürü parlayan gözlerime bakıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p46">Gözlerimiz daha birbirine ilk temas ettiğinde sayısız anı hücum etti zihnime. O belki ilk karşılaşmamızı anımsamıştır; ilk sohbet, ilk randevu, ilk sarılma, ilk öpücük, kuğuluda yağmurun altında ilk kez ıslandığımız o büyülü gece…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p47">Benim zihnime nüfuz edenlerse tüm bunların zıddıydı. Benim aklıma iyi olan hiçbir şey gelmemişti; aksine Alaz’ın gidişi, ilk ağlayışım, ilk bayılışım, ilk depresyonum, ilk ilaçlarım, 29 Nisan’da yağmurun altında hayatımdan ilk kez vazgeçtiğim o lanetli gece…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p48">Terk eden taraf iyi anılarla yaşardı ama terk edilen tarafı gidişin karanlığı öyle bir ele geçirirdi ki güneşli günlerin yerini sadece geceler alırdı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p49">Benim ruhumdaki güneş batalı oluyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p50">Ağlayabilen biri değildim ben. Çocukken ne zaman ağlasam babam daha çok ağlamak istememe sebep olurdu. Ben de zamanla daha çok ağlamamak için hiç ağlamamayı öğrendim. Gözyaşlarımı dışıma değil içime akıttım. Yıllardır kaç kere ağlamışımdır, bir elin parmaklarını geçmez ama hala bugün ağlamamaya çalışırken boğazımdaki yumru ve gözlerimdeki sızı aynı şekilde hissettiriyorlar kendilerini. Hiç hafiflemediler.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p51">Hıçkıra hıçkıra ilk ağlayışımsa sessizliğin hâkim olduğu havada eski evimin girişinde “Gitme.” Diye haykırırkendi. Gururlu bir kadın yalvarmazdı ama ben dizlerimin üstüne çöküp gitmemesi için yalvarmıştım. Ben artık kimsesiz kalsam da kendimi sevemem, nefretimi hak edecek ne çok şey yapmıştım…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p52">Olduğum yere mıhlanmış gibi dururken istemeden bir damla yaş sağ gözümden yanağıma usulca aktı. Yaşın ıslaklığını hissetmemle boğuk sesler ve buğulu görüntüler yavaş yavaş tekrar net hale gelmeye başladı. Ne diye aktı ki o yaş? Bana neden bu kadar duygusuz bakıyorsun Alaz? Beni görmek hiç mi canını yakmıyor? Gururlu bir kadının inançları ve hedefleri olurdu ama ben her şeyi sadece onun sevgisini edinmek için yapmıştım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p53">Hisler diye geçirdim içimden, hisler Maral… çünkü geçmişin bana doğru geldiğini hissetmiştim. Alaz gitmeden önce hissettiğim gibi. İnsan hissederdi: vedaları ve ölümleri, kazanacaklarını ve kaybedeceklerini.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p54">Tunç’un elini elimde hissettim. Kulağıma adımı fısıldadı sakince, iyi misin der gibi. Değilim Tunç. Cennet, hüma kuşuna geldi ama baksana artık benim cennetim değil. Eskisi gibi bakmıyor. Giderken baktığı gibi bakıyor. Benim her hücrem acıyla kıvranırken o oldukça sakin görünüyor. Kendim asla inandırmadığım bu şey belki de gerçek mi? Gerçekten sevmiyor mu? Sevgisi bitti mi? Sevgi biter mi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p55">Ağlama isteğimi tek gözyaşıyla bastıramayacaktım. Boğazımdaki yumrunun baskısı artıyordu. Gitsem ya buradan, tek başıma ağlasam. Gidebilir miyim ki? Yürümek istesem adım atabilir miyim? Tunç arkamda değilken yıkılmadan durabilir miyim? Şu an beni ayakta tutan kendi gücüm mü Tunç’un desteği mi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p56">Sakin ol Maral, nefes al Maral, güçlüsün Maral, unuttun Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p57">Yumruk yaptığım ellerimi açtım önce. O kadar sıkmışım gibi avuç içim kanıyordu tırnaklarım yüzünden.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p58">Hilal şeklindeki kırmızı izlerin yanına yıldızlar çizerdim eskiden yine kırmızı kalemle. Böylece olur da biri görürse kimse onların tırnak izi olduğunu anlamaz, avuçlarıma Türk bayrağı çizdiğimi düşünürler sanıyordum. Baksalar anlaşılırdı çizim olmadığı da kimse de bakmadı avuç içlerime zaten.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p59">Bacaklarımı yokladım sonra; oradalar, yürüyüp gidebilirim buradan. Gri pantolonuma kanım bulaştı. Gözlerimi açıp kapadım tekrardan, görüntüm daha da netleşti; görüyorlar, yürürken düşmeyeceğim. Kulaklarım duyuyor, tenim hala soğuğu hissediyor. Kontrol benim elimde.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p60">Sakin ol Maral, nefes al Maral, güçlüsün Maral, unuttun Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p61">Bir adım attım önce öne doğru. Sendeleyeceğim diye o kadar korktum ki. Onun gözünde bir kere o aciz duruma düşmüştüm tekrar düşmek istemiyordum. Gerçi ne fark eder ki? Bir kere diz çöktüğünde ikinci kere çökmemen doğrultmaz sırtını, güldürmez yüzünü, gönlünü almaz gururunun.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p62">Yalpalamadım hatta dışarıdan bakıldığında kimse benim üzerimde tonlarca yük olduğunu anlamazdı. İlk adımın verdiği cesaretle omuzlarım tekrar dikleşti, eğilen başımı tekrar kaldırdım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p63">Dayan Maral, ağlama Maral, güçlüsün Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p64">İkinci adım, üçüncü adım ve dördüncü adım, işte tam karşısındayım. Yakından bakıyorum ona. Günlerce tekrar böyle bakabilmek için ağlayan ben değil miydim? Dolgun dudaklarının rengi hala biraz soluk ve kenarında ufacık bir doğum lekesi var ama sakalları saklıyor şimdi. Öğrenciyken yasaktı sakal bırakması, şimdi komutan olmuş. Hiçbir anın şahidi olamadım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p65">Kirpikleri benimkilerden daha güzel, hala kıskanılası şekilde gür ve kıvrık. Koyu saçlarına rağmen bembeyaz teni, yanağındaki bıçak izi mi? Eskiden yoktu. Hiçbir yarasına merhem olamadım. Hayranı olduğum o yüz, alev alırdı her dokunduğumda halbuki şimdi elimi uzatsam değmez yüzüne. Uzun saç ne kadar yakışmış. Her şeyin yakıştığı gibi. Hala kalbimi nasıl attırıyor varlığın? Nasıl unutamıyorum seni, hala ilk günkü hayranlıkla…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p66">Geçip gidecektim yanından ama son kez baktım gözlerine. Hiçbir zaman son kez olmayacaktı değil mi? Olsa bile bilemeyecektik. Son bakışı bilemeyecektik. Hataydı, tekrar bakmak.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p67">“Işığınla ışık kazandırdın gözlerime Maral, bakma yeşil olduklarına senden önce kapkaraydılar.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p68">Bahsettiği karanlığı artık görebiliyordum. Onun nereye baktığını anladığımdaysa bir yaş daha aktı, bu sefer sol gözümden. Ucunda lotus çiçeği olan kolyeme bakıyordu. Kolyemize… Her gün içimde taşıdığım kolyemi bugün siyah kazağın üzerinden sarkıtmıştım. Biliyor gibi, geldiğinde görmesi için.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p69">“Yanında olamadığım her an için bununla sana destek olmaya çalışacağım Hüma Kuş’um.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p70">Yıllardır bir an bile yanımdan ayırmadım o kolyeyi. Çok istedim, defalarca kopardım attım boynumdan ama dönüp dolaşıp yine ona sarıldım. Sanki o kolyeyi çıkarırsam onu beklemeyi de bırakacaktım. Bırakamadım. Arayıp bulamayınca yıldım, o geri gelsin diye beklemeye başladım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p71">Bırakamadım. Ne sevmeyi ne beklemeyi…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p72">Çiçek işlemeli bir taştan aşkımın hasretini gidermeye çalıştım. Nesnelere anlam yükleme Maral, diyen adam bana bir kolye vermişti yokluğunda tutunmam için.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p73">Yokluğun sonumdu ve nesnelere anlam yükledim Alaz.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p74">Tekrar gözlerini kolyeden kaldırıp da bakmadı bana, bakamadı belki bilmiyorum. Ben de daha fazla beklemeden arkamda bıraktım onu. Arabama kadar dayansam boğazımdaki yumruya yeterdi bana ki öyle de yaptım. Arkamda nasıl bir yıkıntı bıraktığıma bakmadan arabama yürüdüm. Gözden uzaklaştığımda koştum hatta. Kabanımın cebindeymiş anahtarım fark etmemiştim odamdan önce arabama yönelirken.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p75">Arabaları neden sevdiğimi söylemiştim değil mi? Kaçmaya yardımcı olurlar.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p76">Oturdum sürücü koltuğuna. Yarım dakika kadar bekledim önce. Karşımdaki uçak pistine baktım. Rüyalarım haberciydi, bu akşam rahat bir uyku çek Maral. Bekleyişin bitti, bugünü kutla Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p77">Yaşlar önce ardı ardına yavaşça döküldü gözlerimden. Zamanla hızlandılar, nefes alışverişlerim de öyle. Daha fazla tutmadım içimde büyüyen fırtınayı. Bağıra bağıra ağlamaya başladım. Canım öylesine yanıyordu ki. Acın azalacak demişti annem, yanılmış. Acım hep taptazeymiş de ben onu çekmeye alışmışım. Birkaç kere direksiyona vurdum ama asıl zararı kendime vermek istiyordum. Kalbim ne zaman acıdan duracak olsa fiziksel olarak canım yanarsa yüreğiminkini daha az hissederim sanıyordum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p78">Kendime o kadar zarar verdim ki artık kendimi affetmem imkânsız.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p79">Ben ona sürekli bir gün gideceğini söylüyordum, herkes bir gün gider sonuçta değil mi? O ise her seferinde inkâr ediyordu. Kendi inşa ettiği inancımı yine kendi yerle bir etti ve ben hala o enkazı kaldıramadım. Ağladım, dünyanın sonuymuşçasına ağladım. Hayır diyerek ağladım, sızlamayın diye ağladım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p80">O kadar iz var ki vücudum da artık kendimi sevmem imkânsız.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p81">Gitmeliyim buradan. Kimse beni bu halde görmeden gitmeliyim. Ben ağlarken görülemem, artık değil. Yalan yok, bir zamanlar istedim. Ağladım ve ellerimi salladım, sokaklarda dolaştım saatlerce gözlerimde yaşlarla. Kimse görmedi. Kimse sormadı. Artık değil. Artık görülmek istemiyorum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p82">Direksiyona yasladığım başımı kaldırdım. Uzaktan görünenlere baktım. Derya ve Kenan, Tunç’un yanına geçmiş; Andiç amca Tunç’u kolundan tutuyordu. Destek olmak için mi yoksa hareketini engellemek için mi bilmiyorum. Ben arabamı çalıştırıp buradan gidecektim gerisi önemli değildi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p83">Abim bile görmesindi bunu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p84">Giden birini beklemek olağandır ama yok olan birini beklemek aptallıktır. Öyle ki zaman geçtikçe gideni gitti diye değil kalanı hala bekliyor diye suçlamaya başlar akıl. Ben bu aptallığı yaptım, bekledim. Adını zikretmeyi dahi aile içinde yasakladım ama ben bekledim. Beklemekle kalmadım, sevgime özenle bakıp gözettim. Bitmesin diye, bekleyiş son bulduğunda hazır olsun diye. Aptal.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p85">Şimdi bu aptallığımı abim bile görmesin.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p86">Hep bastığım o butona bastım. Arabanın çalışmasıyla beraber iki elimle birden direksiyona sarıldım. Sesli bir şekilde duymaya ihtiyacım olan şeyler vardı. Söyleyecek tek kişi de bendim, yalan da olsa derinlere saklanan sesimi gün yüzüne çıkarıp söyledim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p87">“Acıya gösterdiğin tepkidir güç, güçlüsün Maral.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p88">Değilsin. İnan bana değilsin. Olmaman da seni suçlu yapmaz. Aksine sevgini gözetirken yepyeni bir duyguya gebe kaldın sen. Hayal kırıklığı. Ve sen sevgini gözetirken o duygu nefretini gözetmeye başladı. Kardeş gibi büyüdüler el ele kalbinin ortasında. Şimdi ikisinin savaşı başlayacak.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p89">Bekleyişin bitti belki Maral ama harplerine harp eklendi. Sevgin ve nefretin…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p90">Her gün gelip gittiğim yollar bir labirent oldu bugün sanki. Sakince çıkışa doğru yöneldim ama önüme çıkan bedenle durmam bir oldu. Bekledim çekilsin diye, çekilsin istedim. Ben bu yüzleşmeyi hep istedim ama şu an hazır değildim. Karşımdaki adam hazır olup olmamamı umursuyor muydu? Sanmam.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p91">Gözlerine diktiğim bakışlarımı indirdim. Bizim dilimizde bu kabullenmek demekti. Ben direksiyondaki ellerime odaklandığım sürede yan koltuğun kapısı açıldı. Arabamın geniş olması tam isabet olmuş ki elindeki silahıyla anca sığdı. Açık havada dikkat etmemişim. Kokusu…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p92">Değişmemiş diyemem, babam gibi kokuyordu… Daha doğrusu asker gibi ama benim aşık olduğum adamın kokusu zorla da olsa geliyor bana. Biner binmez hareket edebilseydim keşke ama nereye gidecektim. Ne yaşıyoruz biz?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p93">Ben öylece durmuş beklerken beş dakikaya yakın zaman geçmiş ama benim için akmıyor gibiydi. Alaz’ın nefes alışveriş sesi vardı arabada sadece, ben kendi nefeslerimi dizginlemeye çalışıyordum. Panik atak mı geçiriyorum? Hayır, şimdi olmaz.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p94">İstesem de ondan yıkıldığımı gizleyemezdim. Denemek bile aptallık olurdu. Onun yerine “Nereye?” diye sordum. Zorla çıktı sesim. Yıllar sonra ona ilk söylediğim şey buydu, yıllar önce son söylediğim şey gibi: Nereye?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p95">Bana bakıyordu şu an, evet ama ben daha fazla bakmak istemiyordum, yola bakmaya devam ettim. Karşılık alamayınca o da önüne döndü. Derin bir nefes aldıktan sonra “Kalbin nereye götürürse.” Dedi. Yıllar sonra ondan ilk duyduğum şey buydu: Kalbin nereye götürürse.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p96">Tek bir yer canlandı gözümde, zaten başka neresi olabilirdi ki? Orada doğmuş ve orada ölmüştük.</div>
+        
+        <div class="p-wrapper" data-p-id="huma2-p97" style="text-align: center; font-style: italic; color: #fff; margin: 40px 0; line-height: 2.2;">Mezarımıza bir ziyaret gerçekleştirelim Alaz. Sevgi apartmanında, geçmişe dua edelim. Asla hak etmediği cenneti onun için dileyelim. Bana ilk defa dokunduğun, öptüğün, birlikte en zirveyi gördüğümüz evde duvarlar örelim aramıza, perdeler çekelim, kaçalım. Hatta biradan nefret ederim ama senin için tüm dolabı dolu tuttum, bir bira al ve neden gittiğini konuşalım. Hayır konuşmayalım, sebeplerinin sonuçları hafifletmeyeceği kadar ağır bedeller ödedim. Bana da bir şarap aç Alaz; kapının önünde, dizlerinin üstünde bıraktığım kızı kaldırıp geleceğim. Dört yıl, yedi ay, on üç gün önce dondurduğum zamanı çözelim, bırakalım tekrar aksın. Bizi gelecekte nelerin beklediğini bilmeden, gittiğin yerde geri gel bana Alaz. Geçmişimize ağlayalım. Her gece hayalini kurduğum bugüne bir kadeh kaldıralım ve ilk günkü gibi sadece sohbet edelim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p98" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p99">Sahne arkasında coşkuyla kadeh kaldırdı tüm grup. Herkesin yüzünde kocaman bir mutluluk vardı. Gençlik ne güzel şeysin sen öyle, sadece şarkı söyleyip dans etsen kimse yargılamaz. Çocuklukları elinden alınmış bir grup insan şimdi gençliklerini ölesiye yaşamaya çalışıyorlar.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p100">“Harikaydık arkadaşlar.” Dedi bateristleri kadehini kaldırırken.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p101">“Harika mı, fevkaladeydi. Bu kadar eğlendiğimi hatırlamıyorum.” Dedi bas gitarcıları kadehini kaldırırken.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p102">Tunç ise söylenenlere katıldığını belli ederek güldü ve bir şey söyleme ihtiyacı hissetmedi. Bardağını tokuşturdu diğerleri gibi. Küçük bir yudum aldıktan sonra arkasını döndü ve telefonda biriyle konuşan Maral’a baktı. Adımlarını Maral’a yönlendirerek yanına geldi. Gelenin kim olduğuna bakma gereksinimi duymadı Maral. Annesiyle konuşuyordu belli ki.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p103">“Tamam, tamam anne ben eve geçeceğim zaten. Görüşürüz çarşamba günü.” Diyerek kapattı telefonu ardından Tunç’a verdi dikkatini. Birkaç saniye öylece bekledikten sonra samimi bir gülüş yer aldı Maral’ın yüzünde. Elindeki telefonu koltuğa bırakan Maral ileri atılarak sarıldı Tunç’a.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p104">“Gerçekten harika bir geceydi, harika çaldın. Teşekkür ederim.” Dedi başı Tunç’un omuzundayken. Tunç da aynı şefkatle kardeşine sardı kollarını ve Maral göremese de huzurluca güldü. Onun mutluluğu Tunç’a yeterdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p105">“Sen harika söyledin, eminim herkes çok eğlenmiştir.” Dedi. Maral sarıldığı bedenden ayrıldı. Tekrar anlamsızca birbirlerine bakmaya başladılar. İkisi de ne var manasıyla başını sallayığında önce Maral’dan ardından Tunç’tan bir kahkaha yükseldi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p106">“Galiba sarhoşum.” Dedi Maral kahkahasının arasından. Gülmekten gözlerinden yaşlar gelmeye başlamıştı. Tunç da ileri doğru eğilmiş eliyle karnını tutuyordu. “Bayılacağım, ben değilim ama öyle hissediyorum.” Dedi Maral’a.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p107">Önce Maral’ın kahkahaları dindi ardından Tunç’un. Maral şefkatle bakıyordu Tunç’a. İkisi de nefesini toplayıp gözlerinden akan yaşları sildikten sonra Maral bıraktığı telefonuna uzandı tekrardan. Bir mesaja cevap verdi daha sonra Tunç’a dönüp “Öyle hissediyorsan vücudun sarhoş olmak istiyor demek ki Tunçkuş. Hadi git götü başı dağıt sen biraz. Bu aralar çok gergindin, çık bir rahatla. Hayat sadece okul değil.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p108">Tunç ellerini göğsünde birleştirip kaşlarını kaldırdı. “Çok bilmiş misin sen? Tavsiyelere bak.” Dedi kınar bir ses tonuyla ardından yaptığı rolü bırakıp “Sen gelmiyor musun?” diye sordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p109">Maral ellerini kaldırdı hemencecik. “Hiç almayayım. Bu kadarı bana bile çok. Yoruldum, ben gidip hunharca uyuyacağım.” Dedi. Tunç üstelemedi ama onsuz hiçbir yere de gitmek istemiyordu. Tam bunu dile getirecekken Maral neyin geldiğini anlamış olacak ki “Sakın ben de gitmeyeyim o zaman deme. Bir git ya, bir açıl, farklı insanlarla takıl. Sıkılacaksın böyle benden.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p110">“Aşk olsun, sen sıkılıyor musun benden?” diye sordu Tunç beklemeden. Maral gözlerini devirecekken son anda vazgeçti. Tunç böyle konuları hep ciddiye alıyordu, hayattaki en kötü şeyi bile şakaya vuran Maral da buna alışmakta zorlanıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p111">“Senden asla sıkılmam ama…” kulağına doğru eğildi Tunç’un, gizli bir şey söylüyormuş gibi “Git bana gelin falan yap, hadi.” Geri çekilip heyecanlı heyecanlı devam etti Maral bu sefer. “Hadi ya hadi, tüm fakülte peşinde biraz bak sen de etrafına. Görümce olmak istiyorum ben.” Maral için sevdiklerini paylaşmak en zor şeydi ama Tunç’un aşk kadar kutsal bir duyguyu da tatmasını istiyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p112">Tunç güldü Maral’ın bu söylediğine. Aşk, Tunç’a en uzak kavramdı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p113">Kırmadı ama kardeşini. Onu da anlıyordu. Sevilen biriydi ama kimseye kendini tam olarak açmıyordu, samimiyetten kaçınıyordu. Evet belki de iyi yapıyordu ama kendini fazla geri çekiyordu. Hep iyileşmekten bahsedilir, insanların açtığı yaraları iyileştirmek… İşte onları kapatmak için yine insanlara ihtiyaç vardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p114">Hayat böyle komik karşıtlıklarla doludur, Tunç’un da bunu artık kabullenmeye başlaması gerekiyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p115">Önce Maral’ı eve bırakacağı konusunda diretse de Maral zorla onu geceye devam eden diğer tayfayla gönderdi. Kendisini ise az önce mesajına cevap yazdığı bir kız arkadaşının götüreceği yalanını attı. Tunç kırk kere eve vardığında “Haber vermezsen dönerim.” dedikten sonra Maral’ı okulun önünde bıraktı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p116">Maral Tunç’un içinde olduğu araba yol alıp da gözden kayboluncaya dek bekledi yüzünde minik bir tebessümle. Hayata alışmaya çalışan yoldaşı, sen de mutlu olmayı çok hak ediyorsun.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p117">Araba gözden kaybolduktan sonra o da yakınlarda olan kendi arabasına doğru yöneldi. Vardığında sürücü koltuğuna oturdu, sakince arabayı çalıştıracakken vazgeçti. Aşırı kuralcı biri değildi ama şu an hissedeceği kadar sarhoştu, ölmeye de gerek yokti. Ee, kendisini alacak bir kız arkadaş da yoktu. Az önceki mesaj, geceyle ilgili attığı bir tweete cevaptı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p118">Taksi bu saatte sarhoş araba kullanmaya eş değer derecede tehlikeliydi. “Kaldım ya burada.” Diye mırıldandı kendine doğru. Ne yapsam diye düşünürken birinin cama tıklatmasıyla irkildi. Cama vuran kişi eğilip de yüzünü gösterdiğinde tanımakta zorluk çekmedi. Önce rahatladı ardından şaşırdı. Vuran kişi bir iki adım geri atınca hızlıca arabadan indi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p119">“Kaya, ne işin var burada?” diye sordu karşısındaki genç adama. Şaşırmıştı gördüğü çehreye karşın. Kaya güldü bu soruya, ardından “Sen çağırdın.” Diye cevap verdi. Maral da güldü, güldüğünü görmek güldürmüştü nedense.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p120">“Yani ben çağırdım da geleceğini düşünmemiştim. İstanbul’da işlerin yok muydu senin?” diye sordu bu sefer Maral bir elini saçlarına atarak. Kaya ellesini cebine yerleştirdikten sonra “Vardı, bitti, döndüm. Dönmüşken de davetine icabet edeyim dedim ama görüyorum ki bana özel bir davet değilmiş bu.” Diye cevap verdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p121">“Hayır özeldi,” dedi Maral hemen. Sonra dönen başını yok saymaya çalışarak "Yani özeldi derken başta böyle bir plan yoktu. Projeyi yürüten hoca dekandan rica etmiş. Dekan da sizin okulun dekanından izin istemiş” Diye ekledi. Bir süre gökyüzüne bakarak düşündükten sonra bir cık sesi çıkardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p122">“Yok havanın dekanından. Onlar da konser için bir uçak harp okulu öğrencisini oraya nasıl gönderelim gibi bir şey demişler. Benim hoca da bir inat pir inat. Karayla konuşun o zaman demiş dekana. Sizin dekan daha da sert. ‘Asker olacak bu çocuklar asker, ne o öyle konser falan’ demiş sonra benim hoca tanıdığı bir subayı araya sokmuş,” burun kemerini işaret parmağıyla sıkıştırdı. “Adı neydi ya, Be… Behzat!” Ellesini birbirine vurdu. “O komutan da konuşmuş falan. Güç bela kabul ettirmişler.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p123">Kaya öylesine sorduğu bu soruya uzun uzun ve ciddi bir şekilde cevap almayı beklemediğinden ufak bir kahkahaya engel olamadı. Maral ise kahkaha atan genç adamı görünce kafası karışmıştı. Komik olan neydi? Sormuştu, söylemişti işte. İlk karşılaştıklarında karşısındaki buz gibi adam gitmiş yerini sıcak biri almıştı sanki.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p124">“Özel hissetmeye devam edebilir miyim o halde?” diye sordu Kaya gülüşünün arasından. Maral nasıl cevap verse bilemedi. Acaba hayal miydi, yok o kadar sarhoş değildi. O an bir ampül yandı. Az önce taramalı tüfek gibi konuşmuştu ve bu sarhoş olduğunun belirtisiydi. O yüzden gülen Kaya halüsinasyonu görüyordu kesin. “Yani, iyi hissettirecekse hissedebilirsin.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p125">“Güzel cevap.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p126">Güldüler aynı anda. Acaba Kaya da mı sarhoştu? Ağzından cımbızla laf aldığı adam şimdi durmadan gülüyordu. “Nasıl döneceksin sen?” diye sordu Kaya ve “Sarhoşsun.” Diye de ekledi. Maral küçümser bir bakış attı önce ardından alaycı bir gülüşle “Onu da nereden çıkardın, inanılmaz derecede ayığım.” Dedi ama sonra bir aydınlanma yaşadı. “Ben nasıl döneceğim Kaya?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p127">O kadar büyük bir ciddiyetle sormuştu ki bu soruyu Kaya bu sefer daha sesli bir şekilde güldü. Maral içinden “halüsinasyon da bir yere kadar ama yani” Diye geçirdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p128">“Bırakayım seni istersen.” Diye bir teklifte bulundu Kaya. Maral’ın yüzüne şüpheci bir bakış yerleşti. Tek kaşını kaldırdı ve “Ben nereden bileyim sen hırlı mısın hırsız mısın sapık mısın?” diye sordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p129">Kaya’nın beklediği cevap bu değildi lakin, gülüşü soldu. Maral bunu görünce gülerek “Şaka şaka,” omzuna vurdu hafifçe “Asker adamsın, hem taksiden güvenlisindir. Atla bakalım.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p130">Andiç sürücü tarafından yolcu koltuğuna geçerek arabaya oturdu. Ondan on saniye kadar sonra da sürücü koltuğunun kapısı açılı ve Kaya da arabaya bindi. Arabayı çalıştırdıktan sonra “Nerede evin?” diye sordu. Maral cevap veremeden bir de “Annen sorun etmez değil mi?” diye de sordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p131">Maral ikinci soruya güldü. Ben yalnız yaşıyorum, kimse bana karışamaz; diye bağırmamak için kendini zor dizginledi. Telefonunu çıkarıp navigasyondan konum açtı ve telefon tutacağına yerleştirdi. Önüne döndükten sonra da “Yalnız yaşıyorum ben, sorun yok.” Diye cevapladı. Kaya da başını sallayarak onayladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p132">Evet asker adamdı ama sonuçta erkekti. Hangi özgüvenle dört gündür tanıdığı bir adamla aynı arabada evine gidiyordu anlamadı. Sadece bir his vardı, güven. Hayır iki his vardı, güven ve sevinç. Onu tekrar gördüğü için sevinçliydi. Hayır üç duygu vardı; güven, sevinç, şaşkınlık. Onu tekrar görmek istediğini bilmiyordu, onu tekrar görmenin onu sevindirmesine şaşkındı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p133" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p134">Sevgi apartmanı hangara uzaktı ama beni kalbim oraya götürüyordu. Bir saatlik bir yoldu. Küçük şehirliler için çok uzun, İstanbullular için inanılmaz kısa, Ankaralılar için yanındaki kişiye göre değişecek bir zaman dilimi. Bu yolculuk benim için dört yıl gibi geçiyordu. Yirminci dakikada telefonum çaldı. O ana kadar ikimizin de kulakları trafikten ve nefeslerimizden başka bir şey duymadı. Arabamı alalı ilk defa radyosunu açmadım. Çalan telefonu cevapladım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p135">“Efendim Tunç.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p136">Nerede olduğumu, nasıl olduğumu, gelebileceğini, onun da sabah öğrendiğini ve birkaç şeyi daha söyledi ama pek odaklanamadım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p137">“Tunç, Tunç; ben sana döneceğim. İyim merak etme. Ben aramadan arama olur mu, müsaade et.” Dedim sözünü keserek ve tam kapatacakken geri yasladım telefonu kulağıma.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p138">“Seni seviyorum.” Dedim ama devamını ondan duymak istedim. Derin bir nefes verdi, duydum. Hatta gözlerini sıkıca kapatıp açmış sonra da tavana bakmıştır. Böyle yapar hep.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p139">“Biliyorsun, ben de seni seviyorum.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p140">“Biliyorum.” Dedim. O ses tonumdan anlaması gereken her şeyi anladı ardından kapattım telefonu. Aradığım destek Tunç’muşa ki şimdi onunla konuşacak sesim de vardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p141">“Her şeyin başladığı…” güldüm ve gülüşümden histerik bir ses çıktı “…ve her şeyin bittiği yere gidiyoruz.” Dedim. Tek söylediği “Biliyorum.” Oldu. Bense “Mezarımıza.” Dedim fısıldayarak son olarak ve varana kadar ikimizden de tek çıt çıkmadı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p142">Dört yıl süren yolculuğumuz bittiğinde arabadan ilk inen ben oldu. Şöyle bir durup baktım dört katlı minik apartmana.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p143">Ankara gri mi, ona ne, o kırmızı olmak istemiş. Ankara ciddi mi, ona ne, sakinleri her bir yanına çeşit çeşit çiçekler ekmiş. Ankara boğucu mu, ona ne, sarmaşıklarının onu boğmasından rahatsız değil. Ankara’da deniz yok mu, ona ne, ben kendi yaptığım gölde Lotusun her renginden yetiştirdim bahçesinde. Ankara ruhsuz mu, işte bunun için ona ne değil, Sevgi Apartmanı son bıraktığımdan bu yana ruhunu kaybetmiş. Hava çise atmaya başlayınca başımı kaldırdım ve kahkaha atmadan edemedim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p144">“Görüyor musun, her şey yirmi dördüncü yaşındaki gibi.” Dedim, gözlerim kapalı başımı geriye doğru yatırmışken. Arkamı döndüğümdeyse o hala arabanın yanında dikiliyordu. Maskesini geri kapatmış ama gözlüklere gerek duymamıştı. Güldüm yeniden, en son buradayken Kara Harpte son sınıf öğrencisiydi. Şimdiyse kendisini gizlemesi gereken bir bordo bereli, bir komutan olmuş; Kıdemli Üsteğmen Kaya Alaz Dinçer olmuş.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p145">Beklemedim daha fazla, yağmur bastıracak gibi görünüyordu. Bense onunla aynı yağmur altında bir daha ıslanmayacağıma yemin etmişlen. Siyah demir kapıya doğru yöneldim. Önünde saksılar dolusu çiçek vardı. Kasımpatılar, kardelenler, papatyalar, güller, laleler… Bu narin çiçekleri bu sert iklime rağmen büyütmüş ve yaşatmıştık apartman sakinleri olarak.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p146">Bir zamanlar ben de sorumluydum bu çiçeklerden. Neriman anane pek güzel bakmış lotuslarıma yokluğumda. Her rengi hala pasparlak, dokundum dördünün de yapraklarına, eğildim kokularını duyabilmek için, önüme gelen otlar alnımı okşadı. Neriman ananenin kendi çiçeklerinin olduğu saksıda evin anahtarı vardı. Zorlanmadan buldum anahtarı ve kapıya ilerledim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p147">Yıllardır gelmedim buraya. Benim mütevazi evim, kendi paramla barındığım yuvam… Annemden kaçmak için gün saydım üniversite sınavından sonra. Kesinlikle İstanbul’du, annemi de içinde bırakıp bu şehri geçmişe gömecektim. Hazzetmezdim zaten, deniz yok deniz…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p148">Zorunlu olmadıkça gelmeyecek ve hayallerimdeki gibi İTÜ’de gün batımını izleyecektim ama öyle olmadı. Gidemedim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p149">Saçma biliyorum, neden gidemeyeyim değil mi? Gidemedim işte. Geçmişimi terk edemedim. Peki tamam, Ankara’da kalacaktım ama annemle asla. Tunç’un çalıştığı yerde işe girdim, gurur kırıcı olsa da annemden kaçabilmek için babamın maaşına ortak oldum, Andiç amcanın desteği de yadsınamayacak kadar çoktu; işte böyle tuttum bu evi. Büyük bir sevinçle döşedim her yanını. Bir oda, bir banyo ve salonla birleşik mutfak… Minicik ama benim. Küçük ama sıcak. Kimse bağırmıyor, kavga etmiyor, saçımı çeken de yok dökülüyor diye azarlayan da. Sadece ben ve sessizliğin güzel şarkısıydık, Alaz’a kadar.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p145">Beklenmedik olaylar vuku bulup da annemin yanına geri döndüğümde kopamadım buradan. Önce kalmadığım eve kira ödedim gizli gizli. Elim bollaşmaya başlayınca da satın aldım ama o günden beri hiç gelmedim. Belli aralıklarla biri temizlemeye gelirdi, acil durumlarda karşı komşum Neriman anane el atardı. Gizli gizli sahip oldum bu eve, Tunç’tan başka kimse de bilmiyor zaten satın aldığımı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p150">Ben kapının önündeyken o benim az önce olduğum yerdeydi. Aslında ben de oradaydım hala, dizlerimin üstündeyim. O da inceledi apartmanı, maskesinden mimiklerini göremiyordum ama gözleri yetiyordu. Dördüncü kattan başlayıp aşağı doğru eğdi başını ve sonunda bende durdu. Eminim şu an tebessüm ediyordu çünkü gözleri gördüğüm ilk andan beri ilk defa duygu barındırıyordu, özlem. Gittiği günü hatırlamadı, ilk geldiği günü hatırladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p151">Ben gittiği günü hatırlamıştım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p152">Bir süre zaman tanıdım. En azından birimiz hala güzel anıları hatırlayabiliyor dedim, zaman tanıdım. Anıların tadını çıkar Alaz, benimkilerin tarihi geçti. Tanıdığım zaman fazla uzayınca da odağını bana versin diye seslendim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p153">“Çok değişmedi gördüğün gibi.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p154">Şöyle bir etrafına bakındıktan sonra maskesini indirdi. Zaten kalabalık bir semtte değildik. Tek tük insan vardı. Yıl 2032 olmuşken ve Ankara daha da çok kalabalıkken burası hala tenhaydı. “Dışı değişmemiş.” Dedi karşılık olarak.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p155">Güldüm, ellerime baktım sona geri kaldırdım başımı. Yağmur artmıştı. Tüm apartmanlar yüz tarama sistemiyle açılıyorken burası hala eskiler gibiydi. Kilite yerleştirdiğim anahtarı çevirdiğimde doksanlar havası veren apartman kapısı açıldı. Bir yarım içeride kalmışken gelmesi için seslendim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p156">“Hadi gel, bir içini de gör.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p157" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p158">“Hadi gel, bir içini de gör.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p159">Maral apartmanın girişinde Kaya’ya bakıyorken Kaya ilk defa geldiği bu yeri inceliyordu. Ankara’da görmeye alışkın olmadığı türden, kırmızı renkli, dört katlı, her katta iki daire bulunan, küçük ve mütevazi bir apartmandı bu. Girişine her türden çiçek iliştirilmişti. Kaya bu şehirde ilk defa baktığı bir apartmanda sadece beton yığını görmüyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p160">Dışını incelerken üçüncü kattaki balkon kendini diğerlerinden ayırıyordu görünüşüyle. Karanlık da olsa sokak lambasının aydınlattığı kadarıyla girişteki gibi çiçekler vardı. Tavanda led lambalar asılıydı. Yakından görmek istedi Kaya. Bir kahve ısmarlamayı teklif eden Maral’ın teklifini kabul etmişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p161">Maral’ı onaylayarak o da girişe doğru yöneldi. Kaya da içeri girdiğinde Maral sessizce kapattı kapıyı. Yedi aileye yuva olan bu apartmanda tek başına yaşayan iki kişiden biri kendisiydi. En küçük daire kendisinindi ve gece geç saatte eve geldiğinde alışık olmayan komşularını rahatsız etmemeye özen gösteriyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p162">“Sessiz ol, komşuları rahatsız etmeyelim.” Dedi Maral fısıltıyla. Kaya başını sallayarak onayladığında Maral önde o arkada, parmak uçlarında üçüncü kata tırmandılar. Kapısının önüne geldiğinde çantasından anahtarlarını aramaya koyuldu Maral. Bir süre cebelleştikten sonra Kaya’nın seslenmesiyle aydınlandı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p163">“Maral, Maral, elinde anahtarlar. Elinde.” Dedi Alaz Maral’ın elini işaret ederek. Maral seslice gülme isteğini bastıramadı ve bir kahkaha attı, hemen ardından ellesiyle ağzını kapattı. Kaya da güldü onun bu haline. Maral’ın elinden aldı anahtarları ama bunu yaparken gözlerini birbirlerinden hiç ayırmadılar. Kaya sonunda kapıyı açabilmek için başını çevirdiğinde karşı dairenin kapısı açıldı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p164">“Maral, neredesin kızım merak ettim.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p165">Neriman anane önce Maral’ı ardından eli anahtarda kalmış olan Kaya’ya baktı. Maral birkaç saniye ne diyeceğini bilemedi, ağzını açıp bir şey diyeceği sırada vazgeçti. Neriman anane güldü, yargılayacak bir kadın değildi. Eşini erken yaşta kaybetmiş ve bir daha da evlenmemişti. Çocuğu da yoktu, geçinip gidiyordu kendi halinde. Maral’ı da torunu gibi severdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p166">“Tamam kızım tamam, merak ettim sadece çok geç kalmazsın normalde diye, iyi geceler.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p167">“Neroşum bugün 29 Nisan, etkinlik var dedim ya ben sana…” derken Maral, Neriman çoktan kapısını kapatmış evine geçmişti. Yine birkaç saniye kaldılar öyle. Kaya kapıyı açıp kenara çekilerek Maral’a yol verdi. Maral topuklu botlarını ayağından çıkardı ve rahatladığını belli eder gibi derin bir nefes verdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p168">“Topuklular hoşsunuz ama yoruyorsunuz.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p169">Kaya da içeri girmiş ayakkabılarını çıkarıyorken “Hani alışıktın sen?” dedi. Maral gülerek “Alışık olmam yormadığı anlamına gelmez. Hadi gel, keyfine bak.” Dedi ve ceketini vestiyere astıktan sonra içeri yöneldi. Kaya da hemen arkasından gelen üstünü değiştirip geleceğini söyledi ve odasına gitti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p170">Kaya bu esnada salonu incelemeye koyuldu. Küçük evlerin kurtarıcısı olan krem rengi bir L koltuk vardı. Çinili bir halı ve köşede tanımadığı yeşil renkli bir bitki vardı. Dikkatini çeken balkon buradan görünüyordu, ona ait olmasına nedense şaşırmamıştı. Mutfak hemen arka taraftaydı ve salonla birleşikti. Koltukların renginde ahşap dolaplar vardı. Eskiydi belki ama Maral’ın eli değmişti belli. Onun boyadığına emindi. Mutfaktan çıkıp koltuğa oturduğunda en çok dekore edilmiş yerin televizyon ünitesi olduğunu gördü. Geri kalkıp yakından baktı. Ünitenin etrafında kardeşi olduğunu söylediği adamla fotoğrafları vardı, kardeş olduklarını söylemişti ama gariptir hiç benzeyen bir yanları yoktu. Dikkatini çeken bir diğer şeyse daha çok fotoğraf çerçevelerini şarkı sözleri ve şiirler dolduruyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p171">“Spending my last coin so someone to tell me It’ll be okey.” (Son paramı birinin bana “Her şey iyi olacak.” Demesi için harcıyorum.)<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p172">“Herkesten çok güldü, belli ki acı çekiyor.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p173">“May these memories break our fall.” (Belki de anılar düşüşümüzü yavaşlatır.)<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p174">“Mutlu hayat yoktur, mutlu anlar vardı.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p175">“And it’s fine to fake it ‘til you make it. ‘Til yo dou, ‘til it’s true.” (Yapana kadar, gerçek olana kadar olmuş gibi yapmanda sorun yok.)<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p176">Kendisini en çok düşündüren ise şu satırlardı: “Bir pişmanlıksam bırak öyle kalayım/ İkna etme beni bir mucize olduğuma/ Ben yalanlara kolay inanırım.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p177">Bu satırsa kaşlarını çatmasına ve içinde geçmişin kıpırdamasına neden oldu: “Sadece aşk ve ölüm her şeyi değiştirir.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p178">“İnsanın koyacak fotoğrafı olmayınca böyle dolduruyor.” Dedi arkasından gün boyu dinlediği ses. Siyah askılı elbisesini çıkarmış onun yerine siyah bir pijama takımı giymişti. Açık olan saçlarını şimdi yukarıdan topuz yapmıştı ve elindeki pamukla gözünü ovalıyordu. “Gözümü oymuyorum, makyajımı siliyorum.” Dedi Maral, Kaya kendisine garip garip bakınca ve mutfak tarafına doğru ilerledi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p179">Dolaptan iki tane kupa çıkardı ve kahve makinesini göstererek “Ne içersin, tüm mal varlığımı bu canavara yatırdım. Bana her kahveyi yapabiliyor.” Dedi salondan ayrılıp yanına gelen adama.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p180">Kaya “Fark etmez, kendine ne yapıyorsan ondan yap.” Dedi. Maral da peki diyerek bardakları aldığı dolabın yanındakinden Türk kahvesi çıkardı. Makineye koydu ve kahvenin pişmesini beklemeye koyuldular. Maral kollarını göğsünde birleştirip kalçasını mutfak tezgahına yasladı. Sohbet açmak istercesine başını sallayıp yüzünü yıkadığı için biraz kendine gelmişti ve “Ee, neye borçluyuz bugün bu kadar sıcakkanlı olmanı?” diye sordu bu sefer diğer gözünü silerken.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p181">Kaya da aynı pozisyonu aldıktan sonra “Bir şeye borçlu değiliz. Sanki sana çok kaba konuşmuşum gibi davranıyorsun.” Dedi. Maral pamukla işini bitirmiş olsa gerek tezgahtaki çöpe attı. Kaya “Bu makyajın tamamen çıkmış haliyse gözlerinin güzelliğinin bir bedeli olmalı.” Diye geçirdi içinden. Aslında sesli de söylemek istedi ama daha yeni tanıştıkları için fazla olabilirdi. Yanlış anlaşılmak istemezdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p182">“Kaba davrandın demiyorum ama soğuk davrandın bugün daha sıcak davranıyorsun.” Dedi Maral dürüstçe. Kaya “Doğru haklısın, biraz soğuktum kabul ama aslında sıcakkanlı biriyimdir. Gördüğün gibi.” Dedi ellesiyle kendini gösterirken. Güldü ikisi de. Makine kahvenin hazır olduğunu duyururcasına ötünce gülmeyi bırakıp kahveyi bardaklara doldurdu Maral daha sonra kırmızı ve sarı olan kupadan kırmızı olanı Kaya’ya uzattı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p183">“Galatasaraylı mısın?” dedi hüsrana uğramış bir sesle. Maral güldü ve başını hayır anlamında salladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p184">“Sadece milli maçları takip ederim. Takım tutmuyorum o yüzden. Tunç Galatasaraylı…” Kaya’nın kulağına doğru fısıldadı “Ve fanatik.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p185">“Anladım.” Dedi Kaya.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p186">“Sen Galatasaraylı değilsin sanırım. Çok üzüldün.” Diye sordu Maral. Kaya gülüp “Fenerliyim.” Dediğinde Maral eğlenerek “Tunçla tanıştırmalıyım seni.” Dedi. Kaya onayladığında kısa süreli bir sessizlik ortama hâkim oldu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p187">“Americanoyu koca koca kupalarda içerken Türk kahvesini minicik fincanlarda içmeyi kabul etmiyorum. Kupada Türk kahvesi normalleşmeli.” Dedi Maral konu açmak için. Kahve sıcak olsa da bir yudum aldı bile. “Katılıyorum.” Dedi Kaya ve o da bir yudum aldı oysa kahve sevmezdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p188">“Balkona geçelim mi?” diye sordu Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p189">“Geçelim.” Diye yanıtladı Kaya.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p190" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p191">Her şey aynıydı. Tek bir şeyi bile değiştirmedim. Koltuklar, halılar; duvardaki tablolar, şiirler; sadece birkaç eksilen fotoğraf ve eklenen birkaç yeni tümce…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p192">“Aşk her şeyi değiştirdi.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p193">“Çok sevdiğin ama geri döndüremeyeceğin kişiler, her hatırladığında seni tekrar tekrar terk eder.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p194">“One day, I watched as you’re leaving and life lost all it’s meaning.” (Bir gün gidişini seyrettim ve hayat tüm anlamını kaybetti.)<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p195">“He become a stranger whose laugh ı could recognize anywhere.” (Gülüşünü nerede duysam tanıyabileceğim bir yabancıya dönüştü.)<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p196">Zamanı hakkını vererek dondurdum. O zamandan biri evime gelse buranın gerçekten 2026’da kaldığını söylerdi[cite: 1]. Hatta bu düşüncemi sesli dile getirerek ona da söyledim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p197">“2026’da kalmış değil mi?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p198">Sorumla beraber incelemekte olduğu evimden dikkatini bana çevirdi. Eklenen satırları okuduğuna emindim. Hayır, senin acını çektiğim için utanmayacağım Alaz çünkü ben seni her parçamla sevdim, her parçamla acısını çekmek de hakkımdı. Ne diyeceğini bilemiyorsun değil mi Alaz? Sen hep biraz böyleydin, korkaktın.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p199">Çekinme Alaz; evet, hiç değişmemiş de, fotoğrafları neden atmadın de, sana neden hala kırgın baktığımı sor, çekinme Alaz; aşamadın mı hala de. Hepsini seve seve yanıtlayayım çünkü eğer ben sorarsam sen yanıtlayamayacaksın işte o zaman bu aşk sonum olur.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p200">“Evet, her şey aynı.” Dedi sadece. Soramazsın tabi, sen birazdan daha korkaksın.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p201">Sessizlik havaya hâkim olmaya başladığında huzursuz bir nefes verdim. Ne konuşacaktık ne diye buraya geldik bilmiyordum. Tek bildiğim bu evi alırken “Eğer buraya tekrar dönersem bu o yanımdayken olacak.” Demekti ve o yanımdayken buraya tekrar dönmüştüm.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p202">İki aptal ayakta dikilmeye devam ederken “İlk günkü…” yabancılıkla “…gibi önce kahveyle başlayıp mı bira istersin yoksa direkt başlayalım mı?” diye sordum. Gerçi ilk günden daha da yabancıydık ya neyse. “Görevdeyken içmem.” Dedi. Güldüm, bahanelerin Alaz, hala aynı derecede saçmalar. “Silahlı bir çatışmaya gireceğini sanmıyorum şu an.” Dedim. “Bilemezsin.” Dedi. İmasını anladığımda teslim olur gibi ellesimi kaldırdım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p203">“Peki, sen geç. Geliyorum.” Dedim üzerimdeki kabanı çıkarırken. Başını onaylar anlamda salladı ve silahını boynundaki askıdan çıkarıp balkonun girişine yasladı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p204">Mutfağa geçip ona küçük bir fincanda kahve yaptım. Birazdan içeceğine o kadar emindim ki güzelim kahve ziyan olacaktı. Neyse, ziyan olan kahve olsun bir seferlik. Kahveyi yaptım. Kendime de bir kırmızı şarap alıp balkona doğru yöneldim. Her zaman oturduğu köşesine oturmuş ve bir ayağını balkon demirlerine yaslamıştı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p205">Bilerek mi yapıyorsun? Eskisi gibi bakıp, davranıp, unutmadım diyebilmek için mi? Yoksa sadece bir alışkanlık mı? Dört yıl alışkanlıkları unutmak için uzun bir süre değil mi Alaz? Yoksa sen de benim gibi geçmişte kalmadın ya?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p206">Elimdeki kahveyi ortadaki küçük yuvarlak sehpaya bıraktım. Kendi şişemi de açıp bardağıma doldurduğumda hazırdık. Hep yaptığımız o balkon sohbetlerimiz… Bu sadece bir alışkanlık mıydı bizim için yoksa bir ihtiyaç mı? Hep bu sohbetler hazırlamadı mı seni beş günde bir o okulun zorlu koşullarına?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p207">Yıllar sonra çıkıp gelen oydu, üstelik onu bir daha görmeyeceğimi iddia eden de oydu, şimdi çıkıp da konuşmayı ben başlatacak değildim. Çıkıp gelmeye cesaretin varken neden şimdi susuyorsun Alaz? Dur biliyorum, görev senin korkaklığını dinlemez ama koskoca özel kuvvetlerden de senin dek gelmen nasıl bir tesadüf? Şöyle sorayım, tesadüf mü?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p208">O kahvesinden bir iki yudum aldı, ben şarabımdan. Konuşmayacağımı biliyordu. Söze girmek için doğru sözleri buldu ki sonunda konuştu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p209">“Garip olduğunun farkındayım.” O bana bakarken ben doğruca karşımdaki apartmanın duvarlarını ezberliyordum, bunu ne çok yapmıştım zamanında.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p210">“Evet, garip.” Dedim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p211">“Görev için buradayım.” Dedi, hala bana bakıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p212">“Görev için buradasın.” Dedim onu onaylayarak. Benim için dönecek halin yok ya…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p213">“Bilmiyorum.” Dedi. Bu sefer döndürdüm bakışlarımı. Baktım yüzüne alaylı alaylı. Ne düşündüğümü anladığı için konuşmaya devam etti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p214">“Uzun süredir sınır dışı bir görevdeydim. Gerçi gerçekten bilmiyordum, projeyi duydum ama sen olduğunu bilmiyordum.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p215">“Aklına geldim mi?” diye araya girdiğimde sadece baktı. Korkma Alaz, anladığın gibi o kadar derin bir soru değil bu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p216">“Yani projeyi duyduysan Bürküt olarak duymuşsundur. Tanıdık gelmedi mi?” diye eklediğimde neden bahsettiğimi anladı. “Bizim tanışmamıza vesile olan proje, aklına gelmedi mi ben olabileceğim?” diyerek bitirdim sorumu. Ben gözlerimle onu takip ederken elindeki fincanı bıraktı ve ayağa kalktı, içeri gitti. Güldüm kendi kendime. Nasıl iyi tanıyorum seni? Korkunç değil mi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p217">Bir şişe birayla geri geldi ve gelmeden büyükçe iki üç yudum aldığı belli oluyordu. Alkolün bile kurtaramayacağı kadar bataklıktasın değil mi Alaz? Tekrar oturup karşımda bir yudum aldığında ben de ilk kadehimi bitirdim ve yeniden doldurdum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p218">“Amerika’dasın diye biliyordum. Döneceğini düşünmemiştim.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p219">Başımı aşağı yukarı salladım yavaşça sadece. Demek Amerika’da olduğumu biliyordun Alaz? Haksızlık değil mi; sen istediğinde benimle ilgili her şeye erişebiliyordun, benimse seninle ilgili sahip olabildiğim tek şey hayatta olup olmadığın bilgisiydi. Bunu da Andiç amcadan zorla öğreniyordum. Bilmek istediğim çok şey vardı aslında ama soru haline getiremiyordum meraklarımı. İlk sorduğum soruyu ilk anladığı anlamda sormakla başlayabilirdim bence.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p220">“Aklına geldim mi?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p221">Bu sefer sorduğum soru projeden uzaktı. Burada hiçbir şey yaşamamışız gibi konuşamazdım. Evet, neden gittiğinden, neden dönmediğinden daha çok merak ettiğim tek şey buydu. Gitti evet ama aklına gelmişimdir en azından. İzim onda kalmıştır.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p222">“Geldin.” Dedi. Tek kelimelik cevaplar, kaçamak bakışlar… Bunlar çok eskide kaldı sanıyordum Alaz.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p223">“Tek kelimelik cevaplar verme Kaya.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p224">Kaya mı, niye böyle dedim şimdi? İyi ki isteyerek demedim gerçekten. Bu kadar mı yabancı hissettiriyor artık bana? İyi de bir insan bir yabancıyı nasıl bu kadar sevebilir? Sanırım ben dört yıl önceye de değil 2024’e dönmüştüm. Kaya deyince öyle bir baktı ki yüzüme… Kırdıklarına say Alaz, seni Kaya olarak hatırlamak benim suçum değil. Güldü sonra, ben de gülerdim. Ağlamak üzereyseniz ve ağlamamak istiyorsanız inatla gülün, biz hep öyle yapardık.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p225">“Böyle mi cezalandırıyorsun beni? İçini rahatlatıyorsa öyle söyle.” Dedi. Tüm gün her cümlemizden sonra alay eder gibi gülecektik birbirimize. Öyle mi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p226">“Cezalandırmak?” Kaşlarım çatıldı ama güliyordum da “Haklıydın, gitmek istemen cezalandırabileceğim bir şey değil, kimse benimle kalmak zorunda değil.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p227">Bak, giderken bana söylediğin hiçbir kelimeyi, hangi sözcüklerden sonra nefes aldığını bile unutmadım Alaz. Gözlerini sürekli kırpmıştın belki utancından bilmiyorum ama ben gerçekten gideceğini anladığımda gözlerine birkaç saniye daha fazla bakabilmek için hiç kırpmamıştım, sen buna dikkat etmiş miydin?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p228">Bu söylediğime karşılık bir şey demedi. Onun yerine önceki soruma daha detaylı bir cevap verdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p229">“Seni silip atmadım, unutulacak şeyler yaşamadık. Seni güzel hatırlamaya çalıştım. İyiliklerle ve güzel dileklerle andım. Bence en azından bunu hak ettik.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p230">“Yanılmamışım.” Dedim ve bir yudum aldım şarabımdan ve devam ettim. “Ben iyiliklerle hatırlamadım. Yaşadığımız güzel olan ne varsa unuttum. İyi de anmadım seni ama kötü de anmadım. Aklıma geldin ama hiç anmadım.” Aklımdan hiç gitmedin ki Alaz, keşke gitseydin.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p231">“Böyle olduğu için özür dilerim Maral.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p232">“Dileme.” Dedim. Söz kesmek huyum değildir ama bugün bunu çok yapacaktım belli ki.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p233">“Bu ama inan bana böyle olması gerekiyordu.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p234">“İnanmıyorum.” Dedim. Bu dediğimi umursamadan devam etti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p235">“Geçmiş geçmişte kaldı, ikimizin de yorulmasını istemiyorum. Bana ekibini ve seni korumam emredildi. Görevimi yapıp gideceğim.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p236">Gideceğim…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p237">Doğru ya, görevim ben. Benim için dönecek halin yok ya… Tekrar mı gidecek? Olsun, zaten alıştım ben. Alıştım mı? Senin gidişini bir daha mı izleyeceğim? Niye böyle dedin ki şimdi? Niye geldin diye hesap soramadan, gizli gizli sevinemeden tekrar gideceğine mi üzüleceğim?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p238">Bir yudum daha aldım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p239">“Fazla uzun değil mi?” diyebildim sadece. Sesli dile getirince bunu da idrak ettim. Biz bu kadar süre nasıl yan yana duracaktık? Hadi durduk ben altı ayımı onunla geçirdikten sonra tekrar nasıl ayrılacaktım. Varlığına alışmam bir saat sürmedi Alaz bak halbuki gidişine dört senede bile alışamamıştım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p240">“Bizim o kadar kalacağımızı sanmam. Dış politika gergin, Türkiye’nin bu projeyi yapmasından rahatsızlar. Ortalık durulana kadar kalırız daha sonra görev düşer.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p241">Ne kadar da normal konuşuyor. Biraz üzgün olduğunu belli et de kendimi aciz hissetmeyeyim Alaz, en azından rol yap. Bir yudum daha aldım ve ikinci kadehim bitti. Doldurdum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p242">“Korkmalı mıyım?” diye sordum. Bu proje uğruna ölmek korkutucu mu? Değil bence, en azından bir uğur için ölmüş olurum. Hem ölüm korkutucu olsaydı zamanında denemezdim. Ölümden korksaydım gitmesine izin vermezdim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p243">“Korkma, bir şey olmasına izin vermem.” Dedi beklemeden. Güldüm. Aynı korumacı tavırlarına devam ediyorsun yani. Senin yanında bana hiçbir şey olamazdı değil mi? Alaz beni her kötülükten korurdu. Peki ya asıl tehlike sensen? Beni sakınman gereken kişi kendinse?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p244">“Senden korkmalı mıyım? Kendinden koruyabilecek misin beni?” dedim ben de beklemeden.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p245">Korumalıydı. Nasıl yapardı bilemem ama ben bir kere daha onun gidişini kaldırabilir miyim bilmiyorum. Zaten zoraki yaşıyordum. Bunu en iyi sen bilirsin. Zoraki yaşamak ne demek bana sen öğrettin. Kişisel soruları atlıyordu. Bunu da cevaplamadı ama ben bir cevap istiyordum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p246">“Kimse hiçbir şey bilmiyor timimden ve öyle de olmasını istiyorum. Rica etsem…”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p247">“Beni kendinden nasıl koruyacaksın?” Dedim elimdeki kadehi masaya sertçe bırakırken ve sesim yükselirken.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p248">“Bilmiyorum.” Dedi o da şişesinin benimkinin yanına bırakırken. Bir duygu belirtisi, sesin yükseldi Alaz. Gözlerini kapattın ve tek eliyle şakaklarını ovuşturdun. Korkuyorsun. Korktuğunda böyle yaparsın. Sesini tekrar kıstı ve bu sefer istediğim gibi konuştu benimle, araya perde çekmeden.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p249">“Benim için kolay mı sanıyorsun? Sen gözlerimin içine böyle bakarken kolay mı sence?” diye sordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p250">“Ne bulmayı bekliyordun Kaya, bir de bunun için özür mü dilemeliyim senden?” diye sordum ben de. Soracak sorular o kadar çoktu ki biz bu soruları kaç gün burada oturup konuşursak bitirirdik, bilmiyordum. Kaya demem canını yakıyor biliyorum Alaz ama o kadar yabancısın ki şimdi sana Alaz dersem onu da kaybederim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p251">“Hala çok kırgınsın, hiç hafiflemedi mi?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p252">“Hafiflemedi.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p253">Utanmıyordum, âşık olmuş olmaktan utanmıyordum. Gözlerim tekrar doluyordu ama ben utanmıyordum. Hem âşık olmuş olmak utanç verici bir şey olsaydı o da utanmalıydı. Nihayetinde o da âşık olmamış mıydı? Belki de soruyu yanlış soruyordum. Böyle bir durumda âşık olmak mı aşık kalmak mı utanç vericiydi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p254">“Yapma Maral.” Dedi ama sesi zorla çıkmıştı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p255">Sen yapma asıl. Ben ne yapıyorum da yapma diyorsun? Kalbini mi kırıyorum, canını mı yakıyorum? Gidiyor mijim ben?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p256">Gözlerim dolan yaşları daha fazla taşıyamayınca iki gözümden iki yaş süzüldü. Görmesin diye yan çevirdim başımı ama kimden neyi saklıyordum?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p257" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p258">Kahveler bitti ama onlar sohbetlerini bitirmek istemediler. Maral mutfaktan getirdiği birayı ve şarabı masaya bıraktı. İkisinin de şişesini açıp birayı Kaya’ya doğru uzattı. Kendisininkini de hazırlayıp tekrar koltuğuna yerleştiğinde bıraktığı battaniyesi geri omuzuna sardı. Bunları yaparken Kaya’nın her hamlesini özenle izlediğinin farkında değildi. Saat sabah dörde geliyordu ve sabah soğuğu iç yakıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p259">“Tunç’la hiç benzemiyorsunuz yani fiziksel olarak.” Dedi Kaya. Maral tebessüm etti bu yorum karşısında. Evet hiç benzemiyorlardı ama benzeyen çoğu kardeşten daha kardeşlerdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p260">“Öz kardeş değiliz.” Dedi Maral lafı dolandırmadan. Kaya’nın kaşları havalandı. Şaşırmıştı çünkü onları sahnede ilk yan yana gördüğünde aralarındaki kardeş sevgisini hissetmişti. Hem ne kadar yakın olurlarsa olsunlar sonradan tanıştığı bir kişi için kendini “iki kardeşiz.” Diye tanıtan birini görmemişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p261">Ayrıca sadece bir abi Maral’a iltifat eden o Harbiyeliye öyle bakabilirdi. Kaya’nın merakını anlayan Maral açıkça anlattı. Soran kimseden gizleme ihtiyacı hissetmiyorlardı ama gerçeği belirtme ihtiyacı da hissetmiyorlardı. Soyadlarının farklı olduğununa dikkat etmeyen kimse zaten sorgulamıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p262">“Ben on yedi yaşındayken tanıştık Tunç... Sahilde oturuyorduk ikimizde.” Güldü Maral, bu an ne zaman aklına düşse gülerdi. Dönüm noktasıydı çünkü. O zamana kadar yapayalnız büyümüşken bir kardeş edindiği dönüm noktası.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p263">“Normalde çok sosyal biri değilimdir ama çok mutsuz görünüyordu. Ben de hep mutsuz olduğumda denizi izlemeye giderdim ve gerçekten hiç tanımadığım biriyle konuşmak fikri çok cazip gelirdi. O yüzden gittim yanına. Tam dediğim gibi hayatında ilk defa gördüğü bana her şeyi anlatmıştı çünkü anlatmaya ihtiyacı vardı.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p264">Tüm bunları söylerken ellesiyle oynayan Maral başını kaldırarak Kaya ile göz göze geldi. “Basit bir hikâye gibi gelebilir ama o günden sonra bırakmadım onu, o da beni. Andiç Amca oğlu yerine koydu, ben bile fazla geliyorum zannederken annem oğlu yerine koydu. Aslında Andiç Amcanın nüfusunda Tunç Kurt Kara ama Kurt’u kullanmıyor.” Dedi ve ekledi. “Andiç Amca kim dersen babamın eski bir arkadaşı belki duymuşsundur Binbaşı Andiç Kurt.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p265">“Tanıdık geliyor.” Dedi Kaya. Tunç’un hikayesini merak etti ama sormadı. Belki bir gün Tunç’la tanıştıklarında kendi anlatırdı. İyi bir adama benziyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p266">Konuşma bitip de yerini sessizliğe bırakınca elindeki kadehi Kaya’ya doğru uzattı. “Hadi kadeh kaldıralım!” dedi neşeyle. Hiç tanımadığı bu adamla sohbet etmek ona bir anlığına hiç olmadığı kadar normal hissettirmişti. Sesini dinlemek hoşuna gitmiş ve dinledikçe dinleyesi gelmişti. Şarkı söylediğinde çok güzel olacağına emindi neredeyse.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p267">Kaya juga güldü ve şişesini kaldırdı ardından “Kaldıralım kaldıralım da neye kaldıralım?” dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p268">Bir süre düşündü Maral. Üzerine kadeh kaldırıp iyi dileklerde bulunabileceği çok kavram yokto dünya üzerinde ama çok da anlamlı bir şey olmasına gerek yok diye düşündü. Bizim anlamlı kılabileceğimiz bir şey olmalı…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p269">“Ankara’ya.” Dedi omuzlarını indirip kaldırarak. Ankara’yı anlamlı kılabilir miydi gerçekten? Denemek aptallık olmazdı değil mi? Olmazdı…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p270">Kaya gözlerini kısılacak derecede güldü. “Gülmek çok yakışıyor, o kadar çok yakışıyor ki ama böyle gülünce de gözlerini göremiyorum, hangisinden nasıl feragat edeyim?” Diye geçirdi içinden Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p271">“Ankara’ya” dedi Kaya da ve şişesinin Maral’ın kadehine tokuşturdu. İkisi de bir yudum aldı. Bakışları karşı evin duvarlarında olan Maral, Kaya’nın adını seslemesiyle ona döndü.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p272">“Maral.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p273">“Efendim Kaya.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p274">“Bugün benim doğum günüm biliyor musun yani teknik olarak dündü ama.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p275">Maral’ın öğrendiği bilgiyle kocaman açtı gözlerini ve bardağını masaya bıraktı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p276">“Ya Kaya neden söylemedin, kutlardık.” Dedi. Kaya’da gülüp etrafı göstererek “Kutluyoruz işte.” dedi. Maral başını iki yana sallayarak “Yok hayır, öyle olmaz bekle.” Dedi yardımla içeri gitti. Elinde bir dilim kek ve üzerine dikilmiş bir mumla döndüğünde Kaya’nın ağzı şaşkınlıktan hafifçe açıldı. Maral tabağı sehpanın tam ortasına iliştirdiğinde “Bilsem pasta falan alırdım ama kek yapmıştım. Şanslısın normalde makarna yiyerek yaşıyorum.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p277">Kaya öylece çikolatalı keke ve üzerindeki muma bakıyordu. Yirmi ikinci yaşına girmişti ve altı seneden beridir ilk defa mum üfleyecekti doğum gününde.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p278">Birkaç saniye bekledikten sonra şişesini tabağın yanına bıraktı ve “Bana Alaz desene sen.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p279">Maral dirseklerini dizlerine koymuş ve yüzünü ellesinin arasına yerleştirmişti. Kaya böyle söyleyince yüzünü kaldırarak dik bir pozisyona geldi ve kaşları şaşkınlıkla havalandı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p280">“Neden?” diye sordu merak ettiği için.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p281">“Sevmiyorum Kaya’yı” diye cevap verdi Kaya.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p282">Maral da “Öyle mi, Kaya diye tanıtıyorsun ama kendini.” dedi soru sorarmışçasına.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p283">“Yani genelde Kaya’yı kullanıyor insanlar, babam da. Ama ben Alaz’ı daha çok seviyorum hem annem de öyle derdi.” Dedi. Maral’ın içine bir burukluk oturdu. Bunu istemesi demek aslında biraz da onu yabancı olarak görmediği anlamına gelmiyor muydi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p284">“Tabi, tabi nasıl istersen.” Dedi ve ekledi. “Hadi ne duruyorsun üfle mum eriyor. Mumlu kek olacak. Ama dilek de tut.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p285">İkisi de sehpaya biraz daha yaklaştıklarında Maral sessizce mırıldanarak Alaz’a doğum günü şarkısı söyledi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p286">“İyi ki doğdun Alaz…” Gözleri birbirlerini buldu. “İyi ki doğdun, iyi doğdun, mutlu yıllar Alaz.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p287">Kısa bir sessizliğin ardından güldüler karşılıklı. Kaya’yı dahi Maral’ın ağzında beğenirken Alaz’ı daha da çok sevmişti şimdi doğum günü çocuğu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p288">Alaz altı yıl üstüne ilk defa dilek diledi ve kekin üzerinde dikilen kırmızı tek muma üfledi. Maral gülerek hafifçe alkışladı ve tabağın yanındaki çatalı keke batırdı. Aldığı bir parçayı Alaz’a doğru uzattı. Normalde olsa asla böyle bir şey yapmazdı, kendi de anlayamadı. Alaz, Maral’ın uzattığı keki aldı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p289">“Ellerine sağlık, çok güzel olmuş.” Dedi. Maral başını salladı sadece. Utanmıştı, konuyu değiştirmek adına “Ama alıştım şimdi Kaya dersem düzelt beni.” Dedi. Alaz da “Anlaştık.” Diyerek karşılık verdi. Maral kadehini alıp tekrar bağdaş kurdu. Alaz geri yaslandı ve sohbet etmeye devam ettiler.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p290">Tek bir konuşmayla ne kadar çok şey paylaşılabilirse o kadar şey paylaştılar. Saatlerce ailelerden, okuldan, arkadaşlardan konuştular. İkisinin de farklı fikirleri vardı ve ikisi de birbirlerini sabırla dinlediler. Farklı bakış açıları, farklı anlamlar çıkardılar birbirlerinden. Numaralarını aldılar birbirlerinden. Sabaha kadar devam eden sohbetleri Maral’ın uyumasıyla ve Kaya’nın bir süre onu izledikten sonra “ne yapıyorum ben?” farkındalığını yaşamasıyla sabah altıya doğru son bulduğunda Kaya evden ayrılmıştı ama bu buluşmaların sonu hiç gelmemişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p291">Önce Alaz Maral ile iletişime geçti. Bir sonraki hafta sonunu da böyle geçirdiler ve diğerini ardından diğerini de. Alaz her hafta iki günlük hafta sonu iznini Maral’ın yanında geçirmeye başlamıştı. Kafeye ya da sinemaya gitmiyorlardı ama evi kafeye ve sinemaya çeviriyorlardı. Mutfakta vakit geçiriyorlar birlikte yemekler yapıyorlardı. Sinema için televizyon ve ışıkların kapalı olması yetiyordu. Bol bol sohbet ediyor ve birbirlerini anlamaya çalışıyorlardı. İkisi de geçmişlerini birbirlerinden saklasalar da gelecekleri hakkında konuşuyorlardı ve en önemlisi birbirlerine hayallerini anlatıyorlardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p292">Maral mühendisliği çok sevdiğini ve iyi yollar kat etmek istediğini ama aynı zamanda sanatın içinde olmak istediğinden bahsediyordu. Albüm kaydetmek istediğini ve tiyatroya da ilgili olduğunu söylüyordu. Alaz asıl isteğinin özel kuvvetler olduğunu ve hiç beklemeden bu yolda ilerleyeceğini anlatıyordu. Alaz’ın okul, ülke, bayrak, vatan hakkında anlattıklarını derin derin düşünüp anlamlandırmaya çalışıyordu Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p293">İki yakın dost oldular önce ama sıklıkla gelen iltifatlar, edilen danslar, küçük temaslar, okunan şiirler ikisinin de ilişkilerinin arkadaşlıkla sınırlı kalmayacağının farkına varmalarını sağlıyordu. Bunu dile getirecek kadar cesur olansa Maral’dı. Duygularından utanmayan aksine onlara rağmen mantıklı kararlar verebilmesiyle övünen bir gençti. Edindiği aşkla beraber mantıklı kararlara veda edeceğinden ise habersizdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p284">Maral kendini Alaz’a yavaş yavaş kaptırmaya başladı keza Alaz da ama aradaki fark Maral’ın bunu belli etmesiyken Alaz’ın kaçmasıydı. Maral ne kadar duygularının arkasındaysa Alaz da bir o kadar karşısındaydı. Hislerine karşı koymaya çalışır, çareyi uzlaşmak yerine onlarla çatışmakta bulurdu. Maral’a ilk âşık olan oydu hatta bu kızın hayatında kaplayacağı büyük yeri sanki ilk gördüğünde hissetmişti ama sonuna kadar kaçan da oydu. İlerleyen yaşlarında ise her ne kadar gidecek olsa da övündüğü tek kararı aşkına sahip çıkmak olacaktı, babasına rağmen.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p294">Bir düzen kurdular ama bu düzen Maral’ın “Bu aşk mı bilmiyorum ama sana arkadaşça şeyler hissetmiyorum.” Demesiyle biraz değişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p295" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p296">Tam olarak ilanı aşk olmasa da sevgisini ilk itiraf eden bendim ama biliyorum ilk âşık olan da oydu. O gün bir karacı olarak Hava Harp Akademisinde beni bulması basit bir tesadüften daha fazlasıydı. Tanrı onu beni iyileştirmesi için göndermişti, biliyorum ama açtığı yaraların esamesi kapattıklarının yanında okunmazdı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p297">Hepsini diktim yaralarımın ama dikiş tutmadı öyle olunca sadece yara bandı yapıştırdım. Bandı kaldıran yaranın aslında iyileşmediğini, kabuk bağlamadığını, hala ilk günkü kadar kanadığını görür ama ban harikulade bir oyun sergiledim, gizledim. Eğer şimdi de onunla bulunursam her gün, her an, oyunum bozulur; bant kopar; yaram gözler önüne serilir.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p298">“Nasıl olacak? Ben bilmiyorum aynı ortamda yapabilir miyiz yani…” bitiremedim sorumu. Aslında şu an soğuk su iyi olurdu ama elimdekiyle yetindim. Üçüncü kadehimi bitirdim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p299">Sakin ve soğukkanlıydı, bunu sesine yansıtarak “Nöbetler olacak, olabildiğince denk düşürmeyeceğim ikimizi, sana söz veriyorum gözünün önünde olmayacağım, her şey nasılsa öyle olmaya devam edecek. Varlığımızı hissetmeyeceksiniz.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p300">Güldüm büyükçe. Seni maskelerin, gözlüklerin altında dahi hissettim, tutamayacağın sözler verme Alaz diyemedim. Dördüncü bir kadeh doldurmadım. Buradan sonra yine döneceğim yer hangardı ve ben dönüp çalışacaktım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p301">Durup nefes almaya vakit yok Maral, acıların hiçbirimizin umurunda değil.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p302">Hep böyleydi zaten. Ertesi gün sınavım varken de dövüldüm ama yine de çalıştım. Beni terk eden adam geri döndü ama ben çalışacaktım. Ne şimdi bu? Dünyanın kanunu mu?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p303">“Bilemiyorum Kaya.” Dedim. Belki gözümün önünde olmayacaktı ama bir alt katımdaki varlığını bilerek nasıl çalışacaktım? Yargılayın. Ben de bunca seneye rağmen bir adım ileri gidemediğim için kendimi yargılıyordum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p304">“Zamana bırak Maral çünkü inan ben de başka ne yapılır bilmiyorum.” Dedi. Yargılamayın, ben eminim o beni gerçekten sevdi. Sevmiş olmalı. Sevmeyen biri bana vaktinde öyle hissettiremezdi. Seven insan her koşulda kalacağına inanırdım. Kalamazmış demek ki. Bırakayım Alaz, sen ne dediysen yapmadım mı hep? Zamana bırakalım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p305">“Peki.” Dedim ama kendimi tutamadan ekledim. “Bunu ama eğer olmazsa birlikte çalışamayacağımıza dair bir dilekçe yazarım, sıkıntı çıkaracaklarını sanmıyorum. Korumak istiyorlar anlıyorum ama kaş yaparken göz çıkarmaya gerek yok. Varlığın verimimi düşürürse gidersin.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p306">Gidersin…<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p307">Sanırım bunu benden duymak ikimizi de şaşırttı. Şaşırma Alaz, yokluğunda en azından bir robot gibi yaşıyorum ve Savaşmam gereken duygularım olmuyor ama eğer varsan duygular geri gelir ve ben artık onlara rağmen mantıklı kararlar verebilen bir kadın değilim. Derince yutkundu ve başını salladı, kabullenerek.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p308">“Tamam, giderim.” Dedi. Ne diye eğiyorsun başını Alaz, enine sonunda olacak olan bu değil mi? Ya şimdi ya bir yıl sonra ya da görev düşünce, ne fark eder? Her olasılıkta gidiyorsun.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p309">“Peki o zaman, bitti mi?” diye sordum ayaklanırken. Kardeşimin yanına gitmek istiyordum ama bitmediğini hareketlenmediğinde anladım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p310">“Sadece görev Maral, daha fazlası değil tamam mı?” diye sordu. Yapma şunu, daha ne kadar kırabilirsin, kırma artık kalbimi. Tepinme kırıklarımın üstünde, seni de beni de kanatırım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p311">“Tamam.” Dedim sert bir ses tonuyla “Kaya.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p312">Umutlanmamamı istemiyordu aklı sıra. Onu hala seviyor olabilirdim ama artık imkânsız olduğumuzu ben de biliyorum. Birlikte olmak için sevginin yetmeyeceğini öğrendim ben. Sınavından da pek iyiyle geçtim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p313">Kalktım ve masadaki iki şişeyi ve bir kadehi mutfağa bıraktım. Peşimden geldi ve silahını askısını geçirmeden eline aldı. Kabanımı giyip çıkışa yöneldimben tekrar dönüp de bakmadım evime bir daha. Peşimden geldi sadece, onun da yüzüne bakmadım bir daha. İkimiz de çıktığımızda kapıyı tekrar kilitledim, başka bir kapının açılma sesini duymadımdan arkamı döndüğümde Alaz’ı ve Neriman Ananeyi bakışırken bulunca şaşırdım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p314">Ananem eşinin hediyesi olan ve hiç çıkarmadığı sabahlıklarının içinde şaşkınlıkla bize bakıyordu. Eli kapısına asılı olan ekmekte kalakalmıştı. Hiçbir şey demedi ama Alaz’ı olan bakışlarını gördüğümde benim dahi içimden bir şeyler koptu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p315">“Neroş.” Diyebildim bir şekilde. Anlaşılan bugün oldukça fazla karşılaşma gerçekleşecekti ve içimden bir ses bunun son olmadığını söylüyordu. O ses genelde haklı çıkardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p316">Neriman anane hiçbir şey söylemedi. Kilosundan dolayı paytak adımlarla Alaz’ı kenarda bırakıp yanıma geldi ve sarıldı bana sadece, ben öylece kaldım bir süre. Sonra ben de kollarımı sardım bedenine.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p317">Birine sarıldığınızda ağlama isteğinizi dinginleştirmek size de zor geliyor mu? Çünkü ben şu an başımı hiç anne olmayan bu kadının boynuna gömüp, anne kokusunu içime çeke çeke ağlamak istiyordum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p318">Geri çekildiğimizde yanaklarımı okşadı yumuşak ellesiyle. Toplu olan saçımın kuyruk kısmını sevdi. “İstediğin zaman de bana konuşalım he mi Maral’ım.” Dedi. Başımı salladım sadece. Konuşursam sesim şu an çatallı çıkardı. En içinden gelecek şekilde gülümsedi ve bakışlarını bir daha Alaz’a değdirmeden evine geri girdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p319">Alaz’ın mahcubiyetini hissedebiliyordum. Çünkü o öyle bir adamdı ki eskiden kendini sevdiremediği kimse yoktu. Neriman anane de bu kişilerin başını çekiyordu. Her pazar sabahı onun evinde yaptığımız kahvaltıları hatırlıyor muydu? Kaç gün geçti, hala o günlerde Neriman ananenin kızarttığı kadar güzel patatesler yememiştim ben. Gerçi Alaz’dan sonra Neriman anane kızartmaya devam etti de bana çürük sebze tadı gelirdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p320">Alaz gittiğinde beni evin önünden alıp zorlukla içeri taşıyan Neriman ananem, tekrar o hale düşmem değil mi?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p321">İndik aşağıya. Sürücü koltuğuna oturacağım sırada açtığım kapı Alaz tarafından geri kapatıldı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p322">“Alkollü araba kullanma Maral, ver ben süreyim.” Dedi. Eskisi gibi kontrol manyağıydı belli ki. Merak etme iki şişeden aşağısı sarhoş etmiyor artık beni. O kadar alıştı ki bünyem. O kadar içtim ki zamanında sırf biraz olsun düşünmeyeyim daha doğrusu düşünsem dahi hatırlamayayım diye. Artık yapamıyorum. Sarhoş olduğumda bile hatırlıyorum her şeyi, gidişini.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p323">“Üç kadeh.” Dedim ben de ve ekledim “Ayrıca sen de alkollüsün.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p324">“Sen daha alkollüsün ama hadi laf dinle biraz.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p325">Laf dinle.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p326">Yapma Alaz, değişmemişsin gibi konuşma. Değiştin işte, değişmiş olmalısın. Dört buçuk sene Alaz, ben çok değiştim ve rol yapmıyorum. Az önce istesem de artık senin de yapmanı istemiyorum. Sen de yapma.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p327">Dinledim lafını, bıraktım kapıyı ve yolcu tarafına geçip oturdum. Bu an neden bana bu kadar tanıdık geliyordu hatırlayamadım. Alkollüyüm ve gideceğimiz yere Alaz sürüyor. Oldukça tanıdık ve Deja vu gibi hissettiriyor.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p328">Silahını arka koltuklara bıraktı ve yanıma yerleşti. Arabayı çalıştırdı ama bu sefer sessiz bir yolculuk istemiyor olsa gerek radyoyu da açtı. Çalan şarkı ise benimle alay ediyor olmalı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p329">“Güldürür müyüm seni, bıktırır mıyım bilmem. Baktırır mıyım yüzüme eğer güldürürsem?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p330">Şarkı tüm arabada yankılanacak kadar açtı sesini bir son kez baktı Sevgi Apartmanına. Derler ki yerler anılarla yerleşir aklımıza. Bu ev benim kurtuluşumun sembolüydü bir zamanlar. Kendi ayaklarım üzerinde duruşumdu. Şimdi bırak kendi ayaklarım üzerinde durmayı ayakta bile değilim. Bu yer de tüm Ankara gibi bana gidişinle yer etti. Sen koca bir şehri bana cehennem ettin. Beni bu şehirden nefret ettirdin.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p331">Ben bakmadım. Artık Sevgi Apartmanına bakmak acı veriyordu. Gazı köklediğinde hangara dönmek üzere yola koyulduk.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p332">Bilirsin Alaz, ben hep eskilerden dinlerim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p333">Hem ben seni hep güldürürdüm.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p334" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p335">Andiç Albay Maral’ın babasının liseden beri arkadaşıydı. Utku öldüğünde Mehtap ve Maral’a sahip çıkmış, rahat yaşayabilmeleri için elinden geleni yapmıştı. Sebebini anlamasa da bunu kendine borç hissetmişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p336">Ardından Maral’ın yanında gezen herkesin sicilini çıkardığından Tunç ile tanışmıştı. Yetimhanede büyüyen bu çocuk onu bir hayli etkilemişti. Andiç ne baba olmuş ne de evlenmişti. Bu güzel duygulardan yoksun hayatında Tunç’u kendine evlat bilmişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p337">Üniversitede zorla da olsa ev açmış, direkt parayı kabul etmediği için onu yormadan çalıştıracak olan bir yere ederinden daha fazla maaş alabilmesi için kendi ödeme yapmıştı. Tunç ise kendini sürekli geri çekiyordu. Andiç’e bırak babayı bir kere bile abi dememiş, Andiç Binbaşı, Yarbay, Albay’dan ileri gidememişlerdi. Tunç’un Andiç’e gösterdiği resmiyeti komutanları bile göstermiyordu ama anlıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p338">Daha kendi ailesi tarafından refaha değer görülmemiş, doğduğu ilk aylarda bir hastane bahçesinde terk edilmiş bu adamın kendisine neden tam olarak güvenemediğini anlıyordu. Hatta bu güvensizliği anlamıyordu sadece, biliyordu aynı zamanda.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p339">“Bırak!” diye bağırdı Tunç. Sesi açık havada yankılanacak kadar yüksekti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p340">“Oğlum bir sakin ol.” Dedi Andiç sesinin yumuşak çıkmasına dikkat ederek. Bu esnada Tunç’un kolundan tutuyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p341">“Bırak dedim!” diyerek kolunu Andiç’ten kurtardı. Tunç, Maral’ı dünyadaki her şeyden daha çok seviyordu. Onun için Andiç Albay’a saygısızlıktan bile geri durmaz, ölümü dahi göze almaktan çekinmezdi. Aralarındaki mesafeyi sıfırlayarak kendilerininkine benzeyen mavi gözlere dikti bakışlarını. Boyları hemen hemen eşitti ama Tunç bir iki santim daha uzundu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p342">“Yüzündeki kırgınlığı gördün mü? Gözünden yaş aktı gördün mü?” yüksek çıkan sesini kısarak devam etti. “Maral bir şeyleri aşamadı Albayım, en iyi senin anlaman gerektiği yerde onu bu yüzleşmeye mahkum bıraktın.” Geri çekildi ve ellesini iki yana açtı. “Ve ben şimdi ne yapacağımı bilmiyorum.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p343">Maral’ın telefonda “biliyorum” derken sesinde duyduğu kırgınlık kalbini paramparça etmişti Tunç’un. Onu o karanlık kuyudan çıkarması o kadar zor olmuştu ki. Şimdi ise onun bir daha aşağı inmesine izin vermeyecekti ama nasıl yapacağını bilmiyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p344">Sonsuz bir güvenle kendini açıp kardeşini emanet ettiği adam sadece Maral’a ihanet etmemişti, onların dostluklarına da etmişti. Sonuçta gitmek de bir noktada ihanetti, değil mi? Tunç, Alaz’ın alelade bir şekilde gitmeyeceğini biliyordu. Bu nedenle aramıştı, ulaşmaya çalışmıştı, anlamak istemişti ama Alaz; Maral ile hayatına gelen herkesi çıkarmaya karar vermişti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p345">Maral gün geçtikçe kayboluyor, Tunç ise bu boşluğun içinde kardeşinin elini arıyordu, bulabilmesi ise bir mucizeydi ve mucizeler yalnızca bir defa gerçekleşirdi. Tunç’u Maral’dan, Maral’ı Tunç’tan daha iyi tanıyan kimse yoktu ve o emindi ki Maral hala Alaz’ı seviyordu. Şimdi yan yana olurlarsa eğer Maral’ın elini o boşlukta tekrar bulabilecek miydi, emin değildi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p346">Derya, Andiç Albay’ın ricasıyla neler olduğunu zerre anlamayan timi içeri götürmüştü. Burçe olduğunu öğrendiği asker Tunç’a “Sebepleri vardı.” Demişti içeri girmeden önce. Timden kimse bir şey bilmiyorken Burçe’den bunu duymak onun öylesine biri olmadığını anlamasına yetmişti ama o an için ne onun kim olduğu ne de Alaz’ın sebepleriydi umurunda olan. Alaz ve Maral yan yana ve yalnızdı şu an. Kim bilir Maral ne kadar kötü hissediyordu. Umurunda olan buydu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p347">Andiç boğazını temizledi. O da böyle olmasını istemiyordu ama ne yolu denediyse yol bir şekilde Kuzgun Timine çıkmıştı. “İyi olacak.” Diyebildi sadece. Tunç haklıydı, Maral’ı en iyi kendisi anlardı şu an. Kendisine itirafı bile yıllarını alan imkânsız sevdasıyla hep yüz yüze gelmek, her şey normalmiş gibi konuşmaya çalışmak nasıl can yakardı bilirdi. Üstelik bir maziye sahip olan iki kişi için bu daha da zor olurdu. Keşke sebeplerini bilselerdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p348">Gerçi herkes herkesin sebeplerini bilseydi dünyada kalp kırıklığı namına bir şey kalmazdı. Sebeplerin sonuçlarıydı insanların bildiği, sonuçlar ağırsa da sebeplerin yükümlülüğü biterdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p349">“Maral’la konuşacağım. Vereceği cevaptan eminim zaten ama o benim için sorun yok demezse ya onlar buradan gider ya da ne tazminat ödeyeceksek öderim, alır kardeşimi giderim buradan. Hiçbir proje ondan kıymetli değil.” Dedi Tunç bu kez bağırmadan ve ekledi: “Hakkın ben de büyük Albayım kabul ama Maral da benim tek varlığım. Anlatabildim mi?”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p350">Andiç kabullenerek başını salladığında Tunç geri hangara doğru yöneldi. Birkaç dakika öylece dikildikten sonra Andiç de geldiği protokol arabasına geri binerek askeriyeye doğru yol aldı. Komik olansa iki saat sonra o da aşık olduğu kadınla yüz yüze gelmek zorunda kalacaktı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p351">Tunç hangara girdiğinde kimseye taraf çevirmedi yüzünü. Derya, Kenan ile birlikte timle ekibi tanıştırıyorken Tunç’u görmesiyle beraber yanlarından ayrıldı. Gitmeden önce koluna yapışıp “Bana haber ver.” Diyen Kenan’a göz kırparak tamam dedikten sonra Tunç’un odasına doğru yola koyuldu. Tunçtan on saniye sonra o da geldi odaya.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p352">Tunç misafir koltuklarından duvardaki tablonun tam karşısında olana oturdu. Dikti gözlerini fotoğrafa. Aslında buradayken bile ne kadar durgundu Maral’ın bakışları. Yedi ay ortalıktan kaybolduktan sonra hiç olmadığı kadar aktif bir şekilde geri dönmüştü hayatına Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p353">Zekiydi, terk edilmiş olmasına rağmen sınavlarını verdi. Her dakika ve her fırsatta çalıştı. Derslere daha çok vakit ayörabilmek için evinden çıkıp annesinin yanına geri yerleşti ve çalıştığı yerlerden istifa etti. Bölümünün ve hatta ODTÜ’nün birincisi olarak mezun oldu. Okurken iki yerde staj programı bitirdi. Yurt dışından onlarca teklif aldı ve Amerika’ya gitti. En bilindik havacılık şirketlerinde çalıştı. Hayatına kimseyi almadı ve kendini işine adadı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p354">Eskiden kafelerde, barlarda, sokaklarda da söylerlerdi ama o günden sonra sadece bir kez 29 Nisan’da çıktılar. Şarkı söylemeyi de bıraktı. Yazmayı bırakmadı ama paylaşmayı bıraktı. Çok başarılı bir genç kadına dönüştü ama bu yolda benliğini kaybetti Maral.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p355">Derya yavaşça çaprazına oturdu Tunç’un ve onun konuşmasını bekledi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p356">“Bir kere rakıya çıktığımızda Maral kör olana kadar içmişti, hatırlıyor musun?” diye bir soruyla başladı Tunç. Derya gülümseyerek başını salladı ve “Hatırlıyorum.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p357">“İşte o gün size birini anlatmıştı, onu da hatırlıyor musun?” diye devam etti Tunç. Derya’nın gülümsemesi soldu. Sessizce “Evet.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p358">“Size hayatının aşkını anlattı ama siz ayıldığı zaman bilmiyormuş gibi yaptınız…”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p359">“Çünkü bildiğinizi bilirse kendini çok kötü hisseder demiştin.” Diyerek Tunç’un sözünü kesip araya girdi. O adam bu adam mı diye geçirdi içinden zira o akşam bu hikâye onu çok ağlatmıştı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p360">Size her şeyi bu kez ayık kafayla anlatacak biliyorum çünkü sizi kardeşi gibi seviyor, bildiğinizi belli etmeyin. O zamana kadar da bana bir şey sormayın.” Dedi Tunç ve geriye doğru yaslandı. Ellesiniyle yüzünü sıvazladı ve bir of sesi çıkardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p361">Gözleri dolan Derya “Tamam abi, merak etme sen, Kenan’la da konuşurum ben. Sorun yok.” Dedi. Elini Tunç’un dizine koyarak ekledi: “Biz onun hep yanındayız.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p362">Tunç dizinin üzerindeki eli tuttu ve zorla da olsa güldü.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p363">“Biz hep birbirimizin yanındayız Deryakuş.” Dedi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p364" style="text-align: center; margin: 40px 0;">✈︎<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p365">Onun sürdüğü arabam, sonuna kadar açık radyomuz ve seneler bizden alıp götürmemişçesine geri dönüyoruz hangara. Çıkarken saat kaçtı bilmiyorum ama şimdi 14.22’ydi. Tunç aramasa da onlarca mesaj atmış. Yolda olduğumuzu söyledim ve hangarda durumun nasıl olduğunu sordum. Hemen döndü mesajıma.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p366">Abikuşum: Hangarda her şey yolunda merak etme kuşum. Kenan herkesle tanıştı yetmedi tanıştırdı. En son Özgür abi sanırım adı Barlas olan askerle çifte telli oynuyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p367">Bu halde bile güldürmeye çalışıyordu beni. Tebessüm etmeme yettin Tunç, inan bu bile çok büyük bir adım. Eminim şu an o da merak içindedir. Merak etme Tunç, oyunuma devam ediyorum.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p368">Şaka yapıyor sanıyordum ama bir video gönderdi. Gerçekten askerlerden biri ve Özgür Usta çifte telli oynuyordu, Kenan da yanlarından alkış tutuyordu. Sıcakkanlı bir çocuktu zaten. Kimseye yabancı hissettirmez, herkese evdeymiş gibi hissettirirdi. Tunç’tan sonra bir de ben ziyaretine gitmiştim Artvin’e. O zaman da böyleydi şimdi de böyle. Videoyu görünce gülmeden edemedim çünkü gerçekten komikti. Ben arkamı olaylı bıraktım zannederken Kenan timi ekibe katmıştı bile. Benim kardeşlerim beni bu durumda bile güldürmeyi başarmıştı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p369">Güldüğümde Alaz’ın yolda olan bakışları bana döndü. Kırmızı ışığa denk gelmenin işte tam zamanıydı. Telefonu çevirip videoyu ona gösterdim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p370">“Benim neferlerim seninkileri bizim tarafa çekmiş.” Dedim. Güldü o da. İçinden “Komutanları sizin tarafta, onlar geçse ne olur.” Dediğini bilmiyordum. Video oynarken üstten bir mesaj düştü, Yüzbaşımdan. İsmi gördü mu bilmiyorum ama o önüne döndü bense mesaja girdim.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p371">Yüzbaşım: On dakikaya oradayım, geldiğimde kapıda ol başmühendisim. Sana bir sürprizim var.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p372">On dakikaya orada mıydı? Sürpriz derken? Bizim ne kadar yolumuz vardı ki? Askeriyenin yakınlarında olduğumuza göre bizim de hemen hemen on dakikalık yolumuz vardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p373">Maral: Şu an dışardayım ama yetişmeye çalışacağım.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p374">On dakika daha geçti ve yolumuz hava üssüne girmemizle beraber son buldu. Alaz arabayı bulduğu yere doğru yöneldi ama benim yerimin önünü başka bir araba kapatmıştı. Arabanın kime ait olduğunu biliyordum tabi ki.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p375">Oğuz arabanın önüne yaslanmış bir şekilde bekliyordu. Güneş gözlükleri her zamanki gibi gözlerindeydi ve bulutların arasından Ankara’ya ulaşmaya çalışan güneş ışınları az da olsa sarı saçlarını parlatıyordu. Onunlayken nasıl üşümediğini asla çözemediğim havacı ceketi yine üzerineydi. Üstüne üstlük arabanın önünde yalnız değildi. Kucağında bir şey vardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p376">Rottweiler cinsi bir yavru köpek.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p377">Alaz arabayı Oğuz’unkiyle arasında üç dört metre kalacak kadar uzağında durdurdu. İkimiz aynı anda arabadan indik. İnmemizle beraber yerinden dikleşen Oğuz güneş gözlüklerini çıkardı ve bakışlarına görmeyi beklemediğim bir şaşkınlık duygu yerleşti. Kucağındaki köpeğe odaklanabiliyordum sadece. O kadar tatlıydı ki. Her şeyin yavrusu tatlıdır, bilirsiniz.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p378">Ben köpeğe odaklanmışken hangarın girişinden gelen Tunç’u gördüm. Başta yavaş olan adımları beni görmesiyle beraber hızlandı ve çabucak yanıma geldi. Gözlerime baktı ağlayıp ağlamadığımı anlayabilmek için. Bence iyi idare ettim Tunç.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p379">O sormadan ben “İyim.” Dedim ve içten bir gülümseme gönderdim ona. Bu esnada yanımızda duran iki adam hala birbirlerine şaşkınlıkla ama anlamlandıramadığım da bir öfkeyle bakıyordu. İkisi arasındaki sessizlik sürüp giderken birbirlerinin adlarını zikrettiler.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p380">“Göktürk.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p381">“Dinçer.”<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p382">Tunç’le dönüp birbirimize baktık ardından tekrar iki askere döndük. Ankara büyük falan değilsin, özellikle askeri personeller için Kenan’ın köyünden bile küçüksün. Bugün daha kaç karşılaşma kaç şaşkınlık yaşanacak bilmiyorum ama sabahkine benzer bir gerginliği benim sorum besleyip büyüttü.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma2-p383">“Siz… tanışıyor musunuz?”<span class="comment-trigger">💬</span></div>
+    </div>
+
+    <div class="chapter-nav">
+        <a href="huma-bolum1.html" class="nav-btn">❮ ÖNCEKİ</a>
+        <a href="huma-bolum3.html" class="nav-btn">SONRAKİ ❯</a>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<!-- Sayaç ve Yorum Hafızalı Cusdis Script Bloğu -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Okunma Sayacı (Bölüm 2 Özel Anahtarı)
+        let currentViews = parseInt(localStorage.getItem("views_huma_bolum2")) || 0;
+        currentViews++;
+        localStorage.setItem("views_huma_bolum2", currentViews);
+
+        // 2. Paragraf Arası Cusdis Yorum Tetikleyici
+        const triggers = document.querySelectorAll('.comment-trigger');
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const wrapper = this.closest('.p-wrapper');
+                const paragraphId = wrapper.getAttribute('data-p-id');
+                
+                // Eğer zaten açık bir yorum kutusu varsa kapat
+                const existingBox = wrapper.querySelector('.paragraph-comment-box');
+                if (existingBox) {
+                    existingBox.remove();
+                    return;
+                }
+                
+                // Ekranda açık olan diğer yorum kutularını temizle
+                document.querySelectorAll('.paragraph-comment-box').forEach(box => box.remove());
+                
+                // Dinamik Yorum Kutusu Oluşturma
+                const commentBox = document.createElement('div');
+                commentBox.className = 'paragraph-comment-box';
+                commentBox.style.cssText = `
+                    background: rgba(10, 10, 10, 0.95);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    padding: 20px;
+                    margin-top: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                `;
+                
+                commentBox.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:0.8rem; color:#888; font-family:sans-serif;">
+                        <span>💬 Bu Paragrafa Ait Yorumlar</span>
+                        <span style="cursor:pointer; color:#fff; font-weight:bold;" onclick="this.closest('.paragraph-comment-box').remove()">Kapat ✕</span>
+                    </div>
+                    <div id="cusdis_thread"
+                      data-host="https://cusdis.com"
+                      data-app-id="2a4b0743-a3ed-45b4-8eb1-96ce01e93637"
+                      data-page-id="huma2_${paragraphId}"
+                      data-page-url="${window.location.href.split('#')[0]}#${paragraphId}"
+                      data-page-title="Hüma Kuşu Bölüm 2 - Paragraf ${paragraphId}"
+                      data-theme="dark"
+                    ></div>
+                `;
+                
+                wrapper.appendChild(commentBox);
+
+                // Cusdis scriptini dinamik olarak yükle veya tetikle
+                if (window.CUSDIS) {
+                    window.CUSDIS.initial();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cusdis.com/js/cusdis.es.js";
+                    script.async = true;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                }
+
+                // 3. Akıllı Hafıza Sistemi
+                setTimeout(() => {
+                    const iframe = commentBox.querySelector('iframe');
+                    if (iframe) {
+                        iframe.addEventListener('load', () => {
+                            try {
+                                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                const nameInput = iframeDoc.querySelector('input[type="text"]') || iframeDoc.querySelector('input');
+                                const submitBtn = iframeDoc.querySelector('button[type="submit"]') || iframeDoc.querySelector('button');
+                                
+                                if (nameInput) {
+                                    const savedNickname = localStorage.getItem('okur_nickname');
+                                    if (savedNickname) {
+                                        nameInput.value = savedNickname;
+                                        nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+                                    }
+
+                                    if (submitBtn) {
+                                        submitBtn.addEventListener('click', () => {
+                                            if (nameInput.value.trim() !== "") {
+                                                localStorage.setItem('okur_nickname', nameInput.value.trim());
+                                            }
+                                        });
+                                    }
+                                }
+                            } catch (error) {
+                                console.log("Iframe kısıtlaması:", error);
+                            }
+                        });
+                    }
+                }, 800);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

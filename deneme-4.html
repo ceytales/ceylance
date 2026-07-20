@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tek Bir Yol Var | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* Yumuşak sayfa açılış animasyonu */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ddd;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInPage 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s;
+        }
+        .logo:hover { transform: scale(1.05) rotate(-2deg); text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(-3px);
+        }
+
+        .essay-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .essay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+            opacity: 0.9;
+        }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+            .essay-container { padding: 30px 20px; margin: 30px auto; }
+            h1 { font-size: 1.5rem; }
+            .essay-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="denemeler.html" class="back-btn">❮ DENEMELERE DÖN</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 130px;"></div>
+</header>
+
+<div class="essay-container">
+    <h1>TEK BİR YOL VAR, SEÇERSEN KAYBEDECEĞİNİ BİLDİĞİN AMA TEK OLAN BİR YOL</h1>
+    
+    <div class="essay-content">
+        <p>Geçmiş kimi insanın “ket vurun” dediği kimi insanın “onu kendinize rehber alın” dediği bir şeydir. Benim hangi gruba girdiğim hala daha meçhul. Silmek bir yana dursun çoğu zaman gözlerimi o kadar geçmişten alamıyorum ki önümdeki engelleri görmekte zorlanıyorum ve bazen o engellere takılıyorum. Rehber alıp hatalarımdan ders çıkarabilecek kadar da barışamadım kendisiyle.</p>
+
+        <p>Neden? Neden ben? Neden böyle oldu?
+        Boş kaldığım her an bu sorular tarafından ele geçirildiğimi fark ettiğimde henüz ufak bir çocuktum. Bu farkındalığı yaşadığımda geleceğim zamanı geldiğinde hatırlaması güzel bir geçmiş olsun diye ruhumdan parçalar vererek çalışmaya başladım. Vaktinde hayatımdaki yeri kendimden bile büyük olan bir insan bana “Yeterince istersen ve yeterince çalışırsan her şeyi başarabilirsin. Eğer olmadıysa yeterince istememiş ve çalışmamışsındır.” demişti.</p>
+
+        <p>Ona olan sevgim ve güvenim o kadar büyüktü ki bir ihtimal yeterli olsam bile bazen sadece olmama fikrini aklımın ucundan bile geçirmedim.</p>
+
+        <p>İstedim. Çok istedim. Öyle ki isteğim kendisiyle beraber hırsı getirdi. Bir noktaya kadar bana her şeyi bahşettiğini düşündüğüm hırsın kendimden ne kadar eksilttiğini göremedim.</p>
+
+        <p>Ve çalıştım. Çoktan daha çok çalıştım. Yorgunluk neydi, nedendi, bir an bile düşünmedim. Bir an için bile biraz durmak, şöyle bir etrafa bakıp durum değerlendirmesi yapmak; beni geri düşürür gitmek istediğim yere geç kalmama sebep olur sandım.</p>
+
+        <p>Ama her şeye rağmen; bütün bu aklıma bile gelmeyen yorgunluklarıma, dur durak bilmeyen çalışmalarıma, tutkuyla bezediğim isteklerime rağmen bana devam etme gücü veren bir şey vardı. Sonuçta olmasa insan bir yerde tükenir, biterdi değil mi?</p>
+
+        <p>Olması.
+        Oldurmam.
+        Gerçekten oluyordu. Belki hayallerim o kadar büyük değildi isteğim ve çalışmam yetiyordu belki de hayallerim gayet büyüktü ve isteğim ve çalışmam boyumu aşıyordu ama sonucunda oluyordu. Başarıyordum. Başarma hissi bana devam etme gücü veriyordu.</p>
+
+        <p>Bugün baktığımda bana arama küslük girmiş bir dost gibi hissettiren bu duygu gerçekten bir insanı devam ettirecek kadar güçlü müydü, inanın hala bilmiyorum.</p>
+
+        <p>Tam olarak ne zaman oldu hatırlamıyorum ya da o geçiş fark edebileceğim kadar keskin değildi ama bir noktada olmamaya başladı. Depoladığım başarı hissi beni birkaç sene götürdü ama üstüne yenisi koyamamak ve aynı tempoda hatta daha fazlasında çalışmak bir noktada beni tüketti. Yakıtı biten araba misali yolun ortasında kaldım.</p>
+
+        <p>Formula 1 yarışlarını düşünün ama üzerinde olduğumuz oradaki gibi belli bir şekli tekrar eden değil daima ileri akan bir pist. Sakın ha geç kalmayayım diye griddeki en hızlı araba benken öyle bir şey oldu ki sağımdan solumdan beni geçen arabaları izledim. Onca sene git git bitmeyen yolun uzunluğunu sorgulamak yerine neden gitmeye devam edemeyişimi sorgulamak, kendime karşı olan inanç ve sevgi eksikliğimden miydi? Bunu hala soruyorum.</p>
+
+        <p>Neden yolun yanlış olabileceğini düşünmedim mesela? Neden ekibimin stratejisinin yanlış olabileceğini düşünmedim? Neden yakıtımın bittiğini değil de arabamın bozulmuş olabileceğini düşünmedim?</p>
+
+        <p>Neden hep kendime çevirdim okları?
+        Neden kendimin en büyük zorbası oldum?</p>
+
+        <p>Bir an için, sadece bir an için kendi kendime “Aferin” diyebilseydim her şey çok farklı olmaz mıydı? Kendimi şımartmaktan mı çekindim, alışık olmadığım takdir duygusu beni duraksatır diye mi çekindim?</p>
+
+        <p>Asla bilemeyeceğiz.</p>
+
+        <p>Şimdi hayat “Yeter sen başaracağını başardın” der gibi beni çıkmaz bir sokağa koydu. Arkama baksam bakarım ama geri gidemem. Bu yarışta sadece ileri bir akış var ama önümde de uzun, düz bir duvar; gidersem kaza yapacağım. Gitmezsem… olmaz, elenirim. Arabamı çekerler. Bir daha yarışamam.</p>
+
+        <p>Tek bir yol var.
+        Seçersen kaybedeceğini bildiğin ama tek olan bir yol.
+        Arabadan inmek.</p>
+
+        <p>Etrafımda saatteki hızları üç yüzleri bulan arabalar varken ben o yolu yürüsem de koşsam da geç kalırım elbet. Geç kalırsam ne olur, bilmiyorum ki. Bu kadar korktuğum şeyin nasıl bir sonuç getireceğini bile bilmiyorken neden bu kadar çok korkuyorum ondan? Biraz merak etsem ya, acaba nasıl olurdu desem? Görmek istesem.</p>
+
+        <p>Belki de o kadar kötü değildir. Evet, berbat da olabilir ama… belki de değildir. Risk almayı unuttum. Aldığım risklerin bana neler kazandırdığını unuttum. Evet kayıp felaket de olabilir ama kazançlar o kadar büyüktür ki riskler de alınmalıdır bazen.</p>
+
+        <p>Kaybedersem gerçekleşecek felakete o kadar odaklanmışım ki kazanırsam elde edeceklerime odaklanamıyorum.</p>
+
+        <p>Arabadan indim. Biliyor musunuz, koşmuyorum bile. Hızlı gitmekten yolun manzarasının ne kadar güzel olduğunu bile hiç görmemişim. Yürüyorum. Biraz manzaranın tadını çıkaracağım, ağaçlara ve gökyüzüne bakacağım. Sonra belki koşarım, belki yeni bir araba bulurum kendime hatta belki bulduğum arabayı biriyle paylaşırım.</p>
+
+        <p>Ama belkilerde değil şimdilerdeyim.
+        Ve şimdilerde arabadan indim.</p>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<script>
+    // Tıklandığında sayfa geçişini yumuşatan minik dokunuş
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", e => {
+                const target = link.getAttribute("href");
+                if (target && !target.startsWith("#") && !target.startsWith("http")) {
+                    e.preventDefault();
+                    document.body.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                    document.body.style.opacity = "0";
+                    document.body.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

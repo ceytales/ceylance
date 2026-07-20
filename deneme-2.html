@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekrar Güzel Olmak İstemek | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* Yumuşak sayfa açılış animasyonu */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ddd;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInPage 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s;
+        }
+        .logo:hover { transform: scale(1.05) rotate(-2deg); text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(-3px);
+        }
+
+        .essay-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .essay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+            opacity: 0.9;
+        }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+            .essay-container { padding: 30px 20px; margin: 30px auto; }
+            h1 { font-size: 1.5rem; }
+            .essay-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="denemeler.html" class="back-btn">❮ DENEMELERE DÖN</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 130px;"></div>
+</header>
+
+<div class="essay-container">
+    <h1>TEKRAR GÜZEL OLMAK İSTEMEK</h1>
+    
+    <div class="essay-content">
+        <p>Bir gün aynaya baktığında gördüğün kişiyi sevebilirsen ona söylemeni istediğim birkaç şey var. Bugünlerde eskisi gibi görünmüyorsun pek. Ama senin zamanın geldiğinde, eğer gelirse, ben de eski olacağım. And bir gün eskilerden bahsettiğinde en büyük dileklerimden biri zihninin oldukça arkasında kalabilmeyi becermiş olmak. Bu bazen imkansız hissettiriyor çünkü en büyük kaybının yaşlarıyım. Daha fazla taşıyamadığı için tüm yüklerinin altında ezilmiş olan tarafınım. Benim eskilerim çok güzel. Mutlu, zayıf, ışıl ışıl, başarılı, çalışkan, umut dolu, heyecanlı.</p>
+
+        <p>Senin eskin ben olacağım.</p>
+
+        <p>Çirkin, mutsuz, umutsuz, hayalsiz, durgun, suskun, mutsuz demiş miydim? Eskiyi unutamaz insan. Unutulmak için yaşanmaz yıllar. Beni unutmanı her şeyden çok isterdim ama unutamayacaksın. İyi tarafından bakmak artık pek tercih ettiğim bir şey olmasa da beni unutmayacak olmanın tek bir iyi yanı var. Yıkıldığında ne kadar berbat bir insana dönüştüğünü bana baktığında görebileceksin. Acaba nasıl olurdu diye sormana gerek kalmayacak çünkü ben hali hazırda anılarında olacağım.</p>
+
+        <p>Bir şeyleri değiştirecek gücüm inan yok. İsteğim de öyle. Sırf bu nedenle bile hiçbir zaman eski olarak kalmayabilir, bu acınası hayatı devam ettirecek yegane Ceylan olabilirim. Yine de bir umut kurtulabilirsem diye bu bedenden, hislerden, düşüncelerden diye bunu yazıyorum.</p>
+
+        <p>Uyanmak zor. Uyumak istiyorum. Uyanmak zorundayım. Mihenk taşını ellerimde tutuyorum. Geleceğini ben seçeceğim. Ölmek isteyen birinin eline gelecek inşa etme sorumluluğunu vermek pek akıl karı değil aslında. Ama onu devredebileceğim bir babam ya da annem yok. Benim bir ailem yok. Altında saklanıp ömür boyu mutlu olabileceğim bir evim de hiçbir zaman olmadı. İleride olur mu, bilmiyorum. Ama olmazsa nasıl yaşayacağım, onu da hiç kestiremiyorum. Eskiden yarınım yokmuşçasına hızlı yaşardım hayatı. İnsanlardan kaçmazdım, her birine sevgiyle yaklaşırdım. Güvensizlik yaşamazdım çünkü bir insanın bana karşı olan kötü tutumu için kendimi suçlamazdım. Kendimi eksik görmezdim. Sevilesi olduğuma inanırdım çünkü ben herkesi severdim.</p>
+
+        <p>Eğlenmeyi bilirdim, güzel şakalar yapar herkesi güldürürüm. Oysa ki son günlerde kendimi bile güldüremiyorum. En son ne zaman güldüm? Hatırlamıyorum. Gözlerim ışıl ışıl olurdu. Karanlıkta bile çektiğimiz hiçbir fotoğrafta gölge düşmezdi yüzüme. Artık güneşi kovalasam bile gözlerim parlamıyor hiçbir fotoğrafta. Işığım söndü. Şimdilerde kimsenin beni istemediğini düşünüyorum. Benimle konuşan herkes sanki zorunluluktan, üzülmeyeyim diye katlanıyor bana. Benimle zaman geçirmek insanları yoruyormuş gibi geliyor. Benimle olmak insanları aşağı çekiyor bence.</p>
+
+        <p>Mesela biri beni sevemez artık. Ben olsam sevmezdim. Artık anlıyorum. Eskiden kendimle olmaya aşıktım ben. Tek başıma kahve içmeye çıkar, kulaklıklarımla beraber mağaza mağaza gezerdim. Çok eğlenceli olurdu. Kendimle konuşmak en sevdiğim şeylerden biriydi. Artık bunları sevmiyorum. Ben artık kendi kendime katlanamıyorum. Sinir oluyorum kendime. Ben beni sevmiyorum, kimseden sevmesini istemiyorum. Çünkü kimseye inanamıyorum artık güvenemiyorum. Çünkü beni sevgisine inandırır da üzerse artık karşı tarafı suçlayamayacak kadar kendimden haz etmiyorum.</p>
+
+        <p>Eskisi gibi güzel değilim, kilo aldım, çok kilo aldım. Göğüslerim sarktı, selülitlerim var, göbeğim kocaman, incecik zarif boynum artık çok kalın ve kollarım sallanıyor. Eskiden böyle değildi, hiçbir zaman çok zayıf olmadım ama eskiden az biraz fazla olan kilolarıma bakamazdı insanlar neşemden. Garip olan benim eskim de kendi eskisine bakar bakar ne güzelmişim önceden derdi. Bu senelerce böyle oldu. Şimdi korktuğum şeylerden biri de senin dönüp benim gibi sefil biri için aynı cümleyi kurman. Beni bile güzel kabul edileceğim kadar mahvetmişsek kendimizi belki de artık bitmelidir Ceylan. Bazı bedeller ödenmelidir.</p>
+
+        <p>Temizlenmek bile zor geliyor. Duş almak, dişlerimi fırçalamak, yüzümü yıkamak, parfüm sıkmak. Hiçbir koku güzel gelmiyor. Kendi kokumu severdim eskiden. Bugünlerde kokum midemi bulandırıyor. Makyaj benim için bir tutkuydu. Hiçbir zaman çevreye beğendirmek için yapmazdım. Sıkıldığımda, üzüldüğümde, sevindiğimde yapardım. Asla alamayacağımı bilsem bile o pahalı markaların standlarını gezer, beğendiğim ürünlerin muadillerini arardım. Bugünlerde en ucuz markaya bile değmiyor gözlerim. Var olan ürünler kir içinde, kendimi bile temizlemek zorken onları orada çürümeye terk ettim.</p>
+
+        <p>Bazı zamanlar anlık enerjiyle sürdüğüm maskarayı günlerce çıkarmadığım oluyor. Yapmak da zor silmesi de zor geliyor. Beni ben yapan her şey gitmiş gibi sanki değil mi? Çünkü benim eskiden cilt bakımımı atladığım bir gün bile olmazdı. Ağlayamamak da bir duyguymuş. Tüm bu kaybolmuşluğun içinde ağlasam rahatlarım belki. Biraz olsun kalkar göğsümdeki taş da ben de rahat nefes alırım.</p>
+
+        <p>Ağlayamıyorum. Hiç ağlayamıyorum. Tutardım kendimi eskiden çünkü lanet olası gözlerim en ufak şeyde yağmak isterdi. Niye böyleyim ki diye diye yakındığım her ana dönüp bakıyorum şimdi, gözümden akmayan o tek yaş içimde günlerce süren yağmurlara sebep oluyor. Çünkü ben artık ağlayamıyorum. Boğazımdaki yumru gitmedi ama yaşlar akmayı bıraktı. Gülmeyi bırakalı uzun zaman oluyor ama ağlamayı da bıraktığımdan beri bir ölü gibi yaşıyorum.</p>
+
+        <p>Hiçbir ölüm haberine dağlanmıyor içim ya da düğün haberine kıpırdamıyor. Sanki artık ne olursa olsun atmazmış gibi geliyor kalbim. Çünkü her ne kadar attığını söyleseler de ben onu uzun zamandır göğsümde hissetmiyorum. Yine de korkuyorum ya ölümden. Kafama anlık ağrılar saplanıyor sanki bıçak gibi. Bazen göğsüme iğneler batıyor gibi hissediyorum ya da sol kolum uyuşuyormuş gibi. Kalp krizi mi geçiriyorum diye ödüm patlıyor. Halbuki istediğim bu değil mi? Evet bu. Ama korkmaktan alıkoyamıyorum işte kendimi. Oysa orası güzel, orada abim var. Onun olduğu yer güzel. Bu dünya onsuz da dönmeye devam ettiğinden beri bana hoyrat ama orası öyle mi? Orası bana cenneti vadediyor.</p>
+
+        <p>Yarın ne olur bilmiyorum. Yüksek ihtimalle yine on iki saat uyuyup uyanacağım, sıkıldıkça yiyeceğim ve odamdan arada bir tuvalete gideceğim. Belki masamda biraz oturup sonra geri yatağımda takılacağım. Ben buyum. Bu hayatı yaşıyorum. Ama yine bir umut çünkü vazgeçemeyeceğimiz bir lanet bu,</p>
+
+        <p>Yarın biraz da olsa farklı olur bir şeyler.<br>
+        Gözlerim açmak o kadar da ölüm olmaz ve<br>
+        Tekrar güzel olmak isterim biraz.</p>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<script>
+    // Tıklandığında sayfa geçişini yumuşatan minik dokunuş
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", e => {
+                const target = link.getAttribute("href");
+                if (target && !target.startsWith("#") && !target.startsWith("http")) {
+                    e.preventDefault();
+                    document.body.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                    document.body.style.opacity = "0";
+                    document.body.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

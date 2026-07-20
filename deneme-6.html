@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olmak İstediğim Nokta | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* Yumuşak sayfa açılış animasyonu */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ddd;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInPage 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s;
+        }
+        .logo:hover { transform: scale(1.05) rotate(-2deg); text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(-3px);
+        }
+
+        .essay-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .essay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+            opacity: 0.9;
+        }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+            .essay-container { padding: 30px 20px; margin: 30px auto; }
+            h1 { font-size: 1.5rem; }
+            .essay-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="denemeler.html" class="back-btn">❮ DENEMELERE DÖN</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 130px;"></div>
+</header>
+
+<div class="essay-container">
+    <h1>OLMAK İSTEDİĞİM NOKTA</h1>
+    
+    <div class="essay-content">
+        <p>Tek bildiğim eskiden olmak istediğim nokta şimdi olduğum yer değildi. Bu konuda çuvalladım, kabul ediyorum. Olması gereken bu yenilgiyi kabul edip önümüzdeki maçlara bakmak, farkındayım ama bugünkü ben olarak, şu anımın ilerisi için olmak istediğim nokta tam olarak neresi; göremiyorum.</p>
+
+        <p>Hayallerle yaşayan bir çocuktum. Bir gün, bir hafta, bir yıl ve çok yıl sonrası için bile hayallerim olurdu. Yarınki hayalim zil çalar çalmaz en hızlı koşan kişi olup kantin sırasında çok beklememekti mesela. Bir hafta sonraki, çarşamba günü kurulan pazarda beğendiğim cüzdan için gereken 20 lirayı biriktirip o cüzdanı alabilmekti. Bir yıl sonra, istediğim lisede olmak.</p>
+
+        <p>Çok yıl sonra ise mutlu olmaktı.</p>
+
+        <p>Mutluluk, ne olduğunu bilmememe rağmen içimde onu gördüğümde tanıyacakmışım gibi bir his olduğundan senelerdir aradığım o şey.</p>
+
+        <p>Kimi zaman kantin sırasında çok beklemiyordum ama genele bakılırsa hep geride kaldığım bir gerçekti. O cüzdanı en yakın arkadaşım para biriktirmesine gerek kalmadan annesine söyleyip pazar yeri de evinin önünde olduğundan ben yetişemeden aldığı için alamadım. Akşamında evde kopardığım kıyameti hatırlıyorum. Çok öfkeliydim. Onu ne kadar çok istediğimi bilmeme rağmen alan en yakın arkadaşıma ve ben öğün atlayıp para biriktirmiş, o cüzdana sahip olabilmek için gerçekten uğraşmışken başarısız oluşuma öfkeliydim.</p>
+
+        <p>Aslında arkadaşım gibi başta ben de annemden istemiştim ama o bunun gereksiz olduğunu düşündüğünden reddetmişti fakat sonrasında ilk defa beni öylesine ağlarken gören annem durumun ciddiyetini fark edip evimizin altındaki tuhafiyeden bana üzerinde kız figürleri olan bir cüzdan almıştı. Aslında benim aldığım cüzdan daha pahalı ve güzeldi, üstelik biriktirdiğim para da bana kalmıştı ama on dokuz yaşında bile pazardaki abiye cüzdanı sorduğumda ve onu arkadaşıma sattığını söylediğinde hissettiklerimi unutamayışım da sanırım benim fazla drama kraliçesi oluşumdan.</p>
+
+        <p>İyi bir lise kazandım mı? Yani, çoğu kişiye göre evet. İyi bir fen lisesiydi ve bulunduğum şehirdeki en iyi öğretmen kadrosuna sahipti. Üstelik senelerdir her alanda il birincileri bünyesinden çıkıyordu. Ama yine de bir şeyler eksikti, anlıyor musunuz? Seneye o okulu hayal ederek hazırlanmamıştım. Hatta varlığını sonuçlar açıklandığında ve ben hayalimdekiyle beraber alternatifimdeki hiçbir okula giremediğimde yeni bir okul araştırması yaparken öğrenmiştim.</p>
+
+        <p>Çok yıldan kastım o zamanlar neydi bilmiyorum ama o hayalin de yıkıldığını kabullenmektense çok diyecek kadar yıl geçmediğini söyleyerek kandırıyorum kendimi.</p>
+
+        <p>Şimdi bakıldığında çoğunu batırsam bile hayallerim varmış. En azından uğruna çalışıp gerekirse ağlayacağım şeylere sahipmişim. Bugün baktığımda… Hayal dünyamın içi bomboş. Herkes ölmüş, binalar yıkılmış, şehirler yok olmuş… Hayal dünyamda kıyamet kopmuş.</p>
+
+        <p>Yarın için bir hayalim yok artık. Her günüm bir öncekinin ufak tefek farklılar dışında birebir aynısı olduğunda bunu yapmayı bıraktım. Önümüzdeki hafta için kurabileceğim tek hayal kimsenin o kadar da umursamadığı kitabımın bölümünü bir an önce bitirmek olabilir. Bir yıl sonrası üzerine düşünmeye kalmadan hızlı gelen bir zaman dilimi oldu. Ben de bu nedenle üzerinde düşünmeyi bıraktım.</p>
+
+        <p>O kadar karanlık ki burası. Önünü görmeden bir yere ulaşmaya çalışıyorsun ama belki de kendi etrafında dönüp duruyorsun ama bilmiyorsun. Karanlık çünkü, göz gözü görmüyor. Sana ışık tutan hayallerin yok.</p>
+
+        <p>Yürüdüğümüz bu hayat yolunu çizmemize öncülük eden ve o yolda önümüzü görmemizi sağlayan hayallerimizdir. Nereye gitmek istediğimizi bilmiyorsak hangi yolu yürümemiz gerektiğini nereden bilebiliriz ki? Sürekli bir yerlere ulaşıp, beğenmeyince geri dönüp başka yola koyularak, deneme yanılma yoluyla olmak istediğimiz noktayı bulmak için fazla kısa hayat ama olduğun yerde öylece beklemek için de fazla uzun.</p>
+
+        <p>Ortaokulda öğretmen, doktor, polis, mimar ve tekrar doktor olmak istemiştim. Hep bunu düşünerek derslerime çalışır ve iyi bir öğrenci olurdum çünkü andaki hayalime ulaşmak için yapmam gereken buydu. Lisede deli gibi ODTÜ’lü olmak istiyordum. En büyük hayallerimden biriydi. Her durup yolu geri dönmeyi düşündüğümde ucunda ulaşacağım yeri hatırlar, kendime devam edecek gücü sağlardım.</p>
+
+        <p>Bugün içimde bir kıvılcım yakan, bana sıfırdan yol inşa ettirecek ateşi harlayan ya da sadece olduğum yolda ışık olan hiçbir hayalim kalmadı.</p>
+
+        <p>Olmak istediğim noktayı kaybettim.</p>
+
+        <p>Bu durumda ilerlemiyor diye kendime kızmak çok büyük bir haksızlık olmaz mı? Ne zamandan beri zifiri karanlıkta arabalarımızı nereye çıkacağını bilmediğimiz yollara sürmüyoruz diye yargılanır olduk? Bu durumda yapılması gereken en mantıklı şey zaten durmak değil midir?</p>
+
+        <p>Hayallerle yaşayan o çocuğu çok özlüyorum çünkü o bir gün sırada geri kaldı diye ertesi gün hızlı koşmayı bırakmazdı. Alamadığı cüzdanın aynısını üç yıl sonra gördüğünde artık asla zevkine uymasa ve kullanmayacak olsa bile satın aldı ve sakladı. Kazandığı okuldan her ne kadar iki sene kurtulmak için her şeyi denese de olmayacağını kabul ettiğinde sıkıca sarıldı ve gururla taşıdı.</p>
+
+        <p>Ben artık karşılaştığı ilk yenilgide vazgeçen biriyim.<br>
+        Ben artık hayalleri olmayan biriyim.<br>
+        Ben artık ilerlemeyen, öylece yerinde sayan biriyim.</p>
+
+        <p>Ve bugün farkına vardığım hayalsizliğin içinde çalışmıyor, çabalamıyor diye kendisine öfkelenmeyi bırakan biriyim. Çünkü kimse kaza yapması çok olasıyken güzel bir manzaraya açılır umuduyla karanlık bir uçurum yolunda araba sürmez, sürmemeli. Riskler, sonucun güzelliği olası bir yenilgiye bile değecek kadar büyükse alınmalı ve uçurumdan düşerseniz ölürsünüz. Sanırım hiçbir manzara buna değmez.</p>
+
+        <p>Belki bir gün yeniden hayallerim olur ve benim yolum yeniden ışıklanır. O zaman gitmek istediğim noktayı bilirim ve hiçbir riski almaktan çekinmem. Belki de sadece gitmem gereken yerlere geç kalmama sebep olacağını düşündüğüm bu bekleyiş doğru zamanda doğru yerde olmamı sağlar. Belki de olmaz, gerçekten kıyametin ortasındayımdır ama sonuçta bunların hepsi bir olasılık. Bilemeyiz. İyi de bitebilir, kötü de. Adını hayat koydukları şey de bu belirsizlik zaten ve hayatta kalanlarla hayatı yaşayanları ayıran yegane şey bu belirsizliğin içinde delirip delirmemenizle ilgili.</p>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<script>
+    // Tıklandığında sayfa geçişini yumuşatan minik dokunuş
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", e => {
+                const target = link.getAttribute("href");
+                if (target && !target.startsWith("#") && !target.startsWith("http")) {
+                    e.preventDefault();
+                    document.body.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                    document.body.style.opacity = "0";
+                    document.body.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

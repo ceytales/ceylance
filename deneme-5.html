@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uyandım, Keşke Uyanmasaydım | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* Yumuşak sayfa açılış animasyonu */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ddd;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInPage 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s;
+        }
+        .logo:hover { transform: scale(1.05) rotate(-2deg); text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateX(-3px);
+        }
+
+        .essay-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            font-weight: normal;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .essay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+            opacity: 0.9;
+        }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            header { padding: 20px 30px; flex-direction: column; gap: 15px; }
+            .essay-container { padding: 30px 20px; margin: 30px auto; }
+            h1 { font-size: 1.5rem; }
+            .essay-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="denemeler.html" class="back-btn">❮ DENEMELERE DÖN</a>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div style="width: 130px;"></div>
+</header>
+
+<div class="essay-container">
+    <h1>UYANDIM, KEŞKE UYANMASAYDIM. KİMSESİZLİĞİMLE RÜYAMDA BARIŞMIŞTIM.</h1>
+    
+    <div class="essay-content">
+        <p>Hayatımın bir noktasına kadar kendime yalnızlık ve kimsesizlik arasındaki farkı sordum. Kendimde bir eksiklik hissettiğimdendi belki de bu sorgu sual, bilmiyorum ama ben zaten hep çok düşünen bir çocuktum. Bu durumun benden eksilttiği şeylerin farkındayım elbette ama artık sorun değil. Geçmişin bu tarafıyla kavga etmeyi bıraktım. Artık onunla daha büyük kavgalarımız var.</p>
+
+        <p>Kendi kendime olmayı hep çok seven bir çocuktum. Daha önce de bahsettiğim gibi tek başıma aktiviteler yapmayı ve zaman geçirmeyi seviyordum. Küçük yaşlarda bu bir senaryo kurgulayıp bebeklere oynatmak biraz daha büyüdüğümdeyse tek başıma kahve içmeye, yemek yemeye ya da sinemaya gidebilmekti.</p>
+
+        <p>Arkadaşlarımın hep “Nasıl bir kafeye gidip tek başına oturabiliyorsun?” sorusunu hep çok saçma ve gereksiz bulmuştum ta ki bunu yapan geçmişime aynı soruyu sorana kadar. Sahiden nasıl yapıyordum? Gidip, bir masaya oturup kahvemi yudumlarken insanları izlemekten nasıl keyif alıyordum mesela? O yabancı hayatlar hakkında kendi kendime tahminlerde bulunup yine bir başıma sohbet etmeyi delilik olarak değil de en yakın arkadaşımla, kendimle, muhabbet ediyormuşum gibi görebiliyordum?</p>
+
+        <p>Romantik filmlere sevgilileriyle gelen insanlara tebessüm edip, onlara mutluluklar kendime de en iyisini dileyip, patlamış mısırıma ve içeceğime gereksiz bir para bayılıp o salona nasıl girebiliyordum? Yalnızlığım nasıl batmıyordu? Kalbim kendime acımadan nasıl atıyordu?</p>
+
+        <p>Bugün sadece çalışmak için gidebiliyorum kafelere çünkü kendimle zaman geçirmeye kalktığımda sıkılıyorum, daralıyorum. Arkadaşları olan insanlara önceden gülümserken şimdi kıskanıyorum. Sinemada yanımın boş olmasını kaldıramadığımdan hiçbir filme gidemiyorum. Kendimle baş başa kaldığım her an canım yanıyor.</p>
+
+        <p>Şimdi ben yalnızlığımdan mı rahatsızlık duyuyorum yoksa artık kendime mi tahammül edemiyorum?</p>
+
+        <p>Kendim için en yakın arkadaşım demiştim ya mesela. İnsanlar en yakın arkadaşlarından ayrılabilirler. Bir daha hiç görüşmeyebilirler. Bazen acı bir tebessümle bazen nefretle iz bırakırlar hayatımızda ama sonuç olarak artık en yakın arkadaşımız olmazlar. Ben kendimden ayrıldım mı? Benliğime artık en yakın arkadaşım diyemiyorum. Onunla zaman geçirmeyi artık sevmiyorum. En yakın arkadaşı kendisi olan insanlar için çok büyük bir risk var. İnsan kendi kendisinden kurtulamaz ki. Bir başkası olsa silebilirsin. Fotoğraflarını ve videolarını yok edersin, sosyal medyadan çıkarırsın, geçtiği sokaktan geçmezsin. Bir başkasını hayatından çıkarmak kolay, siz bir de kendinizi hayatınızdan çıkarmayı deneyin.</p>
+
+        <p>Adı ne yazık ki ölüm oluyor.</p>
+
+        <p>Şimdi kendime yalnızlık ve kimsesizlik arasındaki farkı yeniden soruyorum. Üstelik bu kez verecek bir cevabım da var.</p>
+
+        <p>Kendimle olmayı sevdiğim bütün o zaman diliminin içinde yalnızdım ama kimsesiz değildim. Tek başıma yemeğimi yiyordum ama masasına gitsem beni kabul edecek insanlar vardı. Kafelere tek başıma gidip kendimle dedikodu yaparken arayıp çağırabileceğim insanlar vardı. Sinemaya tek başıma gidiyorum ama sırf arkadaşım da gitmek istiyor diye aynı filme defalarca kez gittiğim oldu.</p>
+
+        <p>Etrafımda insanlar vardı ama ben kendimi seviyordum. Onunla olmayı, onunla konuşmayı, onunla zaman geçirmeyi… Bir nevi hiç yalnız olmuyordum aslında. Kendime sahiptim. En büyük hazinem de buydu. İnsanı terk etmeyecek yegane şey sadece kendisidir. Günün sonunda herkes ama herkes gidebilir fakat gece yastığa başımızı koyduğumuzda benliğimiz her daim bizimledir.</p>
+
+        <p>Mesela sağlıklı bir ailem olmamasına rağmen hiçbir zaman ailesiz hissetmemiştim çünkü bütün olgular sizin onlara yüklediğiniz anlam kadar hayat kazanır. Herkesin ailem sandıkları aslında ailem değildi. Benim tek bir ailem vardı ve onun varlığı bütün terk edilmişliğime bedeldi. Herkes gidebilirdi, herkes benden vazgeçebilirdi ama ben aileme ve kendime sahip olduğum sürece asla kimsesiz kalmazdım.</p>
+
+        <p>Ben ailem hiç gitmeyecek sandım.
+        Ölümü unuttum.
+        Bir masala inandım.</p>
+
+        <p>Birlikte her şeyi başarabilecek bir abi ve kız kardeşin masalına inandım. O kadar edebiyatçı insanım; mutlu sonların sadece masallarda olduğunu ve masalların da gerçek olmadığını anlamam utanç verici bir şekilde yıllarımı aldı.</p>
+
+        <p>Toz pembe hikayelerimizin üzerine siyahla bezenmiş acılarımız döküldüğünde o pembe, karanlığa karşı koyamadı.</p>
+
+        <p>İlk zamanlarda kendime hep insanlar bir gecede bütün ailelerini kaybediyor, şımarıklık etme diyerek kimsenin yapmayacağı kötülüğü yapardım. Halbuki en yakın arkadaşım en sevdiğini kaybetse bunu ona asla söylemezdim.</p>
+
+        <p>Bir şekilde baş etmeye çalışıyordum. Bütün gününü sahte senaryolar kurup onların içlerinde yaşayarak geçiren bir insan olsam da birinde bile aklımın ucundan geçirmediğim bu düşüncenin gerçek hayatta gerçeğim olmasını kabul etmeye çalışıyordum.</p>
+
+        <p>Başka bir evrende diyordum, sonra o başka bir evrendeki benden nefret ediyordum.</p>
+
+        <p>Bir gece ağlarken aklıma geldi. Ben de bütün ailemi bir gecede kaybetmiştim. Annem, babam ölmedi evet ama benim ailem onlar değildi ki. Benim ailem tek bir kişiydi ve ben o tek bir kişiyi kaybettim. Tüm ailemi kaybetmiş sayılmaz mıydım? Ben de bir gecede kimsesiz kalmadım mı?</p>
+
+        <p>Hayat bütün renklerini kaybedip her şeyi tüplü bir televizyonda, renksiz ve cızırtılı görüntülerle oynayan bir dizi gibi hissettirmeye başladığında hiç olmadığı kadar dipte hissetmiştim. Onca zaman adını koyamadığım şeyin adını ailesiz kalmak koyunca görüntü hala siyah beyaz olsa da en azından netlik kazanmıştı çünkü bilirsiniz, çoğu zaman sadece sorunu tespit etmek bile büyük bir adımdır iyileşmek için.</p>
+
+        <p>Onunla beraber toprağın altına girmedim ama ruhumu, benliğimi, kendimi o mezarın başında bıraktım. Hala toprağına sarılır vaziyette bekliyorum. Dizlerimin üstündeyim, yüzüm gözüm çamur içinde kaldı. İlk kez çok para verip aldığım marka ayakkabımı temiz tutmak için hiç olmadığı kadar özen gösterirdim onu gömdüğüm güne kadar. O ayakkabılar ayağımda ve yüzüm gözümden daha çok kirlenmiş durumdalar. Beyazlığından eser kalmamış.</p>
+
+        <p>Herkes gitmişti. Bu kez hem gerçekten ailem gitmişti hem de artık kendime sahip değildim.</p>
+
+        <p>Önümüzdeki ay bir buçuk sene olacak. Bana geçecek demişlerdi. Zaten inanmamıştım ama en azından biraz daha az canım acısın isterdim. Bir yudum bile azalmadı.</p>
+
+        <p>Ne anne ne de baba tarafımdan bir beklentim yok. Zaten yoklardı, artık olmaları da bir şeyi değiştirmez. Benim kimsesizliğimin sebebi bu değil. Harika dostlarım var, muhteşem insanlar düşmeyeyim diye elimi tutuyor. Varlıklarına bin şükür olsun.</p>
+
+        <p>Hala arasam benimle kahve içmeye gelecek, Marvel’ın yeni filmine gidecek, manifestin konserinde deli gibi eğlenecek insanlar var. Onlar hiçbir yere gitmedi. Her şey yolunda. Herkes iyi.</p>
+
+        <p>Ama işte belki şımarıklık belki değil benim istediğim de bu değil. Kendime bunun için daha fazla yüklenmeyeceğim çünkü ben hayattan hiçbir zaman lüks yaşamlar, kalabalık gruplar istemedim. Ben her zaman sadece ona sahip olmayı diledim, geri kalan her şeye kabüldüm. Şimdi benim bu biricik dileğim reddedilip diğer bütün güzellikler önüme serilse bile bunun için kimseye şükran duymayacağım.</p>
+
+        <p>Kaldı ki o güzellikler de benim önüme serilmiyor. Kan dedikleri meretin bizi bağladığı insanlardan hayatımda yedi yabancıdan görmediğim kadar kötülük gördüm. Fazla mı iyi göründüm bilmiyorum kimse ailemi kaybetmişim gibi davranmadı bana. İşte bu sebeple kimsenin sahte samimiyetine ve sarılmayı kabul ettiğim anda sırtıma saplayacakları bıçaklarına ihtiyacım yok.</p>
+
+        <p>Ben o bıçağı çok kez sırtımdan çıkardım. Her birinde yanımda ailem var diye ölmedim. Şimdi taksalar aynı hançeri kazanırlar. Benim onlarla tek başıma savaşacak gücüm yok. Bunu da kabul ediyorum.</p>
+
+        <p>Kimsesizlik bu küçüklüğüm.
+        Yalnızlık sensin, kimsesizlik benim. Senin gibi hala insanlarla çevriliyim ama asla kaybetmemen gereken iki şeyi de kaybettim. Artık ne o var ne de kendim. Pek de sevmediğim bir bedende ne yaptığımı bile bilmeden, insanlar yaşamak diyor, geçip gidiyorum.</p>
+
+        <p>Her gecenin bir gündüzü vardır yazdım Güneşi Beklerken isimli romanımda. İşte bununla beraber bazen yazarların yazdığı şeye inanmadığını öğrendim. Bizim gecemize gün doğmaz artık. Doğsa bile o güneş tutulur, yine karanlıkta kalırız.
+        Olsun.
+        Karanlık olsun.</p>
+
+        <p>14 yaşımda yazdığım bir şiiri hatırlıyorum. Karanlıktan çıkarmayın onları şimdi/Aydınlıkta göremez gözleri. Karanlık olsun, alışkınım.</p>
+
+        <p>Dün gece bir rüya gördüm. Elimde Hüma Kuşu’nu tutuyordum. Basılmış, kitap olmuş.</p>
+
+        <p>Sahildeydim, zannımca Florya sahiliydi. Onunla gondola bindiğim — ben korkudan çığlık atarken o fütursuzca gülüyordu, o kahkahasını bir kez daha duyabilmek için en korkunç oyuncak aletlerine defalarca binerdim — lunaparkın önündeki mısırcı abiden mısır aldım. Bir elimde kitabım bir elimde de mısırım vardı. Her zamanki gibi mısır yarım kaldı ama asıl sorun bu değildi.</p>
+
+        <p>Kapağın üzerinde adım yoktu. Hüma Kuşu bana ait değildi rüyamda ama bunu sorun etmiyordum. Sadece gülümseyip mısırı da kitabı da o kayalıkların üzerine bıraktım ve öylece gittim oradan. Arkama bile bakmadım. Gülüyordum da ve dahası gözümdeki ışık, hala oradaydı. Rüyamda kitabımın sadece okuruydum, yazarı değildim.</p>
+
+        <p>Uyanınca anladım. Ben kimsesiz kalmasaydım Hüma Kuşu’nu asla yazmayacaktım. Bütün yazdıklarım ayda yılda bir tuttuğum günlüklerden ve karaladığım birkaç şiir dizesinden ibaret olacaktı. Şimdi dosya dosya kurgu nasıl aklıma geliyor sorusu da böyle cevap buldu kendine. Ne konuşacak ailem ne de kendim kaldı, elimden de sadece yazmak geliyor çünkü ne olursa olsun anlatmayı bırakamadım.</p>
+
+        <p>Bugün yazmayı kendimden bile çok seviyorum ama kaynağının kimsesizliğim olduğunu bilmek ne zaman kitaplarımın başına otursam bunu yüzüme vuruyor. Keşke kimsesiz kalmasaydım, bu hiç yazamamak demek olsa bile… Keşke kalmasaydım.</p>
+
+        <p>Rüya çok güzeldi.
+        Bugün basılsın diye her şeyimi verebileceğim romanıma sahip olmama fikri bana çok iyi hissettirdi.</p>
+
+        <p>Uyandım, keşke uyanmasaydım. Kimsesizliğimle rüyamda barışmıştım.</p>
+    </div>
+</div>
+
+<footer>© 2026 CEREN CEYLAN</footer>
+
+<script>
+    // Tıklandığında sayfa geçişini yumuşatan minik dokunuş
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", e => {
+                const target = link.getAttribute("href");
+                if (target && !target.startsWith("#") && !target.startsWith("http")) {
+                    e.preventDefault();
+                    document.body.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                    document.body.style.opacity = "0";
+                    document.body.style.transform = "translateY(-10px)";
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

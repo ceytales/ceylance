@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denemeler | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('arka-plan-4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            animation: fadeInPage 1.5s ease;
+        }
+
+        @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+
+        /* --- HEADER --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7); 
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: 0.3s ease;
+        }
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: 0.5s; 
+            display: inline-block; 
+        }
+        .logo:hover { transform: scale(1.1) rotate(-3deg); text-shadow: 0 0 20px rgba(255,255,255,0.4); }
+        
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; position: relative; padding-bottom: 5px; transition: 0.4s; }
+        .nav-links a:hover { letter-spacing: 4px; color: #ccc; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background: #fff; transition: 0.4s; }
+        .nav-links a:hover::after { width: 100%; }
+        
+        .social-icons { display: flex; gap: 15px; align-items: center; }
+        .social-icons img { width: 22px; opacity: 0.8; transition: 0.3s; }
+        .social-icons a:hover img { transform: translateY(-5px); opacity: 1; filter: drop-shadow(0 0 8px #fff); }
+
+        /* --- DENEMELER LİSTESİ --- */
+        .essays-container {
+            max-width: 1100px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 40px 60px;
+            background: rgba(0, 0, 0, 0.25); 
+            backdrop-filter: blur(5px); 
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+
+        .page-header {
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            letter-spacing: 12px;
+            font-weight: normal;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
+            text-transform: uppercase;
+        }
+
+        /* YAZI SATIRI */
+        .essay-item {
+            display: block;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s ease;
+            text-align: left;
+        }
+
+        .essay-item:hover {
+            padding-left: 15px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .essay-title {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.4s;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .essay-item:hover .essay-title {
+            letter-spacing: 3px;
+            color: #ddd;
+        }
+
+        footer { padding: 60px 0; text-align: center; font-size: 0.7rem; opacity: 0.2; letter-spacing: 2px; }
+
+        /* ==========================================================================
+           📱 MOBİL VE TABLET UYUMLULUK AYARLARI (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 30px;
+                flex-direction: column;
+                gap: 15px;
+                background: rgba(0,0,0,0.8);
+            }
+            .logo { font-size: 2.8rem; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+            .essays-container { 
+                padding: 30px 20px; 
+                margin: 20px auto;
+            }
+            .page-header { margin-bottom: 30px; }
+            .page-header h1 { font-size: 2.2rem; letter-spacing: 6px; }
+            .essay-item { padding: 20px 0; }
+            .essay-title { font-size: 1.05rem; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
+            .page-header h1 { font-size: 1.8rem; letter-spacing: 4px; }
+            .essay-title { font-size: 0.95rem; line-height: 1.4; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div class="nav-links">
+        <a href="denemeler.html">DENEMELER</a>
+        <a href="hakkimda.html">HAKKIMDA</a>
+        <a href="album.html">ALBÜM</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ceylance13" target="_blank"><img src="instagram-logo.png" alt="Instagram"></a>
+            <a href="https://whatsapp.com/channel/0029Vb6ljN6FcowBLg3qWW2S" target="_blank"><img src="whatsapp-logo.png" alt="WhatsApp"></a>
+        </div>
+    </div>
+</header>
+
+<div class="essays-container">
+    <div class="page-header">
+        <h1>DENEMELER</h1>
+    </div>
+
+    <a href="deneme-1.html" class="essay-item">
+        <div class="essay-title">“HİÇ GİTMEYECEK SANDIKLARIMIZ”</div>
+    </a>
+
+    <a href="deneme-2.html" class="essay-item">
+        <div class="essay-title">“TEKRAR GÜZEL OLMAK İSTEMEK”</div>
+    `</a>
+
+    <a href="deneme-3.html" class="essay-item">
+        <div class="essay-title">“AİLENİN GÖZDESİ OLMAKTAN AZLİMİ İSTİYORUM”</div>
+    </a>
+
+    <a href="deneme-4.html" class="essay-item">
+        <div class="essay-title">“TEK BİR YOL VAR, SEÇERSEN KAYBEDECEĞİNİ BİLDİĞİN AMA TEK OLAN BİR YOL”</div>
+    </a>
+
+    <a href="deneme-5.html" class="essay-item">
+        <div class="essay-title">“UYANDIM, KEŞKE UYANMASAYDIM. KİMSESİZLİĞİMLE RÜYAMDA BARIŞMIŞTIM”</div>
+    </a>
+
+    <a href="deneme-6.html" class="essay-item">
+        <div class="essay-title">“OLMAK İSTEDİĞİM NOKTAYI KAYBETTİM”</div>
+    </a>
+
+</div>
+
+<footer>© 2024 CEREN CEYLAN | TÜM HAKLARI SAKLIDIR</footer>
+
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güneşi Beklerken | "GÜN NEREDEN DOĞAR"</title>
+    <style>
+        /* Okuma Odaklı Karanlık Tema */
+        body { 
+            margin: 0; 
+            background-color: #050505; 
+            color: #d1d1d1; 
+            font-family: 'Times New Roman', Times, serif; 
+            line-height: 2; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        /* Üst Navigasyon Barı */
+        .reading-nav { 
+            width: 100%; 
+            padding: 20px 0; 
+            background: rgba(0,0,0,0.9); 
+            position: sticky; 
+            top: 0; 
+            display: flex; 
+            justify-content: space-around; 
+            border-bottom: 1px solid #222; 
+            z-index: 100; 
+            backdrop-filter: blur(10px); 
+        }
+
+        .reading-nav a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px; 
+            opacity: 0.6; 
+            transition: 0.3s;
+        }
+
+        .reading-nav a:hover { opacity: 1; }
+
+        /* Hikaye Konteynırı */
+        .story-container { 
+            max-width: 750px; 
+            width: 90%; 
+            padding: 80px 0; 
+        }
+
+        .chapter-header { 
+            text-align: center; 
+            margin-bottom: 80px; 
+        }
+
+        .chapter-header h1 { 
+            font-size: 2.5rem; 
+            color: #fff; 
+            letter-spacing: 4px; 
+            margin-bottom: 15px; 
+            font-weight: normal;
+        }
+
+        /* METİN ALANI - pre-wrap sayesinde paragraflar otomatik ayrılır */
+        .text-content { 
+            font-size: 1.25rem; 
+            text-align: justify; 
+            white-space: pre-wrap; 
+            color: #ccc;
+        }
+
+        /* Alt Gezinti */
+        .footer-nav { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 100px; 
+            padding: 40px 0; 
+            border-top: 1px solid #222; 
+        }
+
+        .nav-btn { 
+            color: #fff; 
+            text-decoration: none; 
+            border: 1px solid #444; 
+            padding: 12px 35px; 
+            transition: 0.3s; 
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn:hover { 
+            border-color: #fff; 
+            background: #fff; 
+            color: #000; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="reading-nav">
+        <a href="kitap-detay-gunes.html">← BÖLÜMLER</a>
+        <span style="font-size: 0.75rem; color: #444; letter-spacing: 3px;">GÜNEŞİ BEKLERKEN</span>
+        <a href="index.html">ANA SAYFA</a>
+    </nav>
+
+    <div class="story-container">
+        <div class="chapter-header">
+            <h1>"GÜN NEREDEN DOĞAR"</h1>
+            <div style="width: 50px; height: 1px; background: #444; margin: 20px auto;"></div>
+        </div>
+
+        <div class="text-content">
+Küçük heyecanlar, kalbinde büyük duygular yeşertmeyi başardığı sürece girdiğin savaşları kaybetmen söz konusu değildir dermiş babam. Bütün olanlardan sonra odasına girmem yasak olsa bile gizlice girdiğimde ve çekmesindeki bir defteri açmayı seçtiğimde görmüştüm.
+
+Defterin üzerinde kızlarıma yazıyordu. Orta sayfalarından açtığım defterden bu cümleyi okuduktan sonra anında kapatmıştım. Sanırım okumak için doğru zaman değilmiş gibi hissetmiştim ya da kız kardeşim olmadan bu defteri almak haksızlık gibi hissettirmişti.
+
+Şimdi yaşadığım şey küçük bir heyecan mı bilmiyorum ama kalbimde büyük duygular yeşeriyor. Daha da vahimi ben o büyük duyguları isimlendiremiyorum bile. 
+
+“Yoldan geçerken kimleri göreyim. Bir baktım Botev kardeşler!” Uras, Doğu’nun da kolunu girmiş ben hala diğer kolunun altındayken ikimizi birden bahçeye doğru ilerletmeye başladı. İçinde bulunduğumuz durumun absürtlüğünü dışarıdan izlemeyi isterdim.
+
+“Yine şansa bak onlar da buraya geliyorlarmış.” Bizim gurubun yanına kadar geldikten sonra üçümüz de durduk. Buse muhtemelen Doğu’nun gelmiş olmasına şaşırırken Simay’ın yüzünde de attığı mesajın işe yaramış oluşunun memnuniyeti vardı. 
+
+“Dedim aynı yere gidiyoruz zaten. Attım arabaya getirdim.” 
+
+“Hoşgeldin Noyan,” Buse elini tokalaşmak için uzattığında Doğu da elini sıkıp normal bir tavırla “Hoşbulduk.” Dedi. Hatta gülümsemiş bile olabilirdi. 
+
+“Gelmene sevindik Noyan,” Arda eliyle Doğu’nun omzuna birkaç kez dostane şekilde vurdu. Doğu, Buse ile olduğu gibi aynı tavırla ona da teşekkür etti. Uras aramızda olduğu için yüzüne bakamıyordum ama ses tonu sıcak davranmaya çalışan biri gibi geliyordu. Ne kadar başarılı oluyordu, tartışılır.
+
+“Yemek faslına geçelim mi o zaman gençler?” Arda, Doğu’nun yanından geçip kısık müziği bastıracak kadar  kalabalığa doğru bağırdığında herkes ellerindeki bardakları kaldırıp bir onay tınısı çıkardı.
+
+“Mr. Duralı, sabahtan beri sürttüğün için servisi sana yaptıracağım, yürü!” Arda, Uras’ı omuzlarından tuttuğu gibi Doğu ve benim aramdan çekti. Uras birkaç saniye bize bakıp gitmek istemediğini belli etse de Arda onu çoktan uzaklaştırmıştı. El sallayıp gitmesini izledim. Peşlerinden  Buse de yol almıştı.
+
+“Aşkım gece için heyecanlı olman çok tatlı ama bu tarifi, üstelik aç karnına, içme. Seni sarhoş eder.” Nehir de geçerken Doğu gibi elimdeki bardağı aldığında bu kez itiraz etmedim. 
+
+“Daha hafif bir şeyler yapayım mı sana?” Karşıma geçip yanağımdan makas aldı.
+
+“Yemek yiyelim de sonra bakarız.” Dedim gülümseyerek ve ben de koluna dokundum. Memnun bir ifadeyle göz kırpıp yanımdan ayrıldığında birkaç saniye arkasından baktım. Tekrar önüme döndüğümde birlikte garip bir üçlü oluşturduğum insanlara baktım.
+
+“Mesaja dönmeyince gelmezsin sandım.” Simay, Doğu’nun koluna dokunup dikkatini çektiğinde Doğu benim üzerimde olan bakışlarını ona çevirdi.
+
+“Hangi mesaj?” Diye sorunca içimden gelen gülümseme isteğini hunharca ayıpladım ve bastırdım. 
+
+Gülüşü sekteye uğrasa bile belli etmeyen Simay “Sabah yazdım ya sana, gelmen için.” 
+
+“Görmedim Simay kusura bakma.” Doğu hafifçe gülümsedi. “Bir arkadaş için geldim buraya.” Tekrar bana baktığında Simay’ın da bakışları benim üzerime döndü.
+
+“Ben diğerlerine bir bakayım.” Diyerek hızlıca yanlarından uzaklaştım. Omzumun üzerinde arkama dönüp baktığımda Doğu hala bana bakıyordu ama Simay’ın gözleri Doğu’nun üzerindeydi. Tekrar önümü döndüğümde az daha Can ile çarpışıyorduk.
+
+“Gün, özür dilerim. İyi misin?” Can yüzüme bakıp aceleci bir şekilde sordu. 
+
+“İyiyim iyiyim, sorun yok.” Dedim gülerek.
+
+“Simay’a sevdiği burgerdan yaptım da diğerleri mideye indirmeden ona vereyim. Ondan acele ediyorum, kusura bakma tekrardan.” 
+
+“Önemli değil Can,” tekrar güldüm ve koluna dokundum. Ardından Simay ile Doğu’ya doğru bir bakış atıp “Hadi al Simay’ı.” Dedim.
+
+Can gülümsedikten sonra yanımdan ayrıldı. Yaklaşık bir saat boyunca barbekünün etrafı kalabalıktı. Gerçekten leziz şeyler yemiştim. Öğlenden beri aklımın kaldığı sarma gece için favorim olmuştu ama etlerin tadı bir o kadar harikaydı. 
+
+Herkes kendi halinde takılmaya başlamışken havuzun etrafına yerleştirilmiş minderlerden en arkada ve köşede kalanına oturdum. İnsanlar yavaş yavaş sarhoş olmaya başlamıştı ben de Nehir’in alkol oranı en düşük dediği mavi mor geçişli içeceği pipetiyle birkaç kez karıştırdıktan sonra yudumladım. Hafif tatlı aynı anda biraz ekşi bir tadı vardı. Dudaklarımda bir serinlik bırakmıştı.
+
+Yemek faslı bittiğinde müzik daha da şiddetlenmişti. Büyük bahçe ışıklarının yerini ağaç dallarından uzatarak astığımız sarı ledler almıştı. Aynı zamanda verandadan pembe ve mavi spotlar ışık veriyorlardı. Girişe yakın yerde bir DJ masası kurmuşlardı. Başında da Uras vardı. Hemen çaprazında da Nehir misafirlere kokteyl hazırlıyordu. 
+
+Havuzun dibinden yanan ışıkları ve havuzun durgun suyunu izliyorken minderin sol tarafının çöktüğünü hissettim. Benim gibi bağdaş kurup baktığım yere bakmaya başlayan Doğu’dan başkası değildi. Elinde bir viski bardağı vardı. İzin bile almadan yanıma gelip oturduğu için kızacaktım ki bana dönüp usulca gülümsedi. 
+
+Gülümsemesi çatık kaşlarımı normale döndürürken dizlerini kendine doğru çekip şakağını da dizine yasladı ve bana bakmaya devam etti. 
+
+“Çok uzun zaman oldu.” Diye mırıldanınca başım hafifçe sorar gibi sallandı. Ne için uzun zaman olmuştu?
+
+“Nasılsın?” Dedi beden diliyle sorduğum soruyu cevapsız bırakarak ama ben, merak ettiğimi anladığına emindim nedense. 
+
+“İyiyim.” Dedim önüme dönüp pipeti dudaklarıma yerleştirirken. “Neden kötü olayım?”
+
+“Kötüsün demedim.” İlk konuşmalarımızdaki sinir bozucu tonundan değil de sanki daha temkinli konuşuyordu. “Sıkılıp sıkılmadığını merak ettim sadece.” 
+
+“Neden?” Onun gibi dizlerimi kendime çekip yüzüne doğru döndüm. “Sıkılan bir yapım mı vardı?” 
+
+“Hayır.” Dedi tereddüt etmeden. “Eğlenmeyi severdin.” 
+
+“O zaman,” omuz silktim. “Sıkılmam için bir neden yok.” 
+
+“Ama sıkılmışsın.” 
+
+Birkaç saniye bir şey söylemeden yüzüne baktım. İnkar etmeyi düşünsem de bundan vazgeçtim çünkü haklıydı. Sıkılmıştım. İnsanlar karakter değiştiremezler miydi ya da bir zamnalar yapmayı çok sevdiği bir şeyden bir gün vazgeçemezler miydi?
+
+“Sıkıldım.” Kabullenerek önüme doğru döndüm. “Başım ağırdı ya! Kaç gündür bangır bangır, daha sakin sakin eğlenemez miyiz?” 
+
+Sesim normalden biraz daha yüksek ve bıkkın çıkmıştı. Başını önüne eğerek güldüğünde ben de bir iki saniye geçmeden sinir bozukluğuyla gülüşüne eşlik ettim. 
+
+“Sen neden geldin?” Diye sorduğumda tekrar gözlerime baktı. “Yani pek böyle ortamları seven birine benzemiyorsun.”
+
+“Nereden vardın bu kanıya?” 
+
+“Daha çok böyle kimseyle konuşmayan, soğuk, havalı, bad boy tavırlarına sahipsin de ondan.” 
+
+“Allah Allah,” dedi şaşkın bir gülüşle. “Gayet de sıcakkanlı biriyim. Sohbet etmek için yanına geldim.” 
+
+Başımı sallarken elimdeki içeceği içmeye devam ediyordum.
+
+“Nasıl göz ardı ederim? Çok özür dilerim.” 
+
+“Önemli değil.” Deyip göz kırptı ve o da viskisinden bir yudum aldı. O kadar da sinir bozucu değildi. Sanırım yapısı böyleydi. Yüzüne bakıp bu düşünceleri aklımdan geçirirken o da bardağını yere bırakıp bana döndü. 
+
+“Gün,” dedi daha sevecen bir sesle. 
+
+“Doğu,” dedim onun gibi bardağımı bıraktıktan sonra.
+
+“Nasılsın? Gerçekten.” 
+
+“Bok gibiyim diyene kadar sormaya devam edeceksin sanırım.” Dedim yüzüne biraz daha eğilip. Kaşlarını kaldırıp indirdi. 
+
+“Cevabını bildiğim soruları sormayı sevmem normalde ama sanırım asıl nokta cevabı senden duymak.” 
+
+“Bak sen,” arkamdaki ağaca sırtımı yaslarken tek kaşımı kaldırdım. “Neymiş sorunun cevabı?” 
+
+“Benden duymak mı istiyorsun yoksa kendi sesinden mi?” 
+
+Dudaklarımdaki gülüş solmadı ama yüzümde asılı kaldı. Bir süre sorusunu cevapsız bıraksam da en sonunda “Senden duymak istiyorum.” Diye mırıldandım. 
+
+“Yorgun,” dedi önce. Sonra bakışlarını gözlerimden çekip ellerime indirdi. “Kayıp,” tekrar dikti mavi gözlerini benim maviliklerime. “Korkmuş.” 
+
+“Kendinden çok emin konuşuyorsun.” Dedim. Artık gülmüyordum.
+
+“Bunları sesli söyleyebilmek cesaret ister Gün. İnsanın mutsuzluğunu kabul etmesi zordur.” 
+
+“Ha bir de mutsuz yaptın beni?” 
+
+“Değil misin?” Vücudunu bana doğru çevirdi. “Madem başın ağrıyor madem bangır bangır, neden buradasın? Neyin üstünü kapatmaya çalışıyorsun? Kime neyi kanıtlıyorsun?”
+
+Pekala, sinirleniyordum ama söylediklerine değil. Söylediklerinin çok mantıklı olmasına sinirleniyordum. 
+
+“Hiçbir şey sana istemediğin bir şeyi yaptıramazdı. Hiçbir güç şu an seni burada tutamazdı mesela. Ama buradasın. Mutsuzluğunun üstünü kapatmaya çalışıyorsun. Arkadaşlarına, annene ama en çok kendine mutlu olduğunu kanıtlamaya çalışıyorsun.” Duraksadı. Bakışlarımız bir an için bile birbirinden ayrılmıyordu. 
+
+“Bir şeyleri halının altına süpürmek o sorunu çözmez. Bunu bilmek için hafızana ihtiyacın yok. Ama kendini iyileştirmeye çalışmıyorsun sadece etrafındakileri dinliyorsun. Bu onları iyileştirir Gün.” 
+
+“Kimse benim kötülüğümü istemiyor.” Diyebildim sadece başımı iki yana hafifçe sallarken.
+
+“Kimse senin kötülüğünü istemiyor.” Alay etmeden, bana katıldığını belli eden bir tınıda konuştu. “Ama bu demek değil ki herkesin izlediği yol doğru.” 
+
+“Kimin yolu doğru o zaman? Senin yolun mu?” Dedim gereksiz bir agresiflikle. 
+
+“Kendi yolun Gün. İçinde sana konuşan kızın yolu.” 
+
+“İçimde benimle konuşan kimse yok Doğu.” Sırtımı yasladığım ağaçtan ayırıp ellerimi bağdaş yaptığım bacaklarımın ortasında birleştirdim. Gökyüzüne bakıyordum. “Birinin benim için çizdiği yoldan gitmek zorundayım.” 
+
+Bir süre konuşmadı. Öylece benim gökyüzünü izleyişimi izledi ama ardından belli belirsiz dizime dokunup ona bakmamı sağladı. 
+
+“Bu sonsuza kadar sürecek bir şey değil.” 
+
+“Ama öyle hissettiriyor.” Dedim hızlıca gülümseyerek.  “Bir yandan her şey aynı bir yandan,” gözlerimi birkaç saniyeliğine kapatıp be hissettiğimi anlamaya çalıştım. “Hiçbir şey bir daha asla aynı olmayacak.”
+
+“Eksildin.” dedi. Sesindeki duyguyu anlayamadım. Sanki kabullenmem gereken bir gerçeği en sakin şekilde ifade ediyordu. 
+
+“Eksildim.”
+
+“Ama yok olmadın.” Gözlerimi açtığımda direkt gözlerini gördüm. “Fiziksel olarak elini tutamasa da seni ayakta tutacak anılar bıraktı sana.”
+
+“Hatırlamıyorum.” dedim titrek bir nefes verirken. Yüzümdeki buruk tebessüm kendisini koruyordu. Asıl sorun da buydu ya. Sadece babamı değil o harika anıları da kaybetmiştim.
+
+“En sevdiği şey seninle Wimbledon izlemekti.” dedi aynı kendine has sakinlikle. “Annenin yemen için zorladığı şeyleri bitirmene yardım ederdi.” Benimkine eşlik eden kırık bir gülümseme vardı yüzünde. Kendi ellerini izliyordu. “Birlikte banyo yaptırdığınız ilk fotoğraf,” durdu. Devam etmesi için bir süre beklesem de devam etmedi.
+
+“İlk fotoğraf,” diye tekrar ettim yüzüne daha çok eğilip. Bahsetmesi çok hoşuma gitmişti. Zihnimde net sahneler oynamasa bile hayal etmek bile gülme isteği uyandırıyordu içimde. Göz ucuyla da olsa bana baktı. 
+
+“Benimle gelir misin?” Diye sordu yarım bıraktığı cümleyi bir kenara koyup.
+
+“Nereye?” 
+
+“Gelir misin?” Tekrar etti. Sanırım gelirdim. Hatta sanırımı çoktu, evet gelirdim. Biraz önce bana verdiği iki bilgi beni onunla gitmeye ikna etmişti.
+
+“Gelirim.” Diye mırıldandım. 
+
+Gözlerinde bir ışık parladı. Yüzündeki gülümseme büyüdü ve bir an için denizde onu ilk gördüğümdeki gibi hayran olunası bir hal aldı. Hızlıca bacaklarını çözüp ayağa kalktıktan sonra karşımda dikildi ve elini bana doğru uzattı. 
+
+Önce gözlerine sonra uzattığı eline baktım. Gülümseyip uzattığı eline tutundum ve oturduğum yerden kalktım. Başımı kaldırıp yeniden gözlerine baktığımda “Peşimize kimseyi takmadan kaçalım.” Dedi.
+
+“Kardeşin?” 
+
+Omzundan arkasına bakındı. İkimiz de Velin’i bulduğumuzda Velin kalabalık bir gurupla coşkulu bir şekilde dans ediyordu.
+
+“Başının çaresine bakar o.” 
+
+“Senin aksine sıcakkanlı bir çocuk.” Dediğimde “hadi ama” diyen bir bakışla boynu büküldü. 
+
+Ellerimiz hala birbirine kenetliydi. Havuzun kenarından kalabalığın arkasından ilerlemeye başladık. O benim bir adım önümdeydi ve elimi bırakmıyordu. Bizimkilerin hepsi DJ masasının önünde toplanmıştı. Arda ve Çınar tişörtlerini çıkarmış havada sallıyorlar, Can da Uras’a eşlik ediyordu.
+
+Doğu birkaç saniye onlarda göz gezdirip kimseye görünmediğimizden emin olduktan sonra bahçe kapısına koşar adım ilerledi. Onun koşar adımına karşın ben direkt olarak koşmuştum. “Bu şarkıyı seviyorum, aslında Taylor Swift yazmış biliyor musun?” Dedim yerdeki çakıllarla cebelleşirken. Sandalet iyi bir fikir değildi.
+
+“Arka vokallerde sesi de var, değil mi?” Bahçe kapısını açıp geçmem için bana doğru döndü. Neden bilmiyordum ama aşırı şekilde deja vu hissi yaşıyordum. Basımı belirsizce sallarken “Evet, var.” Dedim. Güldü ve başıyla dışarıyı işaret etti. 
+
+Son kez kalabalığa döndüm. Dönmemle beraber Arda’nın ve kucağında Buse’yle havuza atlaması bir olmuştu. Minik bir şaşkınlık nidası dudaklarımdan fırladıktan sonra bir kez daha Doğu’ya baktım ve açtığı kapıdan geçtim. Önce ön bahçeye çıktık sonrasındaysa Koral villasını tamamen arkamızda bıraktık. 
+
+Doğu sabah evlerinin önünde gördüğüm SUV’ın kapısını benim için açtı. Teşekkür edip arabaya yerleştim. O da hızlı adımlarla yolcu koltuğuna oturduktan sonra gitmeye alışık olduğum sahilin yolunu tutmuştu. 
+
+Yola çıkmadan önce radyoyu kurcalayıp şarkı çalmasını sağladım. Doğu telefonumu bağlayabileceğimi söylese de radyoda denk gelen şarkıyı dinlemek daha cazip gelmişti. 2015 Türkiye’sinin esintileri arabanın içini doldurduğunda kısıkça mırıldanıyordum.
+
+Hafızanı kaybedip şarkı sözlerini unutmamış olmak trajikomikti.
+
+“Sana yazık da bana değil mi? Kaçıp giden hiç geri gelir mi? Duydun işte sen her şeyi.” Doğu benim aksime şarkıya daha yüksek sesle eşlik etmeye başlayınca önce gülerek onu izledim. Sonra nakarata birlikte girdik.
+
+“Tabi, tabi kim seviyo’ belli. Sana akıl daha yeni mi geldi? Sözlerine koyup attığın o taşlar kafama değil bak nereme geldi.”
+
+Büyük bir kahkaha attığımda arabanın camları açık olduğu için saçlarım uçuşuyordu. Doğu’nun elleri direksiyonda ritim tutuyorken ben de ellerimi birbirine vuruyordum. Sahilyaka Konaklarından çıkıp Serav evlerinin önüne gelmiştik bile. 
+
+“Eğer bundan sonra Hadise çalarsa istediğin bir şeyi yaparım.” Dedim çalan şarkı sona doğru gelirken. Bir yandan da saçlarımı zapt etmeye çalışıyordum. 
+
+“Ne istersem mi?” Dedi muzip bir tavırla.
+
+“Mümkünatı olan bir şeyi.” 
+
+Sadece başını salladı ve ikimiz de sıradaki şarkıyı beklemeye başladık. Radyodaki kadın eski popa olan özlemini dillendirip birkaç şey söyledikten sonra “Bu yaz gününde ne dinleyeceğimizi herkes çok iyi biliyor.” Dedi ve bir gitar ritmi kulaklarımıza ulaştı.
+
+Doğu büyük bir zafer narası atarken ben tamamen şaka olsun diye söylediğim şeyin gerçek olmasının şaşkınlığını yaşıyordum. Doğu keyifle şarkının sesini daha çok açtı.
+
+“Kapımı çal hadi kapımı çal. Hazır ettim ben beni, geçir kendimden.” Daha da mutlu bir şekilde Hadise’ye eşlik eden Doğu’ya gülerek bakıyordum. O kadar neşeli görünüyordu ki insanın mızıkçılık yapası gelmiyordu. 
+
+“Lütfen bana insaflı davran.” Dedim sadece.
+
+“Korkma, sevdiğin bir şeyi isteyeceğim.” 
+
+Neyi sevip sevmediğimi nasıl bu kadar iyi biliyorsun ki diye sormak yerine sessiz kalmayı seçtim. Serav evlerini de geçtikten sonra bizim hep gittiğimiz sahilin yolunun tersinde kalan yola sapmıştı. Bir dakika kadar gittikten sonra ışıklı mekanlar görünmeye başlamıştı bile. 
+
+Doğu arabayı yolun kenarındaki uygun bir yere park ettikten sonra önce birbirimize baktık sonra aynı anda kapılarımızı araladık. Hasır çantamı sağ omzuma taktıktan sonra sağ kolunu benim için açan Doğu’ya baktım. 
+
+Hadi, der gibi önce bana sonra koluna baktıktım. Gözlerimi yüzüne değdirmeden gülüp koluna girdim. Ne çok kalabalık ne çok tenha bir yerdi. Bu kadar yakın olmasına rağmen neden diğerleriyle buraya hiç uğramamıştık diye içimden geçirdim.
+
+“Burası Luna Yolu.” Dedi Doğu benim düşünce bulutumu dağıtıp. “İstemeyeceğin kadar dondurmacı, tatlıcı ve oyun oynanacak yerler var.” Anlattıklarını dinlerken bir yandan yavaş adımlarla ilerliyorduk ve ben sağımızda kalan neon renk şölenini izliyordum.
+
+“Çok çocuk olduğu için gençler genelde gelmiyor. O yüzden seni getirmemişlerdir buraya ama,” Ama’yı uzatırken önüme geçti ve geri geri yürürken anlatmaya devam etti. “Sen burayı çok severdin. Biz de her gece,” tekrar yanıma geldiğinde otomatik olarak koluna girmiştim ama o partide de yaptığı gibi cümlesini yarım bıraktı.
+
+“Boşluğu doldurunuz soruları gibisin Doğu.” Dedim yakınarak. “Başladığın cümleyi bitirsene.” 
+
+“Dur şimdi boşver onu.” Bu kez de arkama geçip iki omzumu birden tutmuşu ve beni dükkanlardan birine doğru çevirmişti. Tam önümde duransa içinde peluş oyuncakların olduğu ve kıskaç ile yakalayabileceğimiz bir oyuncak makinesiydi.
+
+“Bu oyunda berbat olduğuma eminim.” Dedim gözlerimi belertip pembe makineye bakarken. Doğu’nun çenesi bir saniyeliğine omzuma değdiğinde dikkatim makineden dağılmıştı.
+
+“Denemekten zarar gelmez Gün hanım. Hadi gel, jeton alalım.” 
+
+Aynı şekilde kollarımı bırakmadan bana önünden dört adım attırdı ve kasadaki orta yaşlı, saçları kırlaşmış, yeşil gözlü bir amcayla göz göze getirdi. Amca oturduğundan ona biraz tepeden bakıyorduk. Garip bir şekilde bütün dişlerimi göstererek güldükten sonra “Amca jeton alabilir miyiz?” Diye sordum.
+
+“Kaç tane kızım?” Amcacığım gözlüğünü burnunun ucuna indirdikten sonra o kadar tatlı bir sesle söylemişti ki dudaklarım büzüldü. 
+
+“Amca hepsini oynayacak kadar alalım biz.” Doğu araya girdi.
+
+“Tabi ki oğlum.” Amca yerinden kalkıp bize kart vermek için arkasını döndüğüme ağlayacakmış gibi bir ifadeyle Doğu’ya döndüm.
+
+“Çok tatlı bir adam.” Fısıltıyla ve işaret parmağımla amcayı göstererek konuştuğumda Doğu amcanın sırtına bir bakış attı.
+
+“Normal bir amca?” 
+
+“Gayet de tatlı bir amca.” Kollarımı göğsümde birleştirirken meydan okur gibi bir halim vardı. Amca tatlıydı ve onun da bunu kabul etmesi gerekiyordu. 
+
+“Anlıyorum.” Diye mırıldanıp önüne döndüğünde kot şortunun cebinden cüzdanını çıkardı. Amca kartımızı bize doğru uzattığında Doğu yerine ben aldım. Doğu ücret işini hallederken ben arkamı dönüp makineler arasından ilk kurbanıma yönelmeye başlamıştım bile.
+
+Girişte gördüğümüz pembe makineye kartı bir kez okuttuktan sonra kırmızı lazer renklerle makinenin küçük ekranından doksan saniyem akmaya başladı. Köşede alması diğerlerine nazaran daha kolay duran ufak bir zürafa peluşu vardı. Büyük bir dikkatle ona yöneliyorken birkaç kez de arkamı kontrol ediyordum. Doğu, amcayla konuşuyordu. 
+
+O gelmeden peluşu almanın ümidiyle konumunu hazırladığım kıskacın oyuncağı yakalamsı için düğmeye bastım. Kıskaçla beraber ben de aşağı eğilmeye başlamıştım ki kıskaç zürafanın başını yakalamıştı. Ellerim büyük bir sevinçle ağzıma kapanmışken bu kez kıskaçla beraber ben de dikleştim. Tam oyuncak bana ulaşacağı yola girecekken kenarda düşmüştü. 
+
+Ellerim hayal kırıklığıyla ağzımdan indiğinde boynum büküldü. Omzumun üzerinden tekrar arkamı döndüm. Bir kez daha deneyebilirdim bence. Bu kez kesin alırdım. Hem bayağı bir dereceden ilerlemiştim. İçimdeki konuşan kızı dinledim ve kartı bir kez daha okuttum. Kıskacı yine aynı zürafayı almak için ayarlıyordum ki önce burnuma ferah bir deniz kokusu doldu sonra iki yanımdan uzanan kollar beni makineyle kendisinin arasını sıkıştırdı.
+
+Yetmedi elini de kıskaçı oynattığım kolun üzerindeki elime koydu. Yüzü tam olarak yanağımın dibindeydi. Niye bu kadar dibime girmişti şimdi bu çocuk? Of, heyecanlanıyor muyum, ne? Yanaklarım ısınıyor gibi hissediyordum. Bir cesaret başımı biraz çevirince o da bana bakışlarını makineden çekip bana baktı. 
+
+O rahat bir tavırla gülümsedi ben daha çok ayıp olamsın diye gergin bir gülüşle karşılık vermiş gibiydim. İkimiz de aynı anda makineye döndük. Doğu kıskaçın yeri için “Hazır.” Dediğinde bu kez ben onun düğmede olan elinin üzerine elimi koydum ve ufak bir baskı uyguladım. 
+
+Oyuncağa giden kıskaçı izledim ama nedense Doğu yüzüme bakıyormuş gibi hissediyordum. Yüksek ihtimalle uyduruyordum ama insan kendisine bakıldığında hissedermiş diye okumuştum, ne bileyim. Bence bakıyordu.
+
+Kıskaç, zürafayı olduğu gibi yakalayıp bu kez düşmesi gereken yere bıraktığında birdenbire dip dibe olduğumuzu unutup sevinçle bağırarak arkamı dönmüştüm.
+
+“Ay oldu!” 
+
+Dönmemeliydim. Kesinlikle dönmemeliydim. Yüzlerimiz birbirine çok yakındı. Kolları hala iki yanımdan çekilmemişti. Üstelik bir bacağını geri atarak boy hizama eğilmişti. Garip bir şekilde ikimiz de birbirimize bakıyorduk. Ve kısa bir an, çok kısa bir an için bakışlarının dudaklarıma düştüğü netti. Uydurmuyordum, hayal görmüyordum. 
+
+O kısacık anda “Ee hadi al bakalım zürafayı.” Demesiyle başımı hızlıca salladım ve eğildim. O da  bir iki adım geriledi.
+
+En hayati refleksimiz nefes almayı unuttuğum bir andı.
+
+Alttaki kapağı açıp peluşu çıkardıktan sonra kulaklarını düzelterek yerimden kalktım. Bakışlarımı oyuncaktan kaldırıp Doğu’ya çevirdiğimde zürafayı havaya kaldırıp “Teşekkürler.” Diye mırıldandım. 
+
+“Takım işi.” Deyip göz kırptı. Yeniden karşılıklı birbirimize güldük. Doğu eliyle arkasını gösterirken “Basketbol yarışı?” Dedi ve meydan okuyan bir tavırla başını sola doğru hafifçe eğdi. 
+
+“Meydan okumanız kabul edilmiştir sayın Botev.” Ben peluşu çantama attıktan sonra bu kez de potaların olduğu makineye doğru ilerledik. Bütün Luna yolunu belki de iki kez dönsek bile jetonumuz bitmek bilmemişti. Basketbol yarışını ben kazanmıştım. Bunun karşılığında da Doğu benim istediğim bir şeyi yapmayı kabul etmişti. 
+
+Saatler nasıl akmıştı bilmiyorum. Tek bildiğim buraya geldiğimden beri ilk kez nefes alıyormuş gibi hissetmiştim. Arkadaşlarımla olmak da güzeldi, sadece çabaları bile insana yeterdi ama bugün… Farklıydı işte. Sabah kapımın önünde duygu patlamamı yaşadığım kişiyle deliler gibi eğlenmiştim. Suçluluk gütmeden, kendimi geri çekmeden.
+
+İzmir, gerçekten İzmir gibi hissettirirken.
+
+“Nasıl göbeğim çıktı, baksana. Hayatta başka bir şey yiyemem.” Şortumun düğmesini açma isteğimi güç bela bastırarak, bir noktada saymayı bıraktığım tatlılardan birini yiyorken, çıkan karnımı Doğu’ya gösteriyordum.
+
+Doğu güldüğü için ağzından bir çikolata parçası düştüğü sırada büyük bir kahkaha attım. “Olmaz, son bir yer var.” Dediğinde ellerimi teslim olur gibi iki yana kaldırmıştım. Luna Yolunun en sonuna geldiğimizde ufak bir dükkanın tepesinde hiç de ufak olmayan beyaz-mavi neonlarla çevrilmiş bir bulut tabelası vardı. Bulutun üzerinde ise pembe renkli bir el yazısıyla “Lucid Dreams” yazıyordu.
+
+Bulutlardan aşağıya inen, bir tatlının kenarlarından akan sosu andıran çizgiler vardı. Dükkanın kendisi küçük olsa bile tabelası o kadar gösterişliydi ki herhangi birinin dikkatini çekmemesi imkansızdı. Burayı görmüş herhangi birinin…
+
+Unutması imkansızdı. 
+
+Gece karanlığına neon ışıklarıyla meydan okuyan bu caddede tıpkı sabah Buse’nin arabasında olduğu gibi büyük beyaz bir ışık gözlerimin önünde parladı. Sanki çok yüksek sesli bir patlamanın ortasında kalmışım gibi bir çınlama kulaklarımda yankılanıyorken elimde tuttuğum ne varsa bırakıp etrafımda tutanabileceğim tek şeye tutundum. 
+
+Doğu’ya.
+
+“Gün, Gün iyi misin? Gün?” 
+
+Doğu iki kolumdan birden beni destekleyip ayakta durmamı sağladığında çınlama geçmiş olsa bile gördüğüm aydınlık hala yerli yerindeydi ve nedense şu an konuşmadığına emin olsam da Doğu’yu duyuyordum. Sadece duyduğum Doğu, çocuktu.
+
+“İki top alamayız Gün.”
+“Ama neden? Ben iki tane istiyorum. Paramız mı yok?”
+“Paramız var ama çok yediğinde hasta oluyorsun sonra birbirimizi göremiyoruz.” 
+“Off ya! Ama ben iki top istiyorum!”
+“Dondurma yememek mi hasta olup beni görememek mi?”
+“Dondurma yememek.”
+
+Görüş açım tekrar normale döndüğünde birkaç saniye bekledim. Doğu’nun kollarını o kadar sıkı tutmuştum ki çocuğun teninde tırnaklarımın izi çıkmıştı. Tişörtünü izlemeyi bırakıp yüzüne baktığımda dudaklarımı araladım ve “Bir şey,” diyebildim sadece. Yavaşça kendimi bir adım geri çekip kollarını bıraktığımda o hala daha endişeli gözüküyordu. 
+
+Dudaklarımı ıslattıktan sonra “Sanırım bir şey hatırladım ama emin değilim.” Dedim.
+
+“Nasıl bir şey?” Diye sordu. Görüntü yoktu, inanlar yoktu. Sadece ses tonları ve diyaloglar vardı. Taraflardan biri belli ki bendim ama karşımdaki çocuğun Doğu olup olmadığı kesin değildi. Sadece bir histi.
+
+“Boşver.” Deyip yere düşen tatlıyı almak için eğildim. Ben alırım diye karşı çıksa da çoktan kutuyu alıp kalmıştım. Dondurmacıya doğru ilerlediğimi gördüğünde daha fazla uzatmayıp beni takip etmeyi seçmişti. 
+
+“Merhaba, kolay gelsin.” Sesimi normal tutmaya ve gülümsemeye çalışarak büyük dondurma dolabının önünde durduğumda minyon, sarı saçlı ve mavi gözlü, orta yaşlarda bir teyze gülümseyerek boncuklu perdenin arkasından çıkıp bize doğru geldi.
+
+“Merhaba, hoş geldiniz.” 
+
+Kadına tekrar gülümseyip Doğu’ya döndüm. İlk önce onun sipariş etmesi için dönmüştüm ama o bunu daha farklı algılamıştı sanki. 
+
+“Hala hasta olmuyorsan iki top alabilirsin.” 
+
+İzin istediğimi düşünmüştü. Diyalogdaki gibi bir sahne bu kez zihnimde büyük renkli bir resim çizdi sanki bir çocuğun elinden çıkmış gibi. Sanki şimdi burada yine çocuktuk ve ben kırmızı pötikareli bir elbise giyiniyordum. Ayaklarımda yine kırmızı rugan babetlerim vardı. Sarı saçlarım iki taraftan balık sırtı örülmüştü ve upuzunlardı. Kırmızı kalpli bir güneş gözlüğüm vardı.
+
+Krem rengi bir şortun üzerine beyaz kısa kollu bir gömlek giyen ve bir de pantolon askısı olan bir erkek çocuğu da hemen yanımda elimi tutuyordu. Onun saçları jöleyle bir güzel sola yatırılmıştı. Benimkinden daha havalı olan siyah bir güneş gözlüğüyse o inek yalamış gibi görünen saçların üzerindeydi. 
+
+“Bir top karamelli dondurma. Bir top da vanilyalı dondurma.” 
+“Sen neden tek top alıyorsun Doğu?”
+“Çünkü sen tek top yiyebiliyorsun Gün.”
+
+“Olmazsın herhalde. Kocaman kız oldun.” Deyip güldükten sonra dolabın arkasındaki teyzeye dönüp “İki külah alalım. Biri iki top karamelli olsun diğeri de bir top çikolata bir top vanilyalı.” Diye ekledi.
+
+“Tamam Doğucuğum hemen veriyorum.” 
+
+Bir tiyatro oyunu dönüyormuş gibi karşımdaki ikilinin konuşmasını dinlemiştim. Şu an içinde olduğum an hiç gerçek hissettirmiyordu. Simülasyon hata veriyormuş da ruhum arada bir yerde sıkışmış gibiydi. Geçmişte miydim gelecekte mi yoksa bu anda mı? Bilmiyordum sanki.
+
+“Neden her seferinde farklı alırdın?” Diye sordum en sonunda gülümseyerek. Bana dönüp hafif çatık kaşlarla ve anlamadığını belli eden bakışlarla o da gülümsedi.
+
+“Nasıl yani?”
+
+“Ben tek top alıyorum diye ikisini birden alamazdın. O yüzden sırayla alıyordun değil mi? Bir çikolatalı bir vanilyalı.”
+
+Çatık kaşları normale dönerken gülümseyişi büyüdü. Hatırladığım bu ufak anı onu öyle bir güldürmüştü ki soğuk nevale olduğunu düşünen arkadaşlarımın bu yüzü görmesini çok isterdim çünkü gülümserken hiç de soğuk gelmiyordu insana. Aksine sıcacık yapıyordu insanın içini. Üstelik İzmir’in yakıcı sıcağına rağmen rahatsız etmiyordu bu durum.
+
+“Hatırladın mı?” Diye fısıldadı inanamayan gözlerle bana bakarken.
+
+“Hatırladığım ilk anının seninle olmasını ben de beklemezdim.” Deyip önüme döndüm ve kıkırdadım. Bu sırada tezgahtaki teyze bana dondurmamı uzattı. Teşekkür ederek alıyorken önümdeki saçların geriye çekildiğini hissettim. Doğu çekingen bir tavırla ve yüzündeki tebessümü koruyarak saçlarımı kulağımın arkasına sıkıştırmıştı.
+
+“Hepsini hatırlatacağım.” 
+
+Geldiğimden beri bu kadar güven verici bir cümle duymamıştım. Sanki kimsenin amacı hiç bu olmamıştı. Kimse bunu vadetmemişti. Hatırlatmak, anılarımı kazanmama yardım etmek. İzmir’e geldiğimden beri tek yaptığım anımı mutlu geçirmeye çalışmak, zihnimi eğlenceli olarak nitelendirdiğimiz şeylerle meşgul etmekti. Ama o bunların yerine çok daha özelini vermek istiyordu. Anılarımı.
+
+“Özgüvenin her zamanki gibi tavan.” 
+
+Liselililer gibi birbirimize bakıp salak bir tavırla gülüyorken teyzenin “Doğucuğum, bu da senin oğlum.” Diyerek külahı uzatmasıyla bakışmamız bölündü. İyi ki de bölündü, garip bir hal almaya başlamıştı. 
+
+Doğu dondurmaların parasını ödedikten sonra Luna Yolu’ndan çıkıp kumsala doğru ilerlemiştik. Üstelik ben hala Doğu’nun koluna girmeyi bırakmamıştım. Garip bir samimiyetti bu. Hani sevgililer gibi el ele tutuşmuyoruz ama hiç temas etmeyecek kadar da arkadaş değiliz. 
+
+Arkadaşız canım. Başka ne olacağız?
+
+“Herkesi nasıl tanıyabiliyorsun? Çok nadir gelmiyor muydunuz buraya?” 
+
+Başımı çevirip dondurmasını ısırdığını gördüğümde sorduğum soruyu boşverip gözlerimi kocaman açtım ve Doğu’nun kolundan çıktım.
+
+“Doğu!” Ben öylece bağırınca ne yaptım edasıyla o da bana döndü. “Yalasana şunu, dişlerin acımıyor mu?”
+
+“Hoşuma gidiyor.” Deyip sırıtttığında inanamayan gözlerle ona baktım. En sonunda kabullenip yeniden koluna girdiğimde denize doğru ilerlemeye devam ediyorduk. Kumda ayakkabıyla yürümeyi sevmediğimden adımlarımı durdurdum. Benimle beraber Doğu da durdu. Ayakkabılarımı ve çoraplarımı çıkardığımı gördüğünde önce bir süre izledi fakat peşi sıra bana eşlik etmeyi tercih etti.
+
+“Siz ben herkesten nefret ediyorum sanıyorsunuz ama ben aslında çok sosyal biriyim.” Ayakkabılarını tek eliyle alıp tekrar diklendiğinde soruma ithaf ettiğini anladım.
+
+“Seni tanımıyorum. Bu yüzden hakkında bir şey de sanmıyorum.” 
+
+Gayet normal bir cümle söylediğimi varsayarak ilerliyorken Doğu’nun duraksadığını fark edince ben de durup ona doğru döndüm. Yüzündeki büyük gülüş kaybolmuştu.
+
+“Böyle söyleme.” Dedi bir bu kez hayal kırıklığıyla gülümserken. “Beni tanıyorsun. Sadece hatırlamıyorsun. Tanımadığını söyleme.” 
+
+Sesi gerçekten üzülmüş bir insan gibi çıktığından alay etme düşüncemden vazgeçmiştim. Boğazımı temizleyip tekrar ona doğru birkaç adım attıktan sonra önünde durdum. Gözlerine bakmak için başımı kaldırdım. Kendisini gülümsemeye zorluyordu ama ben bunun zorlama olduğunu anlayabiliyordum.
+
+“Tamam,” dedim en ılımlı sesimle. “Yani zaten onu kastetmiştim.” Dondurmamı ona doğru kaldırdığımda yüzündeki zoraki gülümseme samimi bir hal aldı. O da dondurmasını kaldırdığında külahlarını birbirlerine değdirdik. 
+
+Tekrar yürümeye başladığımızda denizin biraz daha yakınına gelmiştik. Kıyıya vuran dalgalar ayaklarımızı ıslatıyordu. Bir süre sessizce sadece yürüdük ve dondurmalarımızı yedik. Aslında ona sormak istediğim bir sürü soru vardı çünkü bir tek o sorularımı geçiştirmiyordu. Bir yandan da böyle, tek kelime etmeden yürümek hoşuma gitmişti. 
+
+“Kendinden bahseder misin biraz?” Diye sordum dondurmamı bitirmiş külahıma geçmişken. O da benimle aynı hızda gidiyordu. Bana dönüp düşünür gibi birkaç saniye havaya baktıktan sonra “Adım Doğu Noyan Botev.” Diyerek başladı. 
+
+“Harika bir başlangıç.” 
+
+Birbirimize bakarak güldükten sonra o devam etti.
+
+“Siz Bulgaristan’a taşındığınızda üç ay kadar komşu olduk.”
+
+Kaşlarım şaşkınlıkla havalanırken ona doğru döndüm. “Gerçekten mi? Orada da mı?”
+
+“Evet orada da.” 
+
+“Annem hiç bahsetmedi.” Bu söylediğime yorum yapmak yerine sadece tebessüm etti ve omuz silkti. 
+
+“Tam o zamanlarda da biz Türkiye’ye döndük. Babam özel bir hastaneye ortak oldu. Aynı zamanda orada doktorluk yapmaya başladı.”
+
+“Hmm evet biliyorum. Sen de tıp okuyormuşsun.” 
+
+Kaşlarını çatıp ukala bir gülüşle yüzüme baktığında birkaç saniye alık alık bakmaya devam ettim ama hemen ardından düşündüğü şeyi reddetmek üzere ağzımı açmıştım ki “Birileri beni araştırmış.” Dedi oldukça keyifli bir sesle.
+
+“Araştırmadım.” Dedim hiddetle. “Sabah kızlar söyledi. Ben sormadım, onlar kendi aralarında konuştu.”
+
+“Konuşma ilgini çekmiş ama.” Aynı sinir bozuculukla konuştuğunda onu kendimden ittim. Daha doğrusu itmeye çalıştım. Hareket eden onun yerine ben olmuştum ki o anda denize düşeceğime emindim ama düşmedim. Keşke düşseydim. Keşke bu kadar aptal, komik ve klişe yaz dizisi sahnesini yaşayacağıma kıçımın üstüne düşseydim.
+
+Doğu beni belimden yakalayıp düşmememi sağlayınca kapalı gözlerimi araladım. Bugün kaçıncı kere bu kadar dip dibe geliyorduk. Ayrıca madem düşmekten kurtarıyordu ağzımın içine girmesine ne gerek vardı? Neden biraz daha geri çekilmiyordu mesela böylece tekrar nefes almayı hatırlayabilirdim belki.
+
+Sadece ufacık ittirmiştim, lanet olası etki tepki kanunu, lanet olası fizik, lisedeyken de nefret ederdim. Yani ediyordum herhalde.
+
+“Dikkat et.” Dedi yumuşak bir sesle ve geri çekildi.
+
+Çok şükür geri çekildi. 
+
+“Kaç kilosun sen?” Boğazımı temizleyip yeniden yerimde dikleştim. Üzerimi öylesine düzelttikten sonra bu kez hiçbir yerine girmeden yürümeyi seçtim. Öylesine sorduğum soruyu “103” diye cevaplayınca gözlerimi yuvalarından çıkacak belertip ona doğru döndüm.
+
+“Ne?” 
+
+“103.” 
+
+“Onu anladım salak,” elimle onu gösterirken bir yandan inanamayan bir bakışla süzüyordum. “Dünyada kıtlık var, insanlar açlıktan ölüyor falan sen niye 103 kilosun? F=m.a, tabi ki senden yana olur.” 
+
+“Yüzücüyüm ben, ondan. Yoksa dünyaları falan yemiyorum. Hem kızlar bayılıyor.” 
+
+Bunu gerçekten söyledin mi der gibi yüzüne baktıktan sonra gözlerimi devirerek önüme döndüm. Kızlar bayılıyormuş. Bayılırlar tabi. İçimizdeki ilkel canlıları öldürememiştik ki bir türlü. Hayvansı büyüklükte kaslı erkek görünce bayılıyorduk. Sahi bu neden bizi etkiliyordu? Araştırılsın.
+
+“İsteyerek mi tıp yazdın, baba mesleği olduğu için mi?” Diye sordum konuyu değiştirmek amacıyla ve bir saniye bile beklemeden “Aile mesleği olduğu için.” Diye yanıtladı. 
+
+“Nesillerdir doktor yetiştirmiş iki taraf da. Annem, babam, onların büyükleri…” ellerini şortunun cebine soktu. “Kuzey de tıpı kazanmıştır umarım. Sınavı iyi geçmişti ama.” 
+
+“İyi de istiyor musun ki?” Tereddüt ederek sorduğum sorunun cevabını zaten tahmin ettiğim için çekinerek sormuştum.
+
+“Belki bizim çocuklarımız zinciri kırar ama geleneği bozan biz olmadık.” İstemiyorum demek yerine lafı dolandırmayı seçmesinden neyi çıkarmalıydım? “Gerçi hepsi bu yoldan geçti. Babam orkestrada çello çalıyormuş mesela ama bırakmak zorunda kalmış. Kendi çocuklarını zorlamayacağını söylermiş ama,” bana dönüp güldü. “Belki de ben de ileride onun gibi olurum.” 
+
+“Sanmam.” Dedim onun gibi gülerek. “Bizim neslin kafası farklı çalışıyor.” 
+
+“Göreceğiz.” Üstelemeden, karşı argüman sunmadan konuyu kapatmayı seçince ben de üstelemedim. Bana zaten biliyormuş gibi bir his verse de ona kendimi anlatma isteğimi bastıramadım.
+
+“Bulgaristan’da moda tasarım okuyordum ben de. İtalya’ya geçecektim bu sene eğer,” duraksadığımda bakışlarının bana döndüğünü hissetmiştim. Şimdi yanımdaki bir başkası olsaydı hızlıca konuyu değiştirir ve bu cümleyi tamamlama izin vermezdi ama o bekledi. 
+
+Ben de bir kez yutkunum hazır hissettiğimde sesli dile getirebildim.
+
+“Kaza olmasaydı.” 
+
+“Donduracak mısın?” Diye sordu kurduğum cümlenin üzerinde durmadan.
+
+“Ben devam etmek istiyorum ama annemle çok zıtlaşıyoruz. Ayrılmayı kabul etmiyor. Ben de Gece’nin düzenini bozmasını istemiyorum.” 
+
+Bir şaşkınlık nidası çıktı dudaklarından. Sebebini sorar gibi yüzüne baktığımda “Gece nasıl, onu göremedim?” Diye sordu.
+
+“Gece iyi.” Başım eğildi. “En çok onunla olan anılarım bulanık, bu yüzden aramızın nasıl olduğunu bilmiyorum.” Güldüm. “Bulgaristan’da kaldı, gelmek istemedi.” Olduğum yerde durdum ve ayağımla kumu eşelemeye başladım. “Teyzem yanında.” Diye eklediğimde eğik başımı kaldırıp gözlerine baktım ve gülümsedim. Geceye rağmen parlamayı başarıyorlardı. Benimkiler öyle değildi mesela. 
+
+Aynı maviyi paylaşmıyorduk.
+
+Bu kez ben zoraki bir şekilde ona gülümsediğimde o gayet gerçek bir tebessüm etti. Süregelen bakışmamızı bölüp denize doğru bir bakış attığında aklında bir şey geçirdiği barizdi. Gözleri tekrar benimkilere döndüğünde yüzünde yaramazlık yapmak isteyen erkek çocukları gibi bir bakış vardı.
+
+“İstediğim bir şeyi yapmak zorundasın.” Dedi ve birkaç adım geriledikten sonra tişörtünü ensesinden kavradığı gibi üzerinden çıkardı. Dudaklarım şaşkınlıkla aralanırken kaşlarım da aynı duyguyla havalanmıştı. Gözlerimi iyice açarak yüzüne baktığımda, yalan yok, vücuduna bakmamak konusunda oldukça zorlanıyordum. 
+
+“Cümlenin üstüne üstünü çıkarman aşırı korkunç oldu.” Dedim mimiklerimi biraz bile bozmadan.
+
+Elindeki tişört kumları boyladıktan sonra üzerime doğru gelmeye başlayınca ben de ister istemez geri geri gitmeye başlamıştım. Ayağımın altındaki su gittikçe yükseliyorken ellerimi dur dercesine ona doğru kaldırmıştım. Ne istediğini anlamıştım ama şu anda bunu yapma fikri garip geliyordu. Yine de omzumdaki çantamı ona doğru fırlatmıştım ki telefonum hala çalışmaya devam edebilsin.
+
+O çantamı tişörtünün yanına bıraktıktan sonra avına yaklaşır gibi bir ifadeyle üzerime yürüyorken ben “Gelme,” dedim gülerek. “Doğu, ıslanmak istemiyorum. Lütfen başka bir şey iste.” 
+
+Dememe kalmadan çevik bir hareketle bir eliyle belimden yakaladı ve diğer kolunu da bacaklarımın altına geçirip yerle temasımı kesti. 
+
+“Doğu!” Kahkaha atarak adını söylemiştim ama çığlık desek daha doğru olurdu. “Allah kahretsin, bari tişörtümü çıkarayım.” 
+ 
+Ve ileri doğru denize fırlatılmamla beraber bütün cümlelerim ağzıma tepildi. Suyun serinliğiyle beraber bütün vücudumdan bir ürperti geçti. Alışmak için birkaç saniye suyun altında kalmayı planlasam da daha bu sabah dokunma fırsatı bulduğum bir çift kol tarafından suyun üzerine çıkarıldım.
+
+Elleri vücuduma dolanmış olsa da bu gayet normalmiş gibi elimle yüzümü sıvazlayıp gözlerimi araladım. Eğlendiği her halinden belli olan herif büyük bir keyifle yüzüme bakıyordu. Önce ters bir bakış atıp ardından elimle ortamızdaki suya sertçe vurdum. Doğu yüzüne sıçrayan suyla beraber başını geriye çevirdiğinde ellerimle omzuna tutunmam bir oldu.
+
+Bütün ağırlığımı verdiğimde amacım onu suyun altına sokup boğmaktı. Gelin görün ki başarmıştım da. Kafası suyun altına giren Doğu kendi kendine çırpınırken ben “Öyle ölmem füze atsaydın köpek!” Diye bağırıyordum. 
+
+Yarım saniye kadar geçmişti ki omuzlarındaki ellerimin bileklerini sertçe kavrayınca büyük bir çığlık basıp kaçmaya çalışmıştım ama nafileydi. Tekrar suyun üstüne çıkan Doğu saçlarını yüzüme doğru sallayınca bu kez başını kaçıran ben oldum.
+
+“Bir an için gerçekten seni yenebileceğimi sandım.” Dedim konuşma başlatırsam didişmeyi bırakırız umuduyla.
+
+“Yendin zaten.” Dedi bileklerimden beni kendisine çekip ellerini tekrar belime koyduğunda.
+
+“Yalan söyleme.” Gülümsedim ve ben de ellerimi omuzlarına koydum. Gözlerim elimin altındaki dövmedeydi. Karanlık olduğu için seçmesi zordu ama bakıyordum işte. Üstelik baş parmağım da tamamen kontrolüm dışında, tekrar belirtmek isterim kontrolüm dışında, dövmenin üzerinde geziniyordu. “Boğulmuş gibi yaptın.” Tekrar gözlerine baktım.
+
+Sessiz kaldı. Hatta belki de söylediklerimi duymadı bile. Büyük bir dikkatle yüzümü inceliyordu zira. Önce alnıma, sonra burnuma, yanaklarıma ve en sonunda dudaklarıma. İncelemesinin fazla uzun sürdüğünü hissedince gözlerime bakması için başımı hafifçe eğdim. Bu dikkatini çekmemi saplamıştı ki gözlerime baktı.
+
+Fakat bu kez ben onun yüzünde bir gezintiye çıkmak istedim. Sol omzundaki elim yavaş yavaş ensesine doğru gitmeye başlayınca gözleri bir an için oraya bakma istedi ama tam olarak dönmedi. Saçlarını elimde hissettiğim sırada çenesini üzerindeki ufak lekeye bakıyordum. Karanlığa rağmen görebildiğim bir doğum lekesiydi bu.
+
+“Biz bu anı daha önce yaşadık mı?” Diye sordum gözlerim hala o izin üzerindeyken. “Çok,” duraksadım ve yutkundum. Ardından gözlerine baktım. “Çok tanıdık geliyor.” 
+
+Vücutlarımızı birbirine biraz daha yasladığında belimdeki elleri de sıkılaştı. İkimiz de gözlerimizin en içine bakıyorken bir eliyle önüme düşen ıslak saç tutamını geriye doğru aldı. 
+
+“Böyle vakalarda insan hep en çok en yakınlarını unuturmuş.” Elini yanağıma yerleştirdiğinde nefes almayı tekrar unutmuştum. Belki suyun içinde olduğumdandı belki de birbirimize çok fazla dokunduğumuzdan. 
+
+Belki de bu dokunuşun hiç yabancı hissettirmeyişinden.
+
+“Ve sen beni hiç hatırlamadın.” Güldüğünde sağ yanağına bir damla yaşın düştüğünü gördüm. Gözlerinin dolduğun fark etmediğim için büyük bir şaşkınlık kanımda dolaşmaya başladı. 
+
+“Doğu,” diye fısıldarken ben de onun gibi ensesindeki elimi orada alıp yanağına koydum. 
+
+“Зоря,” dedi bambaşka bir tınıda ve beni durdurdu. “Pozvoli na denya da izgree nay-setne, moya boginyo na zorata.”
+
+Sesinden ilk kez duyduğum bu Bulgarca cümle, benim de gözümden yaş akıtmaya yetmişti. Bunu sesinden ilk kez duymadığım ama hatırlamadığım için ilk kez duyuyormuşum hissi de gözümden yaş akıtmaya yetmişti.
+
+Hatırlamıyordum. Lanet olsun ki gerçekten onunla ilgili hiçbir şey hatırlamıyordum ama daha önce böyle hissettiğime emindim. Bu anda, tenlerimiz birbirine bu denli sokulmuşken, İzmir’de denizin içindeyken hissettiğim gibi hissetmiştim daha önce.
+
+Kişiler ve anılar unutulsa bile yaşanılan hisler unutulmuyormuş demek ki. 
+O an anladım.
+
+“Anlat bana,” dedim gülerek. “Anlat hatırlayayım Doğu, geldiğimden beri bu kadar güvende hissetmedim.” 
+
+Ne kadar doğruydu daha sabah gördüğün birine bu cümleyi söylemek, ona bu denli büyük bir güç vermek? İyi de o daha sabah gördüğüm biri değildi ki, hatırladığım ilk anıda birlikte dondurma yediğim çocuktu. 
+
+İleri atılıp bana sarıldığında yanağını omzuma yasladı. Elim anında başına gitti. Parmaklarımı saçlarının arasına daldırırken ben de onun gibi başımı omzuna yasladım. Öylece, denizin içinde, sıkı sıkı sarıldık birbirimize.
+
+Daha sabah gördüğüm bu kişi tanıdık yabancı bile değil direkt yabancıydı ama aynı çocukla karamelli dondurmamı almıştım. Aynı çocukla bu anı… 
+
+Daha önce de yaşamıştım. Gözlerim kapalıyken yeniden bir sinema perdesi gördüm. Sahnede oynayanlar Doğu ve bendik. Luna Yolu’ndaki gibi önce ses sonra görüntü gelmedi. Sahne bütünüyle yansıdı perdeye. Çok eski bir zamandanmış gibi değildi ama saçlarım boyalı değildi orada. Doğu’nun saçları da şimdiki kadar uzun değildi ve dövmesi yoktu.
+
+Aynı bu şekilde görünüyorduk. 
+Sarılıyorduk ama orada ikimiz de gülüyorduk.
+
+Doğu kendisini geri çektiğinde gözlerimi açtım ve kurulan perde anında kalktı. Bugün iki tane anımı geri kazanmıştım. İkisi de onunla geçen zamanlarıma aitti. Doğu fazla çekilmeden alnını alnıma yasladığında ikimiz de gözlerimizi yeniden kapatmıştık.
+
+“Bazen keşke kimseyi dinlemeyip herkesin karşısına çıksaydım diye pişmanlık çekiyorum.” Dediğinde alnını alnımdan çekmeden başını hafifçe çevirdi. “Keşke saklamasaydık, herkes bilseydi. O zaman böyle olmazdı diyorum.” 
+
+“Doğu söylediklerinden hiçbir şey anlamıyorum.” 
+
+Alınlarımızı ayırıp iki elini birden yanaklarıma yerleştirdi. Yüzlerimizin arasındaki mesafe azalmamıştı. Hala yakındık. Havuzun başında oturduğumuz andan, oyuncak makinesinin önündeki andan, denize düşerken beni tuttuğu andan daha da yakındık. 
+
+“Zorya,” diye mırıldandı ve gözleri, gözlerimden dudaklarıma indi. “Slav mitolojisinde Şafak Tanrıçası demek.” Yüzümü daha net görmek istiyormuş gibi elleriyle yüzümü çok hafif geriye götürdü. Ardından sağ elini yavaşça boynuma indirdi ve ince zincirin ucundaki yazıya hafifçe dokundu. 
+
+İşte o an farkındalık kalbimin ortasına bir şimşek gibi çaktı. “Зоря” yazıyordu kolyede. Zorya diye okunuyordu. Kendime geldiğimden beri bu kolyeyi taktığımı biliyordum. Hiç çıkarmamıştım, çıkarmak istememiştim. Bana çok önemli birinden hediyeymiş gibi hissettiriyordu ve ben bu kişiyi babam sanıyordum.
+
+“Beni hatırlamıyorsun.” Yanaklarına düşen yaşları umursamadan güldü. “Ama hiç çıkarma kolyeni hala takıyorsun.” 
+
+Yüzlerimizi tekrar yaklaştırdığında dudaklarımızın arasında belki bir nefes kadar aralık kalmıştı. 
+
+“Beni hatırlamıyorsun.” Tekrarladığında konuştuğu için oynayan dudakları dudaklarıma değecek gibi oldu. 
+
+“Ama yine de dudaklarına bu kadar yaklaşmama izin veriyorsun.” 
+
+        </div>
+
+        <div class="footer-nav">
+            <a href="gunes-bolum3.html" class="nav-btn">← BÖLÜM LİSTESİ</a>
+            
+            <a href="gunes-bolum5.html" class="nav-btn">SONRAKİ BÖLÜM →</a>
+        </div>
+    </div>
+
+</body>
+</html>

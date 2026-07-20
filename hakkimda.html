@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: url('arka-plan.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInPage 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* --- OYUNLU HEADER (MENÜ) --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            transition: 0.3s ease;
+        }
+
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 3.5rem; 
+            text-decoration: none; 
+            color: #fff;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .logo:hover {
+            transform: scale(1.1) rotate(-3deg);
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.4s ease;
+        }
+        .nav-links a:hover { letter-spacing: 4px; color: #ccc; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.4s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .social-icons { display: flex; gap: 15px; align-items: center; }
+        .social-icons a { display: inline-block; transition: 0.3s; }
+        .social-icons img { width: 22px; transition: 0.3s; opacity: 0.8; }
+        .social-icons a:hover { transform: translateY(-5px); }
+        .social-icons a:hover img { 
+            opacity: 1; 
+            filter: drop-shadow(0 0 8px #fff); 
+        }
+
+        /* --- HAKKIMDA İÇERİĞİ --- */
+        .content-wrapper {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            padding: 80px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 20px;
+            margin-bottom: 50px;
+            font-weight: normal;
+            text-transform: uppercase;
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .profile-photo {
+            width: 450px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            margin-bottom: 60px;
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0;
+            animation: slideUp 1.2s ease-out 0.3s forwards;
+            transition: 0.3s ease;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #ccc;
+            white-space: pre-wrap;
+            text-align: center;
+            max-width: 750px;
+            opacity: 0;
+            animation: slideUp 1.5s ease-out 0.6s forwards;
+            padding: 0 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.7rem;
+            opacity: 0.2;
+            letter-spacing: 2px;
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           📱 MOBİL VE TABLET UYUMLULUK AYARLARI (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 30px;
+                flex-direction: column;
+                gap: 15px;
+                background: rgba(0,0,0,0.8);
+            }
+            .logo { font-size: 2.8rem; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            
+            h1 { font-size: 2.5rem; letter-spacing: 10px; margin-bottom: 40px; }
+            .profile-photo { margin-bottom: 40px; }
+            .about-text { font-size: 1.05rem; line-height: 1.9; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.75rem; letter-spacing: 1px; }
+            h1 { font-size: 2rem; letter-spacing: 6px; }
+            .about-text { font-size: 1rem; line-height: 1.8; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Ceren Ceylan</a>
+    <div class="nav-links">
+        <a href="denemeler.html">DENEMELER</a>
+        <a href="hakkimda.html">HAKKIMDA</a>
+        <a href="album.html">ALBÜM</a>
+        <a href="iletisim.html">İLETİŞİM</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ceylance13" target="_blank">
+                <img src="instagram-logo.png" alt="Instagram">
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb6ljN6FcowBLg3qWW2S" target="_blank">
+                <img src="whatsapp-logo.png" alt="WhatsApp">
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <h1>HAKKIMDA</h1>
+
+    <img src="profil-resmin.jpg" class="profile-photo" alt="Ceren Ceylan">
+
+    <div class="about-text">
+Selam, Ceylan ben.
+Okurlarım genelde cey der.
+
+Dürüst olmak gerekirse kendimden bahsetmem gereken bu yazıyı yazmakta oldukça zorlanıyorum. Bu nedenle olabildiğince kısa keseceğim :)
+
+13 Kasım 2006’da Tatvan’da doğdum, Bitlis’in bir ilçesinde. Birçok şehri görerek büyüsem de karakterimin şekillendiği yıllarda Karadeniz’in kalplerinde dolaştım. Lise eğitimimi Rize’de tamamladıktan sonra İstanbul’a taşındım ve şimdi de Kocaeli Üniversitesi’nde endüstri mühendisliği okuyorum.
+
+Hakkımda söyleyebileceğim materyal bilgiler bunlarla sınırlı. Kısaca bu sitenin açılmasına vesile olan kitaplarımla, benim nasıl tanıştığımdan bahsedeyim. 
+
+28 Şubat 2024.
+Günlerce aklımda dolanan, iki kişinin yıllar sonra karşılaşıp birbirlerine “neden” diye sorduğu o pasajı yazmamak için dirensem de en sonunda “yazayım ve bitsin” düşüncesiyle parmaklarımın oda arkadaşımın bilgisayar klavyesinde bir akşam vakti dolaşmasıyla başladı.
+
+Biter sandığım hesaplaşma bitmedi. Aklımda dönüp durdular. Bir karakterden çok daha fazlasına dönüştüler. Dertlerini dinlediğim bir arkadaş, tedavisine yardımcı olmaya çalıştığım bir danışan, sokakta ağlarken gördüğüm için üzüldüğüm öylesini biri gibi.
+
+Günlükler, yalnızlığımı paylaştığım defterler, karaladığımı düşündüğüm birkaç mısralık şiirler yerini aklımda ve kalbimde kendilerine yer bulan, beni seçen insanların hikayelerine dönüştüler. 
+
+Şimdilerde anlıyorum başlarda yazmaktan bu kadar korkmamın sebebi onların hikayesini onlara layık yazamamaktan çekinmemdi. Sanırım anlaşılmamak bir noktaya kadar canımı o kadar acıttı ki aynısını kalbimde yaşattığım onlarcasına hissettirmekten korktum. 
+
+Her biri hayatımdan ve çevremdeki hayatlardan kopup ortak bir ruhta birleşmişti. 
+Gerçek değiller, biliyorum.
+Ama gerçeği yansıtıyorlar.
+
+Yıllarca yazdım ama yazan biri olduğumu kabul etmek de yıllarımı aldı. Burası benim için güvenli bölgelerimden biriydi. Ne zaman dünya üzerinde benim için artık gerçekten güvenli bölge kalmadı o zaman o kitaplarımın kapısını sizlere araladım. Bazılarınız şöyle bir kapıdan baktı, bazılarınız içeri girdi, bazılarınız için her biri tıpkı benim oldukları gibi sizin de dostunuz oldu. 
+
+Ölüm beni en değerlimden vurduğunda beni hayatta tutan tek şey yazmak oldu. Onların hikayesini anlatmak benim için sanki bir sorumluluk haline geldi. Onlar vesilesiyle aslında kimi anlatmak, kimi anlaşılır kılmak istedim henüz bu soruyu cevaplayamadım.
+
+Hep söylerim, bazen yaptığın ufacık bir şeyin başka bir insanda ne kadar büyük bir etki yaratacağını tahmin bile edemezsin. İyi ya da kötü…
+
+Sadece okuduğunuzu düşünüyorsanız lütfen bunun yanında hayatta kalmaya çalışan 17 yaşında bir genç kızın elinden tuttuğunuzu da hatırlayın ve bence bununla gurur duyun. Bu benim için gerçekten çok özeldi ve son nefesime kadar minnettar kalacağım. 
+
+Ve bundan sonra kapıdan içeri girmeyi seçecek olanlar için, hepiniz hoşgeldiniz. Buradaki masada hepiniz için bir tabak ve gayeleri sadece anlaşılmaktan ziyade sizi anlamaya hazır onlarca karakterim var. 
+
+7 Temmuz 2024’te size araladığım o kapı daima sizin için açık olacak.
+    </div>
+</div>
+
+<footer>© 2024 CEREN CEYLAN | TÜM HAKLARI SAKLIDIR</footer>
+
+</body>
+</html>

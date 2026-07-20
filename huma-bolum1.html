@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüma Kuşu - Bölüm 1 | Ceren Ceylan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('arka-plan.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ccc;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInPage 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeInPage { to { opacity: 1; } }
+
+        /* --- HEADER --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s ease;
+        }
+        .back-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .back-link:hover { text-shadow: 0 0 10px #fff; opacity: 0.8; }
+        .logo-small { font-family: 'Mrs Saint Delafield', cursive; font-size: 2.2rem; color: #fff; text-decoration: none; }
+
+        /* --- OKUMA KONTEYNERI --- */
+        .read-container {
+            max-width: 750px;
+            width: 90%;
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chapter-header { text-align: center; margin-bottom: 50px; }
+        .chapter-header h1 { font-size: 2.2rem; letter-spacing: 6px; color: #fff; font-weight: normal; text-transform: uppercase; line-height: 1.4; }
+
+        /* --- ŞİİR & METİN ALANI --- */
+        .text-block {
+            font-size: 1.15rem;
+            color: #bbb;
+            white-space: pre-line; /* Satır aralıklarını ve enter'ları korur */
+            text-align: justify;
+        }
+
+        /* --- WATTPAD USULÜ PARAGRAF VE YORUM ALTYAPISI --- */
+        .p-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-right: 40px; /* Yorum balonu için güvenli alan */
+        }
+        
+        .comment-trigger {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            opacity: 0.2;
+            transition: 0.3s ease;
+            user-select: none;
+            color: #fff;
+        }
+
+        .p-wrapper:hover .comment-trigger {
+            opacity: 0.8;
+        }
+
+        .comment-trigger:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 8px #fff;
+        }
+
+        /* --- NAVİGASYON BUTONLARI --- */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+        }
+
+        .nav-btn {
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            padding: 12px 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 2px;
+            transition: 0.5s;
+            background: transparent;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background: #fff;
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+            border-color: #fff;
+        }
+
+        footer { padding: 60px 0; text-align: center; font-size: 0.7rem; opacity: 0.2; letter-spacing: 2px; width: 100%; }
+
+        /* ==========================================================================
+           📱 MOBİL VE TABLET UYUMLULUK AYARLARI (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header { padding: 15px 30px; }
+            .logo-small { font-size: 1.8rem; }
+            .read-container { width: 92%; padding: 40px 0; }
+            .chapter-header h1 { font-size: 1.6rem; letter-spacing: 4px; }
+            .text-block { font-size: 1.05rem; line-height: 1.7; text-align: left; }
+            .p-wrapper { padding-right: 30px; }
+            .comment-trigger { opacity: 0.4; right: 0; } /* Mobilde görünürlüğü hafif artırdık */
+            .nav-btn { padding: 10px 18px; font-size: 0.65rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="kitap-detay-huma.html" class="back-link">❮ BÖLÜMLER</a>
+    <a href="index.html" class="logo-small">Ceren Ceylan</a>
+    <div style="width: 80px;" class="desktop-spacer"></div>
+</header>
+
+<div class="read-container">
+    <div class="chapter-header">
+        <h1>"GÜNEŞ DOĞDU DİYE KABUSLAR NEDEN BİTSİN"</h1>
+    </div>
+
+    <!-- 
+       white-space: pre-line sayesinde yazdığın gibi aktarılacak. 
+       data-p-id nitelikleri ileride her paragrafa özel yorumları veri tabanına bağlamanı sağlayacak.
+    -->
+    <div class="text-block">
+        <div class="p-wrapper" data-p-id="huma1-p1" style="text-align: center; font-style: italic; color: #fff; margin-bottom: 40px; line-height: 2.2;">Bir insanı unutmak zorunda kaldın mı hiç?
+Hiç bir insanı unutmak, bir insandan vazgeçmek,
+Bir insanı hayatından sonsuza kadar çıkarmak zorunda kaldın mı hiç?
+Hani ölmüş gibi,
+Hani uzatsan elini tutamayacağını bilmek gibi,
+Her an kapıdan içeri gülümseyerek gireceğini bekleyip
+Ama aslında hiç gelemeyeceğini de bilmen gibi.
+~Nazım Hikmet<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p2">Bir an sadece hayat ve bir an sadece ölüm.  
+Nefes aldığın ve almadığın bir an.  
+
+İşte o bir anı ilk kez o kadar yakından görmekti hayat öte yandan. Durmak üzere olan kalp, hayatta en sevdiğin insanın kalbi olduğu zamandı öte yandan ölüm. İlk defa ambulansa binmekti hayat, ilk defa hastanın yakını olarak binmekti ölüm. Gece ansızın gelen bir sancıydı hayat yine gece ansızın gelen bir ürpertiydi ölüm. Yere yığılmış bedeni yaşasın diye ağlamaktı hayat, bedeni yaşasın diye bütün soğukkanlılıkla kurtarmaya çalışmaktı ölüm. Anne demekti hayat, baba demekti ölüm. Bir annenin yavrusunu emzirmesiydi hayat, yavrunun annenin kucağında boğulmasıydı ölüm. Yıllardı hayat, saniyelerdi ölüm; umuttu hayat, gerçeklerdi ölüm; sevgiydi hayat, şiddetti ölüm ve kahkahaydı hayat, ağlamaktı ölüm.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p3">Utku Aydemir’in heybetli vücudu tabutunun içinden dahi belli oluyordu. Mehtap’ın sağ ve sol kolunda iki kadın vardı ve ona destek sağlıyorlardı, tutmasalar yıkılacaktı. Ağlamaktan mavi gözleri oldukça şişmiş ve kızarmış, gözyaşlarının bazıları yanağında kurumuştu. Kuruyanların yerini ise hemencecik yeni olanlar alıyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p4">Yaşanan her ne olursa olsun hayat arkadaşını-bu hayat arkadaşı ne zamandır iki kelime etmediği, yüzüne gülmediği, birlikte uyumadığı, sevgisini hissetmediği biriydi-kaybetmek Mehtap’a acıların en büyüğü olmuştu, kollarında kaybetmekse cabası. Prosedür belliydi, yapılan sakinleştirici iğnelerle buradaydı aksi takdirde feryat figan isyanına devam ederdi. Zaten elinden gelen tek şey isyan etmekti.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p5">Oldukça fazla üniformalı vardı bu cenazede. Birçok siyah araba ve onlardan çıkan takım elbiseli adamlar... Omuzları yıldız göğüsleri madalya dolu yiğitler vardı. Kalabalıktı, iğne atsan yere düşmeyecek deyimi bu an için söylenmişti ama bir eksik vardı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p6">Bu tabut al bayrağa sarılı değildi. Bu cenaze bir şehit töreni değildi. Utku Aydemir şehit olarak gidememişti bu dünyadan. O mertebeye layık görülmemişti Yaratan tarafından.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p7">Bu önemli bir insana vedaydı. İyi bir askere, iyi bir dosta, iyi bir amcaya ya da dayıya, belki iyi bir insana bile… Ama iyi bir babaya değil.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p8">Maral, babasını kaybetmişti. Annesini tutan kadınların yanında yer alıyordu o da ama onu tutan kimse yoktu çünkü annesi gibi değildi. Yaşadığı acı ne olursa hep kendi başına, dimdik durarak karşılık vermişti. Siyahlara bürünmüşken yine siyaha çalan kahverengi saçlarının birkaç tutamı önü dantel işleme olan şalından çıkıvermişti. Başı ve omuzları dimdik duruyor ve tek gözyaşı dahi akıtmıyordu o adamın arkasından. Dümdüz, duygusuz bir yüz ifadesiyle babasının defnedilişini izliyordu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p9">Asla mutlu görünmüyordu güzel yüzü ama üzgündü de denilmezdi.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p10">Bir an için kafasını sağında kalan annesine çevirip baktı. Acıdı gördüğü bu çehrenin sahibine; yaşanan onca şefkatsizliğe, şiddette ve öfkeye rağmen bu kıvranan haline acıdı. Ölen Mehtap olsaydı babası tek bir yaş bile akıtmazdı. Ölen kendisi olsaydı babası mutlu dahi olurdu.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p11">Sonrasındaysa babasının şiddetinin ve öfkesinin yansıdığı tek kişinin kendisi olduğunu hatırladı. Mehtap etkisiz elamandı, ona sevgi yoktu ama nefret de yoktu; Utku’nun öfkesini kustuğu kişi daima Maral olmuştu. Hayallerini elinden alan özbeöz kızı, kus nefretini, kus, o hatalı.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p12">Başının umutsuzca iki yana sallayarak tekrar önüne döndü. Kulağına gelen birkaç konuşmayı dikkate almamaya çalıştı ama insanların samimiyetsizliği mide bulandırıcıydı. Sabırla bu anın da bitmesini bekledi. Bitmesini beklediği anlar artık taşıyamayacağı kadar fazla yara açıyordu Maral’da. İnsan anlarını bitsin diye yaşar mıydı?<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p13">Aydemir evinde kavgasız tek gün geçmezdi. Kalpler kırılırdı ama kırılan hiçbir zaman sadece kalpler olmazdı. Cam kırıkları vardı o evde; süpürsen de bitmeyen, battığından durmayacak şekilde kanatan kırıklar… Can kırıkları vardı, şatafatlı bir halıyla üstü örtülen, ustalıkla gizlenen.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p14">O evde atılan her adım bir kumardı. Alınan yanlış bir nefes, atılan yanlış bir bakış kırardı. Sevmek dahi kırardı. Tüm açılan ve durmadan kanayan yaraların ardından hiçbir şey olmamış gibi mükellef bir sofra hazırlardı Mehtap. Baş köşede Utku, sağına ve soluna pek sevgili kızını ve karısını alır yemeğini yerdi. Onlar ışıldayan bir aileydi. Özür dilemek neydi, o evde bilinmezdi. İletişimsizlikleri had safhadaydı ve bunun bedeli ağır oldu.  <span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p15">Hayat Maral’a “neden” diye hesap sormak için yeteri kadar zaman tanımamıştı. Bu bir iyilik miydi yoksa kötülük mü, Maral bunun ayrımını yapmak için on yedi yaşında bir genç kız olarak henüz çok gençti. Ama kötülüktü, bu bir kötülüktü.<span class="comment-trigger">💬</span></div>
+
+        <div class="p-wrapper" data-p-id="huma1-p16">Utku Aydemir, emekli astsubay kıdemli başçavuş, ölmüştü ama şehit olamamıştı. Evde yaşadıkları bir kavgadaydılar yine. Mehtap tekli koltuğunda oturmuş parmaklarını izlerken Utku yine ateş püskürtüyordu. Maral bütün soğukkanlılığıyla babasının söylediklerini dinliyor ağzını açmaya yeltendiğinde bile itilip kakılıyordu.
+
+ 
+ 
+✈︎ 
+
+ 
+ 
+13 Kasım 2022 
+
+Maral okuldan çıkmış eve doğru yürürken yanında bir oğlan bitmişti birdenbire. Kafasını çevirip kim olduğuna baktığındaysa sınıfından bir arkadaşı olduğunu gördü. Duraksamadan adımlarına devam ederken sohbet açılmıştı. 
+
+“Hayırdır Onur, neye yetişiyorsun?” Dedi Maral gülerek. 
+
+“İznin olursa sana yetişmeye çalışıyorum Maral.”  
+
+Zaten Maral’ı yakalayabilmek için koşmuş ve nefes nefese kalmış Onur’a Maral’ın seri adımları hiç yardımcı olmuyordu. Bu cümlenin üzerine Maral tekrar güldü ve biraz daha yavaş ilerlemeye başladı. 
+
+“Eve geç kalamam.” Dedi genç kız. Geç kalıp da evde olay çıksın istemiyordu. Komik olansa yarım saat sonra geç kalmayı biraz sonra yaşanacaklara yeğleyeceğiydi. 
+
+“Yok yok, kalmazsın merak etme. Ben senden bir konu hakkında yardım isteyecektim.”  
+
+“Öyle mi, söyle bakalım yapabileceğim bir şey varsa hallederim.” 
+
+“Ya yanlış anlama ama sen şimdi okul birincisin ya…” dedikten sonra duraksadı Onur, Maral’a bakarak mimiklerinden bir şeyler çıkartmaya çalışıyordu. Çekingen bir gençti. Olur olmadık şeyler için özür diler her hareketine dikkat etmeye çalışırdı. Kalp kırmaktan çekinirdi ve kibar biriydi.  
+
+Maral ise öylece bakıp “Eee” dercesine başını salladı, ardından Onur konuştu. 
+
+“Neyi yanlış anlayacağım Onur…” saatine baktı genç kız ve huzursuz bir tavırla ekledi “…geç kalacağım söyle ne söyleyeceksen.”  
+
+“Tamam tamam, ya ben bir sınava hazırlanıyorum burs alabilmek için senin de derslerin çok iyi. Acaba diyorum sınava için bana biraz yardımcı olabilir misin?” 
+
+Maral kısa sayılabilecek bir süre duraksadı. Sonra gözleri büyüyerek cevap verdi.  
+
+“Nasıl olacağım tam olarak, senin yerine girmemi falan istemiyorsun herhalde!” şeklinde saçma bir telaşa bürünen Maral’ı Onur hemen susturdu. 
+
+“Ya yok hayır be öyle değil saçmalama. Ya anla işte Maral, çalıştır beni diyorum.” 
+
+Onur okullarına bu sene gelmişti. Babası Maral’ınki gibi askerdi ve aynı lojmanda oturuyorlardı. Ortalama bir öğrenciydi ve Maral göstereceği çabanın boşa gitmeyeceğini düşündü. Biraz utanarak ve gülerek cevap verdi genç kız. Hep böyle saçma telaşlara sahip olduğu için ufaktan kendine kızdı. 
+
+“Ay ilahi ben.” 
+
+“İlahi sen Maral. İllegal iş yapabilir miyim ben…” Onur Maral’ın kulağına doğru eğildi ve yapmacık bir gizlilikle “Babam topuklarıma sıkar.” Dedi gülerek. Eve iyice yaklaşmışlardı. Maral da Onur’un bu söylediğine karşın ufak bir kahkaha attı. 
+
+“Yani tabi elimden geldiğince yardımcı olmaya çalışırım ama işler biraz karışık,” evde despot bir baba var. “Sonra daha detaylı konuşsak bunu.” Dedi ve tekrar saatine baktı. Onur da evde otoriter bir baba figürü olduğunu tahmin ederek üstelemedi. Asker aileleri biraz şeydi, katı. Maral’ı zor durumda bırakmak istemezdi. 
+
+“Tamam o zaman, telefondan konuşsak olur mu?” Diye sordu Onur. 
+
+“Olur tabi daha iyi olur hatta.”  
+
+“Numaram var mı sende?” 
+
+“Sınıf grubunda vardır illaki.” 
+
+“Sanmıyorum beni daha eklemediler.” 
+
+“Anladım o zaman sen bana yaz numaranı hem gruba da alırım seni.” Derken çantasından telefonunu aramaya başladı. Bir sürü kitap, defter ve yığınla kağıt dolu olan çantasından telefonunu bulmaya çalışırken zorlanıyordu. 
+
+“Burada da bir ben yokum.” Dedi gülerek ve en sonunda telefonuna ulaştığında Onur’a doğru uzattı. 
+
+“Al yaz ve acele et.”  
+
+Onur başıyla onaylayıp numarasını yazarken “Neden tüm kitapları taşıyorsun ki? Bugün kimya yoktu mesela dedikten sonra telefonu Maral’a geri uzattı. 
+
+Maral gülerek cevap vereceği esnada telefonun saatine baktığında gözleri kocaman açıldı.  
+
+“Geç kaldım. Sonra konuşuruz olur mu? Hoşça kal.” Dedi eve doğru koşarken. Onur da arkasından bağırdı ama Maral duymamıştı. 
+
+“Tamam, konuşuruz.” Ve kendi duyabileceği şekilde ekledi “Dikkat et.” 
+ 
+ 
+
+✈︎ 
+
+ 
+ 
+Maral daha anahtarını kapıya takamadan babası bir hışımla açtı kapıyı. Ne olduğunu anlayamadan da kolundan tutulup sertçe içeri çekildi, şaşkınlığı hızlıca geçti çünkü alışıktı. Çantası omuzundan yere düştüğündeyse çoktan salona gelmişlerdi. Her şey basit bir sohbetten ibaretken Utku için bu namus davasına kadar giderdi çünkü dinlemezdi. Kızının sözüne itimat etmezdi. Yanlış yapmak affedilmezdi ama yanlışların nasıl belirlendiği de büyük bir muammaydı. Etkisiz eleman olan annesi bir köşede kızının kırılışını izlerken Utku öfkesinden küplere binmişti. 
+
+Ve kelimeler. Ama kurşun etkisi. Hayır. Kelimeler. 
+
+“Sen nasıl benim adıma leke getirecek bir hareket yaparsın?” 
+“Kimdi lan o çocuk, ikinizi de öldüreceğim yemin ederim bu sefer elimde kalacaksın Maral.” 
+“Nankör, sana tüm imkanları sağladık okuyasın diye sen git sağda solda elin adamlarıyla fingirdeş,” 
+“Evden çıkmıyorsun bundan sonra, bitti.” 
+
+Tek solukta, bir o yana bir bu yana giderek söylediği bu cümleler de kırmıştı tekrar ve tekrar. Öfkesini kusuşu Maral’ın zannettiğinden kısa sürerken Utku sağ eliyle kalbinin üzerine baskı yaparak kapı eşiğinden geçmek üzereydi.  
+
+Evden çıkmayacaksın derken babasının tam olarak neyi kastettiğini anlayamayan Maral’sa bir cesaret konuştu ve “Okul ne olacak?” dedi. Çıkışa doğru yönelmiş olan Utku duyduğu soruyla gerisin geri döndü. Dudaklarında alaycı bir gülüş ama gözlerinde zehir gibi bir öfke vardı. Söylediği her kelime Maral’ı kurşun gibi delip geçerken o bundan çekinmiyordu. Kalbindeki elini hiç düşünmeden kızının saçlarına daldırdı. 
+
+“Sanki okumak için gidiyorsun oraya da bir de soruyor musun?” dedi imalı imalı. Tekrar kırıldı.  Belki de delindi. Kurşun deler, parçalar. Kelime. Kurşun. 
+
+Babasının kendisine içinde beslediği bu kinin sebebini on yedi yıldır çözemiyordu ama artık fazla geliyordu. İnsanın çıkıp “Yeter artık, dur! diyesi geliyordu. İçinde dolup taşan bu öfkeyi daha fazla dizginleyemedi ve Utku’dan saçlarını kurtardıktan sonra ses tonu da oldukça yüksek olacak şekilde cevap verdi.  
+
+“Sadece sohbet ediyorduk. Başka bir amaçla oraya gitsem gece gündüz çalışıp yapılan her sınavda birinci olmam herhalde baba. Ha ama senin haberin yoktur, benimle ilgili neyi biliyorsun ki sen?” 
+
+Mehtap bile ruhsuz bakışlarını kaldırıp Maral’a dikti. Bazen sessizlik de kurşundu. Bu insanoğlu ne nankördü. Konuşunca yara, sessiz kalınca yara, ne yapmalı o zaman? Kabullenmeli belki de. Yarayı. 
+
+Utku’nun duyduğu cümleyle beraber siniri daha çok artabilirmiş gibi büyüdü. Maral ise ayda yılda bir açtığı ağzını kapatmadan devam etti. İlk kez konuşuyordu ve tekrarı olmayacaktı. Bilmiyordu. 
+
+“Senin benimle ilgili bildiğin tek şey kendi kafanda uydurduğun ve etraftan duyduğun kusurlarım. Onlara inanarak çektiğin saçlarım değil mi baba?” 
+
+Utku’nun sesi tüm lojmanı inletecek kadar yüksek sesle çıkarak “Sen benimle nasıl böyle konuşursun, haddini bil!” dedi. Cümlesini bitirirken eli havaya doğru kalktı Utku’nun.  
+
+Eylemler. Bu da mı? Evet, bu da yara. 
+
+Mehtap’ın gözleri açılırken Maral’ınki sımsıkı kapanmıştı. Kapatırdı. Kapatırdı çünkü kendi evladının canını yakmak üzereyken babasının gözlerinde göremediği tereddüt şiddetti kadar acıtıyordu. Kapatırdı ki kendini avutsun. "Gözlerim kapalı diye görmedim yoksa bana vururken tereddüt oluyor gözlerinde.” Diyebilsin gece kabusuna gelen çocukluğu “Neden susuyorsun?” Dediğinde. 
+
+Başını hafifçe sağa çevirerek bekledi. Çok sert olduğunda acı kısa, uyuşur çünkü. Uyuşturacak kadar sert olmadığında yakıyor asıl. Asker adam tabi, istese de hafif vuramaz. Çoğu zaman yanağını ısırdığından diline gelen metalik tada alıştı. Asıl kötü olan sonrası olurdu çünkü tokadın acısı sonraları yara olan damaklarından devam ederdi. 
+
+Ama dişi kırılmasın isterdi. Diş ağrısı çekilmez olurdu. Ee kötü de görünürdü. Hem soran olursa kaç kere “düştüm” diyebilirdi? Dört kırık diş. İnsan sürekli düşüp diş kırar mı? 
+
+Bekledi, bekledi, bekledi; her zamanki gibi ama o tokat yanağına inmedi. Bu sefer inmedi ya da indi de bu kez uyuşma had safhada hiçbir şey hissetmiyor mu? Belki de boynu kırıldı, felç oldu, olamaz mı?  
+
+Hadi gözlerini aç, eninde sonunda açmak zorundasın. Korkuyorum, açmasam. Korkmak mı, onu yapmayı bıraktın. Bırakmadım, bırakmış gibi yaptım. 
+
+En sonundaysa gözlerini annesinin çığlığıyla açtı. Kelimelere sessiz, saçlara sessiz, tokatlara sessiz. Bu sessiz kadını ne çığlık attırabilir ki bu manzaradan başka. Bir kadının en büyük korkusu kızını nefretle bağdaştıran adamsız kalmaksa annelik neden var ki? 
+
+Babası yere yığılmış ölü gibi yatıyordu. Gibi. Gibisi çok. 
+
+“Utku, Utku aç gözlerini. N’oldu Utku, kendine gel. Maral ambulansı ara hemen, yardım çağır. Maral bir şeyler yap.” Diyerek bağıran Mehtap’tan ve yerdeki babasından gözlerini çekti Maral. Sağlam dişler ve yara olmayan iç yanağının sevinci vardı üzerinde, ne yapsın? Üzülemedi. İstedi. Babası yerde gibisiz ölü yatıyor. Gerçekten üzülmek isterdi. 
+
+Büyük bir soğukkanlılıkla cebindeki telefonu çıkardı ve 112’yi tuşladı. Sesinde hiçbir korku belirtisi olmadan adresi söyledi ve kapattı. Şaka bile sanılabilirdi. İnsan “Babam yere yığıldı.” Derken bu kadar sakin olabilir miydi? 
+
+Aldığı son nefesler fazla sesliydi Aydemir’in, göğsü son kez inip kalktığındaysa gözleri yarı açık bir şekilde kalan bedenini terk etti ruhu. Ambulans geldiğinde Utku Aydemir’in küçük kıyameti çoktan gerçekleşmişti ve Utku’dan ziyade sinir krizi geçiren Mehtap’a müdahale ediyorlardı. Maral’sa olan biten her şeyi salonun köşesinde kalan yerden izlemişti.  
+
+On yedi, bitti artık. 
+On sekiz, her şey güzel olacak. 
+
+Utku’nun kızına kalkan eli havada kalmış, geçirdiği kalp kriziyle beraber bu dünyadaki yolculuğu son bulmuştu.  
+ 
+
+ 
+✈︎ 
+ 
+ 
+
+Her çocuğun en büyük isteği büyümektir, isteme deseler de. İnsanoğlu çocukken bile zorunlu muhtaçlıktan hazzetmez çünkü. Hele ki muhtaç olduğunuz insanlar bir de size zarar veriyorsa. Canınızı yakabilirler, fiziksel ya da ruhsal, ama karnınızı doyurmak için onlara ihtiyacınız vardır. Dışarısı çok soğuk, bir yatağa ve eve de ihtiyacınız var. Size vurabilirler, bağırabilirler, rencide edebilirler ama sokaklar tehlikeli; onlara muhtaçsınız. 
+
+Benim çocukluğumun en büyük isteği büyümekti. Beni onlara muhtaç olmaktan kurtaracak şeyin para olduğunu öğrendiğimde canla başla çalışmaya başlamıştım. Bu farkındalık yaşandığında sekiz yaşındaydım. O zaman pek güzel kendime bir ev ve yatak edinebilir, karnımı doyurabilirdim. Üstelik birilerine saçlarımı çekmemesi için yalvarmak zorunda kalmazdım. 
+
+Benim çocukluğumun en büyük isteği gerçekleşmişti. Ben büyümüştüm. Artık kimseye muhtaç değildim. Böyle zannediyordum, büyüdüm sanıyordum. Her şeyi tek başıma yapabilecek kadar güçlüyüm. Ben Maral Aydemir’im, erken büyüdüm ve belki de bu yüzden asla büyüyemeyeceğim ama ben Maral Aydemir’im, başarı hikayesi yazabilmek için doğdum. 
+
+Nefes doldu dolalı şurama sonuçlanmamış yüzlerce savaşın ortasındayım ve kaçını kazanacağım ise meçhul. Verdiğim savaşların çoğuysa benliğimleydi ama kendimi severdim. O kadar severdim ki kendimi altıncı yaşımın ihtiyaç duyduğu şefkati bugünden geçmişe hissettirmeye çalışırdım çünkü o çocuğun sevilmeye ve şefkate ihtiyacı vardı. Zorunlu sevgi. Nefret kadar keskindir, herkes bilmez. 
+
+İnsanın kendinden başka kimsesi olmayınca çok da güzel sevebiliyordu kendini. İnsanoğlu her ne kadar kaçsa da acizlik olarak nitelendirdiği sevgiden bir şeyi de sevmek gerekiyordu bu hayatta. Sevilmek bazen yetmezdi çünkü. İnsanın kendinden başka sevecek kimsesi olmayacak kadar yalnız kaldığında da kendini sevmek zorunda kalıyordu ve ben cennete kadar kendimi ölesiye seviyordum, istemeyerek ama zorunluluktan. Belki sahteydi ama sevgiydi. 
+
+Ve ben Maral Aydemir, tarih 7 Ocak 2032; kendi paramı kazanıyorum, karnımı doyurabiliyorum ve bir evim var, saçlarım artık eskisi kadar dökülmüyor, kimseye yalvarmadan yaşayabiliyorum. 
+
+Ben Maral, artık kendimden başka sevebilecek birilerine sahibim dolaysısıyla kendimi sevmek zorunda değilim ve sonunda sevmiyorum. Sevmek ihtiyacımı karşılıyorum ama sevilmek ihtiyacım için yetinemiyorum. 
+
+Tarih 7 Ocak 2032; Hüma Kuşu’nun ise cennetten ayrı geçirdiği dördüncü yıl, yedinci ay, on üçüncü gündü. 
+
+Mevsim kış olduğundan güneş doğmamakta direniyordu ama ben doğuşunu izleyecek kadar ayakta kalabilmiştim. Boydan boya cam ile kaplı olan yatak odamdan Ankara’yı selamlıyordum son on altı aydır her sabah olduğu gibi.  
+
+En büyük yaralarımın ve kalp kırıklıklarımın ev sahipliğini yapan Ankara, bugün भी ne kadar güzelsin! Ama gidilmiyor senden işte, zaten insanlar kendilerini kötü anıları hatırlatan her somut nesneden soyutlasaydı kendini geriye ne kalırdı? Benden geriye küllerim kalırdı. 
+
+Saatler 6.32’yi vurduğunda engel olamadığım bir esneme kaçtı ağzımdan. Elimdeki koca bir kupa Türk kahvesi artık beni ayıltamıyordu belli ki. Arkadan Redd kısık sesle “sen kendinde ol yeter” derken elimdeki kupayı camın hemen karşısına konumlandırdığım masamın üzerine bıraktım.  
+
+İşe gitmeden önce bir iki saatlik bir uyku bana yeterli olurdu. Zaten günlerdir iki saatten fazla uyuyamıyordum. Hatta elimde olsa onu da yapmazdım, peki my uykucu bünyem neden mi uykudan kaçıyordu? Çünkü cennet son günlerde oldukça fazla rüyama geliyordu. Yıllardır benden uzaktayken ne diye beni tekrar kendine çekiyordu. Hayat, neden her geleceğe odaklandığımda bana geçmişimle geliyordu? Ben yeni anılar için çırpınırken ısrarla yaşanmışlıklarla idare etmem gerektiğini hatırlatıyordu sanki bana. 
+
+Kendini kandırma, geçmişten bir an bile kopamadım. Suçu hayata atamazsın. 
+
+Ama insan fizyolojisi denen şeyin de bu uyku denen merete ihtiyacı vardı. Bütün özverisiyle çalışmasını emrettiğim beynim için en azından bunu yapmalıydım ki son günlerde şarap-kahve ikilisi arasında yaşarken doğru düzgün beslenmemesine rağmen iyi performans gösteriyordu. 
+
+Bir buçuk saatlik uykumdan alarmıma üç dakika kala uyandım. Tüy kadar hafif olsa da uykum, cennet derin bir uykudaymışım gibi bugün de rüyama geldi. Rüyalar, insana bir şeyler anlatmaya çalışır değil mi ya da hatırlatmaya? 
+
+Zorlanmadan uyandım. Çıplak ayaklarım soğuk zeminle buluştuğunda içim ürpermedi değil. Ağır adımlarla doğrulup tekrar masamın yanına gittiğimde buz gibi olmasına rağmen uyumadan önce bıraktığım Türk kahvesinin kalanını tek yudumda içtim. 
+
+Favori içeceğim Türk kahvesi ya da şarap da olabilir, bu ikisini ayıramıyorum.  
+
+Hayatım rutinlerden oluşuyordu, hepimiz gibi ama benim rutinimin bile rutini vardı. Her şeyi aynı saatte yapıyor ve her günümü bir diğeriyle bire bir aynı yaşıyordum. Değişen şeyler giydiğim kıyafetler, yaptığım makyajlar iyi günümdeysem eğer belki saçlarımın modeli oluyordu. 
+
+Genelde akşam yedi gibi eve gelirim, balkonumda bir saat kadar dinlenir şarkı dinlerken ilk şişemi açarım. Yirmi dördüncü kattan Ankara’yı izlerim ve birbirimize tekrar alışmaya çalışırız. Bir seneyi devirdik. Hala eksik.  
+
+Eksik olan Ankara değil, sensin. 
+
+Sekizde zaten keskin olan Ankara ayazı geceyle birleşince daha yakıcı olur ve çalışma odama yönelirim, gitmeden mutfağa uğrar ve her ihtimale karşın ikinci şişemi alırım; hayır, kolay sarhoş olmam ve evet, sanırım alkoliğim.  
+
+Çalışma odam ortalama bir oda büyüklüğünde ve kare şeklinde. Yatak odam gibi bir tarafı tamamen cam ve şehir gözler önünde. Camın önünde kahverengi bir çalışma masam var. Üzerinde masa lambası, bilgisayarım, tabletim, birbirine girmiş notlarım ve bir fotoğraf çerçevesi bulunuyor. Teknoloji kendini aşmış olsa da ben hala kağıtlarla çalışan analog bir kadınım.  
+
+Odaya açılan kapının etrafını tamamen kitaplık yaptırdım, tavana kadar. Kendimi sevmek zorunda olduğum zamanların eşlik edenleri olan kitaplarım o kitaplıkta yaşamaktalar. Duvara dayalı masamla aynı renk koltuk, kiremit rengi bir halı ve duvarda asılı olan aile fotoğrafıyla odamdaki nesneler bitiyor. Genelde sabah dörde kadar bu odada oluyorum. Göz kapaklarımdaki yük taşınılmaz olunca koltukta kestiriyorum ama çok çalışmam gerek. Bu uçağı bitirmek için resmi olarak altı ayım var. Sekiz yıldır üzerinde çalışıyor olduğumuz ise resmi belgelerde yazmıyor.  
+
+Güneşin doğuşu yatak odamdan daha güzel izleniyor o yüzden güneş doğmaya yakın oraya geçiyorum. İşte bu oda hayli büyük içini doldurmayınca daha da büyük görünüyor. Dikdörtgen odaya girdiğinizde kafanızı sağa çevirirseniz yatağımı görüyorsunuz. İki yanında iki komodin var. Yattığım tarafta olan komodinin üzerinde okuduğum kitabı ve bir bardak suyu daima bulundururum. Şu günlerde ise Martin Eden’ı okuyorum. Biliyorum bu kitap için yirmi yedimi beklememeliydim. Bazen kabuslarım öylesine gerçekçi oluyor ki kalkıp da mutfaktan su alacak halim olmuyor.  
+
+Giyinme odamı ayıran paravanın yanında ise makyaj masam var. Tam yatağımın karşısında ise çalışma odamınki kadar büyük olmayan siyah renkte bir çalışma masası var. Onun üstü boş, sadece masa lambası koydum. Vücudum el verdiğince de burada çalıştıktan sonra yeni bir gün başlıyor. İşe gidip geliyorum ve tüm bu söylediklerim tekrar yaşanıyor. 
+
+Hayatım Eylül 2030’dan beri böyle devam ediyor. 
+
+Hızlı bir duşun ardından hazırlanmaya koyuldum. Saçlarımı ensemden birleştirerek sıkı bir at kuyruğu yapmıştım, her zamanki gibi. Gri renkte kumaş pantolonumun üzerine omuzları düşük bir kazak giyindim, dünküne benzeyen bir kombin oldu. Şık bir makyaj ve altın rengi takılar tercihimdi. Ankara’nın nefes kesici soğuğundan korunmak için en sıcak tutan kabanımı giydim ve yine siyah topuklularımla Bürküt Hangarında bir güne daha hazırdım. 
+
+Maral Aydemir; koyu renklerin, altın takıların ve özellikle topuklu ayakkabıların kadınıydı. 
+
+Resmi olarak Bürküt Projesinin başlamasının üzerinden on altı ay geçmişti ve çalışmalar tüm yoğunluğuyla devam ediyordu.  
+   
+Bürküt, Milli Savunma Üniversitesi ve Türk Hava Kuvvetlerinin ortak çalışması sonucu olarak ortaya çıkmış bir savaş uçağı projesiydi. Ben henüz ODTÜ uzay ve havacılık mühendisliği birinci sınıftayken adı bizzat benim gerçekleştirdiğim bir sempozyumda geçmeye başlamış ve resmi olarak başlaması 2030 Eylül’ü bulmuştu. Bu gecikmenin sebebininse Türkiye’ye yapılan baskı olduğunu biliyordum.  
+
+Ankara hava üssünün bulunduğu yerde Bürküt fabrika koluna geçene kadar çalışılması için oldukça büyük bir hangar kurulmuştu. Benim ise başmühendis olarak atanmam oldukça aksiyonlu bir süreç olmuştu. Detaylı bir seçim sürecinin ardından okul döneminde de projeyle ilgilenen nadir öğrencilerden biri olduğumdan seçilmiştim ve Amerika’daki yüksek lisansımı bitirip, işimden ayrılıp, ekip arkadaşlarımı da özenli bir araştırma sonucunda seçtikten sonra proje için yurda geri dönmüştüm.  
+
+Dönemin Cumhurbaşkanı Elif Gonca da bu proje için desteğini esirgemiyor ve maddi olanakları sağlamaktan çekinmiyordu. Vaatler büyük, çalışmalar yoğundu. 
+
+Belirtilen vaatlerimiz büyüktü, belirtmediklerimiz ise eğer başarabilirsek dünya tarihinde bir milat olacaktı. Böyle bir gücü ülkeme sağlarsam eğer kahraman mı ilan edilirdim yoksa hain mi, işte onu kestiremiyordum. 
+
+ODTÜ’den mezun olduktan sonra elime geçen ilk fırsatta Amerika’ya gitmiştim. Cennetin gidişiyle beraber artık ne Ankara beni kabul ederdi ne de ben ona sığardım. Üç yıl Amerika’da kalmıştım, işim de hazırdı. Dolgun bir maaşımla, ideal Amerikan ailelerinin yaşadığı o müstakil evlerden biri ve NASA’da hatırı sayılır bir pozisyona geçip yaşamak üzereydim. Dönmek gibi bir niyetimse asla yoktu. Ta ki kişisel telefonum, ki benim başka telefonum yoktu, cumhurbaşkanımızın kişisel telefonuyla, eminim onun başka telefonu vardır, çalana kadar. 
+
+Ülkede büyük ses getirerek cumhurbaşkanlığı koltuğuna yerleşen Elif Gonca imla olarak rica etse de ima olarak açıkça emrederek beni bu projenin başında görmek istediğini söylemişti. Amerika’dayken projeyle ilgili haberler alıyordum ve üzerinde çalışıyordum. Herkes hazırdı ama başmühendis bir türlü seçilememişti. Elif Gonca ise eski bir eğitimci olarak gençlere fırsat tanıma isteği ve aldığı referanslarla birlikte beni tercih etmişti ve beni ikna etmesi ise hiç de zor olmamıştı.  
+
+Tepki çekmedi denemez tabi ki. Milyar dolarlık yatırımlara ev sahipli yapan bir projeydi ve haklı olarak tüm meclis en iyisinin olmasını istiyordu. Benimse “Sana tüm imkanları sağlıyoruz, en iyisini yap!” dendiğinde anlattığım bu rutini yapmaktan başka şansım kalmıyordu. Gençtim, beklenmediktim, belki tecrübesiz diyenler de vardı. Aksini ispat etmek istiyordum. 
+
+Eğer ki bu hırsım da olmasaydı kendimi nasıl ayakta tutardım bilemiyordum. 
+
+Dönmek gibi bir niyetim yokmuş ama isteğim varmış belli ki şu an buradaydım. Hem vicdanen de Türkiye’de olmak bana iyi gelmişti. Eskisi gibi kardeşimle bir arada çalışıyordum ve ülkeme hizmet ediyordum, daha ne isteyebilirdim ki! Ankara, sen beni istemsen de ben yine sana döndüm; griye. 
+
+Yılların getirdiği yenilikler, gelişen teknoloji, 2030’lu yılların gelip çatması ve değişen dünya kuralları… Özellikle Amerika ve Çin’in yıllar ardı ardına akınca süregelen kavgası son zamanlarda dünya genelinde korku uyandırıyordu. Rusya beklenmedik bir şekilde sakin, Avrupa ise iki tarafında dostuymuş gibi görünürken Türkiye’nin izlemeyi seçtiği yol tamamen savunma üzerineydi. 
+
+Bürküt projesinin hızlandırılarak gündeme oturmasıysa bu yüzdendi. Olası bir dünya savaşı haline yeni savaş kurallarıyla savaşmak gerekiyordu. Savaşlarda kol gücü hep bir adım önde olacaktı ama beyin gücünün konuştuğu bir dönemdi bu. Bilim yaşamı ele geçirmişti. Bürküt resmiyette savunma sanayi için üretilse de minik sürprizlerim elbette olacaktı. 
+
+Garip bir kadınım, savaşlar bitsin istiyorum ama bir savaş uçağının başmühendisiyim. Amerika’da olacağı gibi dolgun bir maaşım ve üniversitedeki evime zerre benzemeyen bir evim bile var. 
+
+Üniversitede yaşadığım eski evim belki de şimdiki yatak odam kadardı. İnsan tek başına bu kadar büyük bir evde yaşamamalıydı. Ne yapıyorum ben burada dedirtiyordu yalnızlığıma. Ankara’nın göbeğinde büyük bir plazanın lüks bir dairesindeydim. Mutfağım Amerikan mutfaktı ki sanırım bu eski evimle aynı olan tek özellikti. Salonumda da Tunç geldiğinde bir iki kere oturmuşumdur herhalde.  
+
+Her şeyimi çantama koyduğumdan emin olduktan sonra çıktım odamdan. Eve girişimle çalışmaya başlayan pikabımı çıkışımla kapatıyordum ve Redd’in sözünü “düşündükçe daha çok isterim seni” derken kesmek zorunda kaldım. Evden ayrılmadan girişteki aynadan kendime baktım tekrardan. 
+
+Güzel bir kadındım ama kendimi zerre sevmiyordum, sonunda. 
+
+Çıktım evimden, ilk geldiğim günden beri göğsümün üzerinde olan ağırlık bugün nasıl da artmıştı? Ben mi yoruldum yoksa yüklerim mi artıyor çözemiyordum.  
+
+Yirmi dördüncü kattan eksi ikiye inmek bir şarkı dinlemeye yetecek kadar sürüyordu. Kulaklıklarımı taktım ve karışık çala bastım. Kulaklarımı tekrar Redd doldurduğunda kendi kendime gülmeden edemedim. Hatta “Bugün redd günüm galiba.” Demeden duramadım.  
+
+Gelen mailere göz ucuyla baktım. Oğuz’dan gelen “Günaydın Başmühendisim, Tunç hasretimden öldüğünü söyleyince bugün uğramak istedim. On iki gibi geleceğim. Akşam sekizde de rakıya çıkıyoruz tüm ekip. Sonra istersen biz kaçarız.” Mesajına “Yüzünüzü görenin cennetlik olduğunu duydum yüzbaşım, siz yine de Tunç Bey’e fazla itimat etmeyin :)” Diyerek yanıt gönderdiğimde anında çevrimiçi oldu ve cevapladı. 
+
+Yüzbaşım: Böyle dediğini duyarsa yanarsın. 
+Maral: Ama sen beni abime asla ispiyonlamazsın. 
+Yüzbaşım: O kadar emin olma. Akşam geliyorsun değil mi? 
+Maral: Rakıyı çok kaçırmazsanız kaçarım belki. 
+
+Gitmeyecektim. 
+
+Anneme günaydın mesajı attım ve asansör kapısı açıldığında arabama doğru ilerledim. Arabamı çok seviyorum. Bu gece rutinlerimi biraz olsun değiştiren tek şey kendimi arabamla Ankara yollarında bulmak. Camlarına varana kadar simsiyah arabam küçükken hayalini kurduğum tek maddi şeydi. Belki arabalar da kaçmaya yardımcı oluyor diyedir, kim bilir? 
+
+Arabama yerleşmiş tam kulaklıklarımı çıkaracakken telefonumun çalmasıyla duraksadım. Arayan Tunç’tu, arabayı park ettiğim yerden çıkarırken çağrısını yanıtladım. Daha ben alo diyemeden duyduğum enerjik “Günaydın Maralkuş!” sesiyle ses çıkararak güldüm ve ben de onun kadar olmasa da aynı enerjiyle “Günaydın Tunçkuş!” diyerek karşılık verdim.  
+
+Onun da güldüğünü duydum. “Neredesin?” Diye sordu. 
+
+“Arabaya yeni bindim.”  
+
+Bir homurtu sesi geldi telefonun diğer ucundan. “Sürekli geç kalıyorsun. Arar seni cumhurbaşkanına şikayet ederim.” Dedi alaylı bir şekilde. 
+
+“Patronum ben patron.” Dedim arabamı park ettiğim yerden çıkarırken. “İstediğim kadar geç kalırım.” 
+
+“O zaman hiç gelme. Teknik olarak sekiz saat geç kaldım dersin. Nasıl?”  
+
+Derin bir nefes vererek “Direkt lafa gir abikuş.” Dediğimde “Direkt lafa gireyim kuşum. Andiç Albay aradı, bugün ekip için atadıkları tim gelecekmiş.” Demesini beklemediğimden ani bir fren yaptım. Uykusuzluktan dolayı zaten ağrıyan başıma başka bir ağrı öyle bir saplandı ki. Tunç “Maral, iyi misin?” dediğinde zorlukla “İyim.” Diyerek cevapladım. Parmaklarımla göz pınarlarıma bastırdım biraz sakinleşebilmek için. Sonrasında kontrolü tekrar sağlayıp konuştum. 
+
+“Ne yaptı etti atadı o timi yani Andiç amca. Kırk kere dedim ki ona koskoca özel kuvvet timini özel koruma mı yapacaksın çok tepki alır diye.”  
+
+Başına koruma diye ülkenin en iyi birliklerinden tim bile atadılar. Prenses gibi bakıyorlar. Başarısız olduğunu düşünsene ne büyük hayal kırıklığı olurdu…  
+
+“Haklısın ama değişen dünya kuraları diyelim abim ne yapalım. Neyse konuşuruz bunları gelince. Saat sekiz kırk sen yeni çıkıyorsun, acele et, geç kalma. Hadi dikkatli sür, kemerini tak, hızlı sürme.” Dediğinde sinirlerim de bozuk olduğu için kahkaha attım. Konu dönüp dolaşıp benim geç kalışıma dönmüştü yine. 
+
+“Birincisi ben akşama kadar hangarda kalıyorum zaten, yirmi dakika geç kalma hakkım var. İkincisi hem acele edip hem nasıl hızlı sürmeyebilirim?” Dedim. Karşılık olarak “Allah Allah, beni mesai saatleri ilgilendirir Maral Hanım, sen patronsan ben de patronum. Ayrıca cevap verme abine. Acele et, yavaş sür.” Dedi ve ben cevap veremeden telefonu kapattı. Sonra tekrar aradı, bekletmeden açtığımda tekrar bana fırsat vermeden “Seni seviyorum, biliyorum sen de beni.” Dedi ve tekrar kapattı.  
+
+Her konuşmamız sevgimizi belirtmemizle biterdi, yazılı olmayan kardeşlik anlaşmamızın bir maddesiymiş, öyle der Tunç. Yüzümdeki gülüşüm büyürken hayatımda olduğu için ne kadar şanslı olduğumu hatırlattım kendime bir daha. Şükretmeye değer olan tek insan için şükrettim ve benim kendimle olan yazısız anlaşmamda ise onunla o sahilde bulunduğum güne şükretmek vardı. Bencilce olsa da eğer Tunç yalnız olmasaydı o sahile asla gelmezdi ve biz iki kardeş birbirimizi asla bulamazdık. 
+
+Kulaklıklarımı çıkarıp radyomu açtım. O an için atanan timi bile unuttum. En azından yarım saatliğine unuttum. Arabamı olduğu yerden çıkardım ve hangara doğru yola koyuldum. Acele etmedim ve hızlı sürdüm. 
+ 
+
+ 
+✈︎ 
+ 
+ 
+
+“Özgür abi Maral’ın çizdiği prototipin maketi hazır mı?” diyen gür erkek sesi Tunç’tan başkasına ait değildi. 
+
+“Bugün içinde hazır olacak Tunç.” Dedi soruyu yönelttiği adam. 
+
+“Tamam abi.”  
+
+Tunç tam Özgür Usta’nın yanından ayrılmış odasına geri dönecekken karşıda büyük bir ciddiyetle çalışan birini görünce sataşmadan duramadı. Yüzüne hınzır bir gülümseme yerleştirip avına doğru ilerlemeye başladı. 
+
+“Kenan!” diyerek seslendi. Kenan siyah pantolonunun üzerine beyaz tişörtünü geçirmiş üzerine de kırmızı oduncu gömleğini giymişti. Karadenizlilere özgü olan sarının o tonunda saçları da işe ilk başladığından bu yana epeyce uzamıştı. Teni beyaz, saçı sarı olarak bir İsviçreliyi andırırken kara gözleri ve kendine has şivesiyle Kenan oldukça Artvinliydi. Böylesine büyük bir projede yardımcı mühendis olduğu için heyecanını üstünden atamamıştı.  
+
+Onu binbir zorluklarla okutan ailesini onurlandırmak ve Maral ablasının da gözünü kara çıkartmamak için canla başla çalışmaktaydı ama şöyle bir sorun vardı ki yetmiyordu! Belki de bu hangarda en çok çalışanlardan biriydi ama yetmiyordu. Adını işitmesiyle beraber kafasını gömüldüğü kağıtlardan ve tabletten kaldırdı. Ayağa kalkmadan Tunç yanında bitmişti. 
+
+“Lan Kenan neredesin?”  Derken ensesine hafifçe vurdu “Seni arıyorum sabahtan beri.” 
+
+“Buradayım abi ben, nerede olacağım, yerimdeyim, buraya gelsen bulurdun.” Dedi Kenan. Çok ve hızlı konuşurdu. 
+
+“Ya tamam tamam, Maral’ın söylediği çizimleri bitirdin mi? Bitirmediysen on dakikaya burada olur hemen bitir. Yoksa o seni bitirir. Hadi kolay gele.” Kenan daha ağzını açıp, cevap veremeden Tunç ondan uzaklaşarak Kenan’ınkinden iki masa solda olan Derya’ya ilerledi. Kenan da kendi kendine “Tamam abi.” Dedi. 
+
+“Deryakuş sana söylediğim programı hazırladın mı?” diyerek bu sefer kendi yardımcı mühendisine sataştığında Derya uyuyakaldığı koltuktan adını duymasıyla yerinden sıçradı. 
+
+“N’oldu, ne, kim?” 
+
+“Sakin sakin, görende sabaha beşik salladın sanacak Derya Hanım. Programı diyorum, iskelet yazacaktık. Yazdın mı kendi bölümünü?” Derya uyku mamuru haliyle üzgün bir yüz ifadesine büründü. Evet, belki beşik sallamamıştı ama sabaha kadar uyumamıştı. Önüne düşen, anlına yapışan saçları geriye attıktan sonra cevap verdi. 
+
+“Tunç abi ben dün onu bitiriyordum ama bazı beklenmedik sıkıntılar çıktı.” Annem sinir krizi geçirip tüm geceyi hastanede geçirmemize sebep oldu. “Mesai saatinde de bitmemişti biliyorsun.” Yavru köpek bakışlarını takındı. Tunç bakışlarındaki şefkatten hiçbir şey kaybetmeden yüzüne bir tebessüm kondurarak cevap verdi. 
+
+“Tamam abim olsun acele etme ama bugün bana ulaştır.” Oturduğu yere doğru Derya’nın kulağına eğildi ve ekledi “Ben de Maral ablanın emir kuluyum.” Ellerinin başının yanına teslim olur gibi kaldırdı. Derya gülerek cevap verdi: 
+
+“Tamam Tunç abi, kurtaracağım seni merak etme.” 
+
+“Anlaştık.” 
+
+“Anlaştık.” Göz kırptı Tunç, eksi birinci katta bulunan odasına gitmek için hangarın en arka köşesinde kalan merdivenlere doğru ilerledi. Tüm bunları ağzı açık kalarak izleyen Kenan arkasını döndükten kendi kendine söylenmeden duramadı. 
+
+“Bu hangarın günah keçisi ben miyim arkadaş? Ben mesai içi dışı sağı solu çalışayım, hanımefendimiz program bitirmediğinde gördüğü muameleye bak. Böyle pozitif ayrımcılık mı olur, ula yeter da!” 
+
+Tam bilgisayarını açmış az kalan programını bitirmeye hazırlanan Derya duyduğu söylenmelerle oturduğu yerden kalktı ve sesin sahibine arkasından yaklaştı. 
+
+“Kim için söyleniyorsun Kenancık.” 
+
+Kenan hırsızlık yaparken yakalanmış gibi arkasını döndüğünde Derya’nın bakışlarıyla dilini yutmuş gibi oldu. Derya sarıya çalan açık kahverengi saçlarını geriye savurduktan sonra bakımlı ellerini belinin iki yanına yerleştirmiş, uzun boyu kırdığı tek dizi yüzünden bir iki santim kısalmış, yeşilin ağırlıkta olduğu ela gözlerini Kenan’a dikerek meydan okurcasına bakıyordu. Hafif kemikli burnu, yakından belli olan çilleri ve çıkık elmacık kemikleriyle yani olağanca güzelliğiyle karşısında dikilen bu kadına karşı Kenan hiçbir şey diyemedi birkaç saniye. Sonra Derya’nın elini sallamasıyla aklına gelen ilk yalanı atabildi. 
+
+“Twitter’da gördüm. Kızın biri tüm işi çalışma arkadaşına yükleyip yan gelip yatıyormuş ona sinirlendim. Olacak iş mi yav?” 
+
+“Aa değil tabi, ne kadar ayıp. Tweete kızdın yani.” Diyerek oldukça sinirlenmiş gibi rol yaptı Derya. 
+
+“Aynen başka neye kızayım ben?” salakça sırıttı sonraysa gelen arabayı görmesiyle sırıtışı soldu ve sadece “Benim gitmem gerek.” Diyerek koşar adım arkasını dönüp uzaklaştı. “X olmasın onun adı.” Diye bağırdı Derya. Bir türlü çözemediği bu adamın arkasından bakarken kendini “Yemin ederim salak bu çocuk.” Demekten alamadı. İkisi de homurdanarak işlerine döndüler. 
+
+Tunç bu esnada odasına gelmişti. Direkt yazdığı programa devam etmek için masasına yöneldi ve bilgisayarını açtı. Ekran aydınlandığında gördüğü fotoğrafla kocaman gülümsedi. Mehtap, Maral, Andiç ve kendisi vardı fotoğrafta. Tunç ve Maral mezuniyet cübbeleri içindeydi ve ortada birbirlerine sarılmış bir şekilde gülümseyerek kameraya bakıyorlardı. Mehtap Maral’ın, Andiç ise Tunç’un yanındaydı ve o ikisi birbirlerine bakıyorlardı.  
+
+Maral’ın çalışma odasındaki duvarda asılı olan fotoğraf da buydu tam şu an kendi arkasında asılı olan fotoğraf da. Aile gibi çıktıkları tek fotoğraf bu olduğundan olsa gerek dördü de bu fotoğrafı göz önünde tutuyordu. İşine devam edeceği sırada telefonu çaldı. Ekranda baktığında arayanın Andiç olduğunu gördü. Telefonu açtı ve Andiç “Günaydın oğlum.” Diyerek lafa girdi. Tunç da “Günaydın Albayım.” Diyerek yanıtladığında Andiç’ten huzursuz bir nefes veriş sesi geldi. Bunun üzerine Tunç “Bir sorun mu var?” diye sordu. Kısa bir sessizliğin ardından Andiç konuştu. 
+
+“Lafı dolandırmayacağım oğlum. Aslında söylemeyecektim ama sen de Maral’la birlikte öğrenirsen kötü olur diye düşündüm.” Kafası karışan Tunç bunu dile getirdi.  
+
+“Neyi öğrenirsek Andiç Albayım, anlayamadım.”  
+
+“Atanacak timin komutanını tanıyorsunuz.” Dedi Andiç. Sesinden gerilmiş olduğu anlaşılıyordu. Tunç da aynı şekilde gerilmeye başlarken “Kimmiş?” diye sordu. Andiç yanıtlamak yerine sessiz kaldı. Kendisinin hatırlamasını istemişti. Evet, koskoca albaydı ama bunu söylemeye cesareti yoktu.  
+
+Tunç’un tanıdığı üç asker vardı zaten ama o an için çıkaramadı. İkisi zaten yanlarındaydı diğeri ise…  
+
+Tunç’un gözleri kocaman açıldı. Düşünceli bakışlarının yerine büyük bir öfke yerleşti. “Sakın bana aklımdan geçen kişi olduğunu söyleme.” Dedi Tunç ve sesi yüksek çıkmıştı. Andiç telefonun arkasından yumdu gözlerini, tekrar açtığındaysa elinden “Sakin ol Tunç, lütfen.” Demekten başka bir şey gelmedi. Tunç, sakin olmadı. Oturduğu yerden kalktı bir hışımla. 
+
+“Maral zaten bu özel tim atanması durumundan rahatsız sen bir de o timin komutanının kızın hayatını karartan şerefsiz olduğunu mu söylüyorsun? Albayım, çöz bunu. O herif Maral’ın bırakın korumalığını yapmak bir kilometre yakınına bile yaklaşamaz, izin vermiyorum! Olay çıkartırım, yemin ederim olay çıkartırım! Koskoca TSK’de başka komutan mı kalmadı?” dedi tek solukta. Yerinde bir tepkiydi. Andiç bir kere yutkundu ve sesini stabil tutmaya çalışarak cevap verdi.  
+
+“Özel Kuvvetler Komutanlığının alışık olduğu bir görev değil bu. Hem uzun süreli hem de anla işte alışık değil.  Sadece gönüllü bir tim çıkarsa kabul edilir dediler.” 
+
+“Sadece bu şerefsiz mi gönüllü oldu? Hangi hakla?” diye sordu Tunç haklı bir isyanla. 
+
+“Hayır sadece onun timi olmadı ama onlar seçildi. Ayrıca haberi bile yok, iki aydır Suriye’deydiler yeni döndüler. Tim iki şehit verdi komutanlık da bu zor görevin üstüne Bürküt görevini onlara vermek istedi.”  
+
+“İptal et o zaman. Kimseden tim ataması isteyen olmadı, ısrarla direten sensin!” dediğinde Tunç, Andiç otoritesini konuşturmak zorunda kaldı.  
+
+“Tunç, çocukluk etme! Kişisel yaklaşma. Yıllardır olan olayları bilmiyorsun sanki. Yepyeni bir proje, savunma sanayi bölgesi… Olası bir terör saldırısında ilk hedefleyecekleri yerlerden biri orası.” Bir süre sustu. Tunç’ta gözlerini sıkı sıkıya yummuş kabullenmeye çalışırken devam etti. 
+
+“Hayatta ve güvende olmanız her şeyden daha önemli benim için. Ben de evlatlarımı korumaya çalışıyorum. Resmi görev başladı. Komutan imzayı attı. Artık Kuzgun timi Bürküt Hangarının ve sizin güvenliğinizden sorumlu, nokta! Sana söylüyorum çünkü Maral’ın yanında olman gerekiyor. Ayrıca yıllar geçti, Maral da bir şeyleri aşmış olmalı.” Tunç’tan alaylı bir gülüş çıktı. 
+
+“Siz Maral’ı hiç tanımamışsınız Albayım. Konu aşmaksa siz de Mehtap teyzeyi aştınız ama canınız hala ona baktıkça yanıyor.” Tunç’un üçüncü çoğul ile konuşmaya başladığında içinde birkaç küfür savurdu Andiç. Ses tonunu eski haline indirdi. 
+
+“Tunç, konuyu saptırıyorsun aynı şey değil.” 
+
+“Tamamen aynı şey.” 
+
+“Diyeceğimi dedim, bugün ben de geleceğim. Tim geldiğinde lütfen kendine hakim ol. Görüşmek üzere.” Dedi ve telefonu kapattı Andiç. Tunç ellerini sıkarak yumruklayacak bir şey aradı ama bulamadığında vurduğu kendi dizi oldu. Ne yapacağını bilemez halde misafir koltuklarından birine attı kendini.  
+
+“Sikeyim böyle işi, Sikeyim seni Dinçer!” diye bağırdı kendine hakim olamadan. Sonrasında bir eli saçında kafasını sıvazlarken yirmi dakika geç kalan Maral’ı çaresizlikle beklemeye koyuldu.  
+ 
+
+ 
+✈︎ 
+ 
+ 
+
+İstiklal, o kadar umut dolusun ki insan aşık olmak istiyor sana baktıkça; Kadıköy insanın ruhunu genç ve diri tutuyorsun; Beşiktaş, insan içinde kaybolmak istiyor; Haliç, her manzaraya bedelsin; Üsküdar, tarih kokuyorsun; Florya, anılarımsın; İstanbul o kadar güzelsin ki. Bir masal şatosu kadar büyülüsün. Rengarenksin, ışıl ışıl ve cıvıl cıvıl… Ama ben bir masal kahramanı değilim. 
+
+Soğuksun Ankara; ruhun soğuk, mevsimlerin soğuk; bir çöl kadar kuraksın. Sabahattin Ali’nin yazdığı bir romanda ana mekansın Ankara. Ne siyasın ne beyaz; grisin, renksizsin. Anılarımsın Ankara, şimdi cehennem olsan da bir zaman için cennetsin. Her köşende anılarım var. Kuğulu, anılarımsın; Kızılay, anılarımsın; Kara Harp, anılarımsın; devrim, anılarımsın. Ankara, hayatımsın. En sevdiğim yazar Sabahattin Ali, Ankara ve ben o romanın kahramanıyım.  
+
+Saat 09.27 ve hangara gitmeden önce anneme uğradım. Evim zaten anneme çok yakın. Zorla kahvaltı masasına oturduk. Son bir ayda çok kilo verdim, annem de her gördüğünde kuruyup kaldığımı söyleyip bana kilo aldırmaya çalışıyor. O her bana zorla yemek yedirişinde ise benim aklıma ceza diye yemek vermediği günler geliyor. Hayır, annemle aram çok iyi; evet, annemi afettim yani umarım… Geç kaldım bahanesiyle kaçtım yanından.  
+
+Geç kaldım ama sorun değil, ben patronum.  
+
+İstanbul’daki kadar olmasa da trafik vardı. Hem Ankara’da artık on dört milyon nüfuslu kalabalık bir şehirdi ve iş saatiydi. Radyoda rastgele bir şarkı dönüyorken hangara doğru sürdüm arabamı. Hangarın yanında park ediyorduk arabalarımızı. İkinci boşluk bana aitti. İlk yere Derya park ederdi. Kenan ile geliyorlardı işe. Kenan’ın evi Derya’nın yolu üzerindeydi ve Kenan toplu taşımada sürünmesin diye geçerken alıyordu. Didişmekten birbirlerini yeseler de sürekli yan yanalardı anlamadığım bir şekilde. Son kez dikiz aynasından kendime baktım. Yan koltuktan çantamı omuzladığım gibi arabadan indim ve girişe yöneldim.  
+
+Hangarın içini bir topuklu ayakkabı sesi dolduğunda herkes gelenin ben olduğunu anlayabiliyordu çünkü hangarda topuklu giyen tek aptal bendim. Gerçi değiştiriyorum burada ama. Tüm ekibe günaydın deyip kıdemlilere baş selamı vermek rutinimin bir parçasıydı. Masalarında büyük bir özveriyle çalışan Kenan ve Derya da geldiğimi gördüklerinde yanımda bittiler. 
+
+“Günaydın Maral Abla, harika görünüyorsun her zamanki gibi.” Dedi Derya, bu iltifatına gülümseyerek teşekkür ettim. Rutinin bir diğer parçası. Kenan da günaydın dedikten sonra masasını gösterdi ve çizimlerini bitirdiğini söyledi. Masasına yöneldim ve üstünkörü baktığımda beğendiğimi belli eden bir ses çıkardım.  
+
+Yetenekli çocuktu, hatta benden bile yetenekliydi. Harika yerlere gelecekti. Elimle kolunu sıvazlayıp “Güzel görünüyorlar Kenan, detaylı bakacağım ama ufak bir işim var. Sen devam et ben sana gelirim.” Dedim ve onları arkamda bırakarak beni eksi bire götürecek merdivenlere yöneldim.  
+
+Merdivenleri arşınlayıp Tunç’un odasına ulaştığımda kapısı açıktı. Açık kapıdan içeri bakarak elimle çalıyormuş gibi yaptım. “Tak tak, girebilir miyim çakma patron?” dedim. Tunç öylesine dalmış olacak ki sesimi duyduğunda irkildiğini fark ettim. Bu tepkisine güldüm. Gerçi ben Tunç ne yapsa gülerdim, iyi ki varsın Tunç. 
+
+“Korkma ya, kovmayacağım seni. Merak etme.” Derken çoktan içeri girmiştim ve çıkardığım kabanımı koltuklardan birine fırlattım. Tunç da “Haha ne kadar komiksin?” diyerek yerinden kalktı ve yanıma geldiğinde hep yaptığı gibi sıkı sıkı sarıldı bana ama sanki bugün biraz daha sıkı sarıldı.  
+
+“Tunç, kemiklerimi kırmak istiyorsan söyle bileyim.” Dediğimde geri çekildi ve yanaklarımı sıktı. Sahte bir sinirle ellerini iteklediğimde “Tunç makyajımı bozuyorsun, yapma şunu.” Diye söylendim. Tunç da bu tepkime güldüğünde oturduğum tekli koltuğun karşısına oturdu. 
+
+“Görüşmediğimiz altı saat içinde seni çok özledim Maralkuş.” Dedi. Aynı şefkatiyle karşılık verdim. “Aman ne demezsin iki saatlik uykumda bile rüya diye seni gördüm Tunçkuş.” Dedim. Gerçekten de gördüm, cennetin yanında duruyordu öylece. Oturduğu yerde rahatsızmış gibi kımıldadıktan sonra “Çalısacağım diye uykundan etme kendini bu kadar.” Dedi, işte bu söylediğini cevapsız bıraktım.  
+
+Turuncuya çalan saçları vardı Tunç’un. Saçlarına yakışır şekilde mavinin en açık tonlarından birine ev sahipliği yapıyordu gözleri. O açık ton bazen beni korkutuyordu, sanki beyazına karışıyor sanıyordum bakışları. Yüzü aşırı olmayacak şekilde kemikliydi ve ona çok yakışan bir burnu vardı. Artık otuzlarında oluşunun etkisiyle kahkaha attığında gözlerinin yanında ufacık bir kırışıklık beliriyordu.  
+
+Gülmek Tunç’a o kadar yakışıyordu ki onu hep gülerken görebilmek için deli saçması komik, komik olmayan ne kadar espri varsa yapardım. Tunç da her esprimde şu inanılmaz mizahını bana gösterdiğin için çok şanslıyım der. Ben aslında mutlu bir çocuktum. Hayat doluydum, gülerdim, arkadaş gruplarının eğlence kaynağı bendim. Sonra zamanla soldum. 
+
+Uzun boyu ve yapılı vücuduyla koltukta otururken bir eli çenesinde bana bakıyordu.  
+
+Tunç’un bakışlarına karşılık malum konuyu konuşmamız gerektiğinin farkındaydım. İlk tepkimse ellerimi kaldırarak “Hayır n’apayım, n’apayım yani? Kırk kere hayır dedim. İki yüz yıllık albaya laf geçirebiliyorsan sen geçir hem seni daha çok seviyor zaten.” Demek oldu. 
+
+Tunç “hadi canım oradan.” Edasıyla histerik bir gülüş attıktan sonra “Ya bırak Allah aşkına Maral nereyi seviyor. Tim atanmış bile, resmi olarak görevdeler çok geç artık.” Diyerek cevapladı.  
+
+“Gerçekten az linç ediliyormuşuz gibi bir de koskoca bordo berelileri kendilerine köle yaptılar diye linç yiyeceğiz aman ne güzel.” Diyerek devam ettim söylenmeye. Tunç ise benim aksime oldukça büyük bir sakinlikle “Bence öyle yaklaşmayalım, iyi düşün iyi olsun.” Dedi. Onu rahatsız eden şey başka bir şeydi, bakışlarından anlayabiliyordum. Soracaktım ama konuyu saptırmadan devam etmek istedim.  
+
+“Hayır anlamıyorum ki ne gerek var bu kadar tantanaya. Her ülke rahat rahat istediği uçağı, tankı, silahı yaparken, ki altını çizeyim savaş arifesindeyiz, bizim böyle bir şeyi hala bugün gündem yapmamız bile saçma. Hangarda da gereksiz stres yaratacak bu durum kafamıza kurşun mu yiyeceğiz diye. Ya bir de hangar için değil bizim için atanmışlar. Öylesine askerler değil Tunç, özel kuvvet ya delirmemek elde değil.” Dedim.  
+
+Sadece sinirli ve heyecanlı olduğumda, son dört yıldır hiç heyecanlanmadım, sınırsız konuşma potansiyeline sahip olan bir dilim vardı.  
+
+Huzursuzca ayaklandım ve masanın karşı tarafında duran cam dolaba doğru ilerledim. İçeceklerden kendime göre bir şeyler ararken konuşmaya devam ettim. 
+
+“Hayır mesai saatleri içinde de içmezsin sen, soda moda bir şey yok mu?” 
+
+Tunç da kalkmış yanıma geldiğinde kapakları cam olmayan başka bir dolabın içindeki buzdolabından iki tane Beypazarı çıkardı. Her fırsatta telaşın ele geçirdiği bünyeme doğru döndü ve konuştu. 
+
+“İçmem zaten, güzel duruyorlar diye koydum.” Sodaları açtıktan sonra birini bana uzattı. Dediğine karşılık yine gülmeden edemedim. Ciddi bir şey konuşmaya çalışıyorum yapma şöyle Tunç. 
+
+“Tunç ve garip huylarına sayın seyirciler.” Dediğimde Sodaları tokuşturduk ve gülerek içtik. 
+
+“Yalan mı, çok hoş duruyorlar. Ayrıca senin şarap rafının yanında benimki hiçbir şey. Aman ya neyse ne alaka bu şu an?” yüzünü ekşitti. “Bak Andiç Albay’ın bir bildiği vardır illaki. Bizi zor durumda bırakacak bir şey yapmaz o. Hem seneler geçti, kurallar değişebilir. Bu yaptığımız şey en az cephede silah tutmak kadar kıymetli bunu sen de biliyorsun. İyi korunmasını isteyebilirler. Kurşun yiyeceğiz demiyorum ama bilirsin böyle büyük projeleri yapanlar hep birazcık…” gözlerini kıstı ve parmağının ucunu gösterdi. “…tehlikededir. Biz o sözleşmeye size tarihin en iyi uçağını yapacağız yazdık bırak korusunlar lan. Köpeğin olsunlar yerim seni.” Lafını bitirirken sodasını rafa bırakıp tekrar yanaklarımı sıkmaya yeltendi.  
+
+Tunç stresini sevgi patlaması yaşayarak saklamaya çalışırdı ve şu anda da iki saat içine olacakları kestiremediğinden çok büyük stres altındaydı bense bunu bilmiyordum. Geriye doğru eğildim. 
+
+“Uzak dur yanaklarımdan.” Ellerini indirince tekrar dikleştim. “İyi misin sen, bir garip davranıyorsun.” Dediğimde kahkaha attı Tunç. “Harikayım, neden kötü olayım?” dedi ve beypazarını benimkine vurarak. Ben de üstelemedim. Çıkardı kokusu. Tunç gülüşümün tekrar solduğunu fark ettiğinde “Sen bilmem kaç aydır ne yapıyorsak…” 
+
+“On altı.” Diye araya girdim. 
+
+Elini her neyse dercesine sallayarak “Onu yapmaya devam et, işini yap. Onlar da işini yapacak. Görev görevdir. Koskoca Albay da bordo bere timi atıyorsa vardır bir bildiği, yersiz bir hareket değildir bu.” Dedi. Bense yalandan bir korkuyla “Az önce bizi öldürmek isteyen birileri var dedin resmen.” Dedim. 
+
+Tunç gözlerini devirerek bıkkın bir bakışla bana baktı daha sonra ileri atılarak tekrar sarıldı bana. 
+
+“Öyle demedim. Aslında haklısın ben varken ne gerek var time de işte…” 
+
+“Çapkın bakışı yapıyorsun değil mi şu an?” demekten geri tutamadım kendimi göğsüne kafamı yaslamışken söz keserek. 
+
+“Sus kız, abiyle böyle konuşulur mu?” dedi sinirli bir sesle. 
+
+“Hım evet, beş yaşçık. Biz birlikte büyüseydik sen vallahi döverdin beni.” 
+
+“Az mı? Hem altı de sen ona, son anda doğmuşsun 2005’te. Ayrıca keşke büyüseydik duvardan duvara basket topu gibi sallardım seni.” Kahkahayla gülerken “Cani” dedim gülüşümün arasından. Midemin sahneye çıkacağını anladığımda elimle ağzımı kapatıp bir süre bekledim. Aç karnına neyin sodası Maral diye kızdım kendime. Tunç bana meraklı gözlerle baktığında tekrar güldüm ve “Ya içirdin bana sabah sabah sodayı, uygunsuz hareketlerde bulunacağım koskoca özel kuvvetlerin karşısında.” Diye söylendim. 
+
+Tunç da “üstüme iyilik sağlık” bakışıyla “Ben mi içirdim, kendin istedin?!” dedi. Elimi sallayarak geçiştirdim ve “Neyse tanıyor muyuz komutanlarını falan?” diye sordum. Ben bunu sorarken sodasının son yudumlarını içen Tunç büyük bir öksürükle geri püskürttü yudumunu. Ağzımdan bir şaşkınlık nidasının çıkmasına engel olamadım ben de.  
+
+“İyi misin, ne oldu?” 
+
+Tunç elini bir şey yok der gibi salladı ve nefesini topladığında “Genzime kaçtı.” Dedi sadece. Ben sorduğum soruyu unutmuşken o “Bilmiyorum ben, komutan falan yani.” Dedi. “Tamam önemli değil, göreceğiz bugün zaten.” Dedim. Sonra elimdeki şişeyi dolabın altındaki tezgaha bıraktım ve kabanımı aldıktan sonra çıkışa yöneldim. 
+
+“Gideyim şimdi, Kenan’ın çizimlerine bakacağım.” Dedim. O da “Tamam, görüşürüz. Çıkarım ben de birazdan.” Dedi ve ben tam kapıdan çıkacakken ekledi.  
+
+“Her şey olacağına varır. Olmuş bitmiş bir şey için üzme kendini. Hem en iyisini her zaman biz bileceğiz diye bir şey yok belki düşündüğünden epey farklı bir şey olur.” 
+
+Minnet dolu bir gülümsemeyle karşılık verdim bu cümleye. 
+
+“Tamam Tunçkuş. Merak etme, sıkıntı yok. Hadi bay.” Diyerek merdivenleri arşınlamaya başladım. 
+ 
+
+ 
+✈︎ 
+ 
+
+ 
+Bu yola çıkmadan önce Elif Gonca’ya söylediğim iki şey oldu: Tunç Kara benimle çalışacak ve yardımcı mühendislerimizi biz seçeceğiz. Sıkıntı çıkmadan kabul edildi bu isteklerim.  
+
+Tunç o sırada önemli bir şirketin yazılım mühendisliğini yapıyor aynı zamanda kendi oyununu yazıyordu, oyunun senaryosunu ise ben yazıyordum. Ben ona daha gel demeden gelmişti yanıma, tutmuştu elimi; hep yaptığı gibi.  
+
+Kenan ve Derya’yı bulmak ise ikimiz için de zor olmuştu. İkimiz kendi yardımcı mühendislerimizi bulamayınca birbirimizinkini bulmaya karar verdik. Zaten biz bir şeyi kendimiz için değil diğerimiz için yaptığımızda en iyisini yapardık. Ben Tunç’a iyi bir yazılımcı bulacaktım o da bana iyi bir uçak mühendisi bulacaktı. Şartlar basitti: Genç, önü açık, yetenekli. 
+
+Derya ile Amerika’dayken tanışmıştım. Statüsü yüksek ve iyi halli bir ailenin tek kızı Derya. Ailesi tüm yatırımlarını kızları üzerine yapmış yani. Liseyi İngiltere’de okumuş ardından üniversite için Amerika’ya gelmiş. Dışarıdan bakıldığında aile desteğiyle bir yerlere gelmiş bir kız gibi görünüyor ki ben de öyle düşünüyordum. Aslında okuduğu iki okuldan da başarı bursu almıştı Derya ama tabi ki diğer ihtiyaçları ailesi tarafından karşılanmıştı.  
+
+Ailesinden bağımsız birçok projeye katılmış ve başarılara imza atmıştı. Adını soyadıyla değil başarılarıyla tanıtmak istiyordu. İnsanlara kendini ispatlayabilmek için çok çalışıyordu ve ben bunu görebiliyordum. Derya Güneş diye tanıtır kendini çoğu zaman çünkü Derya Güneş Güleryüz dendiğinde insanların bakışının değişmesi rahatsız ediyordu onu.  
+
+Tüm bu süreçte tek hatası ailesinin sözünden asla çıkmamasıydı. Ailesinin istediği yerde çalışacak, onların onayladığı biriyle olacak ve Güleryüz soyadına yaraşır bir şekilde yaşayacaktı. O da potansiyeline rağmen korkuyordu yalnız başına bir şeyleri başarmaktan. Bu projeyi kabul etmesi de çok uzun sürmüştü. Hatta biz başka biriyle anlaşacakken son anda atmıştı imzayı. Şimdi baktığımda doğru bir seçim yaptığımı görüyordum. Bu proje Derya için sadece bir işi değil aynı zamanda onun tam anlamıyla kendi ayakları üzerinde duruşunu simgeliyordu.  
+
+Tunç ise Kenan’ı ODTÜ’den bulmuştu. Tunç’un fanatik bir kişiliği olduğunu söyleyemeceğim ama iş Galatasaray ve ODTÜ olduğunda bir hayli değişiyor. ODTÜ, Tunç’un yalnız ve arkadaşsız geçirdiği yirmi yıldan sonra ona o kadar iyi gelmişti ki. Samimi ortamı, köklü yapısı, akademik geçmişi ve en önemlisi içindekilerin devrimci ruhu… Tunç hayatın kendisine gösterdiği haksızlıklara rağmen ona karşı baş kaldırmadığından ötürü hala daha pişmanlık duyuyorken ODTÜ’de iken bütün hıncını çıkarırcasına yapılan tüm eylemlere katılırdı. Mühendis seçimini de tabi ki eğitimine en güvendiği okuldan yapmıştı.  
+
+Derya ne ise Kenan onun tam zıddıydı. Tek benzer yanları tek çocuk olmaları. Artvinli bir ailenin tek oğlu Kenan. Köyde büyümüş ve çocukluk zamanlarını doğanın içinde geçirmiş. Köyünde eğitim sıkıntı çok olmasına rağmen zorlukla da olsa ilk ve ortaokulu başarıyla okuduktan sonra Rize’ye lise okumak için gelmiş. Maddi olarak ailesine yük olmamak içinse on dört yaşından beri hem okuyup hem çalışıyor.  
+
+Ailesi de oğullarına ellerinden gelen desteği göstermişler. Babası köydeki arsasını satarak, annesi biriktirdiği tüm bileziklerini bozdurarak oğullarına destek olmaya çalışmışlar. Üniversite sınavında derece yapan Kenan ailesine yük olmamak için yakınlarda okuyacakmış başta ama babası onun için her şeyini seferber etmiş ve ODTÜ’ye yerleşmiş. Yine üniversitedeyken hem üç işte birden çalışmış hem de başarıyla okulunu okumuş. Benim üç alt dönemim olan Kenan da kendi senesinde bölüm üçüncüsü olarak mezun olmuş.  
+
+Tüm bu hikâyeyi bilmiyorken Tunç’a neden bölüm birincisini seçmediğini sormuştum. Onun verdiği cevabı ise hep hatırlatırım kendime: “O çocuk sadece üniversite okumuyordu aynı zamanda barınmaya, beslenmeye, korunmaya çalışıyordu. Tüm enerjisini okuluna verebilseydi eğer bırak bölümündekilerin fakültedeki tüm öğrencilerin ortalamasını geçerdi.” 
+
+Ve önümdeki çizimleri incelerken Kenan’ın da doğru seçim olduğunu görebiliyorum. Kardeşim benim için en yetenekli mühendisi seçmişti. Özveriyle çalışıyor ve şimdiden ailesini rahata erdirmeye başlıyordu. 
+
+“Aferin Kenan beklediğimden daha iyi görünüyor hepsi. Kaç gece uyumadın?” dedim yanımda heyecanla bekleyen genç adama. Oturduğum koltuktan kalkıp dostça elimi sırtına vurdum takdir ettiğimi göstermek için. Kenan’ın da yüzünü takdir edilmenin verdiği mutlulukla kocaman bir gülüş kapladı. 
+
+“Vallahi beğendin ya unuttum kaç gündü.” Diye cevap verdi Kenan. Ben de güldüm bu cevaba karşın. Karşımdaki gencin egosunu biraz daha okşamak için daha övgü dolu konuştum.  
+
+“Benim yetenekli mühendisim Kenan Dinç.” Dedim elimi yumruk yapıp havaya kaldırırken. 
+
+Otuz iki diş gülen Kenan da “İdolüm Maral Aydemir.” Diyerek karşılık verdi ve o da yumruk yaptığı elini elime tokuşturdu, güldük ikimiz de.  
+
+“Yedinci çizim en başarılısı olmuş, üçüncü maket için uygun.” Dedim tabletten yansıtılan hologramı sağa sola çevirirken. “Bir yapılsın bakalım daha sonra en uygun olan maketten akışkan fiziğini nasıl kendi lehimize çevireceğimize bakarız.” 
+
+“Tamamdır Maral abla, Özgür Ustaya gönderiyorum hemen.” Diyen Kenan tam masadaki kağıtlara sarılmış ve tabletini kucaklayacakken Tunç kulağında telefonla bize doğru geliyordu. Yanımıza ulaştığında da ayaklanan Kenan’a eliyle “Dur” işareti yaptı. Elini telefonun mikrofonuna koyarak kısık sesle Kenan’a “Derya’yı çağır.” Dedi. Kenan Derya’yı arayıp odama çağırdı. O da geldiğinde hepimiz ciddiyetle telefonla konuşan Tunçun konuşmasını bitirmesini bekledik. Konuşması bitip de telefonu kapatırken “Tamam Albayım.” Demesiyle konuştuğu kişinin Andiç amca olduğunu anladım.  
+
+Tunç elindeki telefonu cebine koyarken “Tim beş dakika içinde burada olur. Helikopterle iniş yapacaklar. Biz de onları karşılayalım. Andiç Albay da gelecek. Derya, Kenan önden gidin geliyoruz biz.” Dedi. 
+
+Aynı anda tamam dediler Kenan ve Derya, daha sonra odamdan ayrılıp hangarın dışındaki helikopter pistine doğru yürümeye başladılar. Tunç ile odada baş başa kaldığımda başımı sallayarak ne olduğunu sordum. Anlardı benim hangi hareketimin ne demek olduğunu. O bana karşılık olarak “Spor ayakkabılarını giymemişsin.” Dedi. Tebessüm etti ama ben de onun her hareketini anlardım. 
+
+“Bordo bereli arkadaşlarımızı güzel karşılamak istedim.” Bir iki adım attım ona doğru. “Neyin var senin Tunç, sabahtan beri garipsin?” dedim. Öyle bir baktı ki gözlerimin içine, çaresizce. “Biz ne zamandır dertlerimizi birbirimizden saklar olduk?” dedim bu kez de. Tunç boğazını temizledi ve tek bir cümle söyledi: “Bu dünyadaki herkesten daha kıymetlisin Maral ve ben her koşulda senin yanında olacağım.” 
+
+Yapardı bunu. Bazen durduk yere sanki herkes ondan gidecekmiş gibi hissedip sevdiği herkese hep yanlarında olduğunu söylerdi ama bunu karşılık olarak “ben de senin yanındayım” cümlesini duyabilmek için dile getirirdi. Bana söylediklerini tekrar ettim ona karşı. 
+
+“Bu dünyadaki herkesten daha kıymetlisin Tunç ve ben her koşulda senin yanında olacağım.” 
+
+Gülümsedik karşılıklı. Sonra göz kırptım ona ve kapıya yönelirken “Hadi bekletmeyelim bordo bereli arkadaşlarımızı.” Dedim. Kapıyı açmış dışarı çıkarken “Daha sert vur ayakkabılarını, duysun herkes Maral Aydemir’in geldiğini.” Dedi. Bu sefer kahkaha attığımda “Topuklular beni ben yapan şeylerden biri biliyorsun.” Dedim. 
+
+“Bilmez miyim.” Dedi ve arkamdan beni takip etmeye koyuldu. Hep bir adım arkamda, hep yaslanacak bir dağ ve hep en büyük desteğim… 
+
+Alana ulaşan Kenan ve Derya’nın yanında yerlerimizi aldık biz de. Helikopter uzaktan görülmeye başlamıştı. Benim içimi ise saçma bir heyecan kaplamıştı. Başından beri bu olaya hiç sıcak bakmıyordum. Dünyanın en donanımlı askeri birliklerinden olan özel kuvvetleri bir çatı altına sokup da “bizi koruyun” demek çok bencilce geliyordu. Ayrıca bu durum ülke genelinde de hoş karşılanmayacaktı biliyordum ama sanki içimdeki garip stres ve heyecanın tek nedeni bu değildi.  
+
+Son günlerde bana geçmişini hatırlatacak rüyalar görüyordum, dört sene üstüne. Belki de tüm bu tempo, iş, tim derken fazla geldi diye düşünürken helikopterin inmesini bekledim. Bu sırada da arkadan iki tane protokol aracı gelmişti. Başmühendis tarafına çevirdiğimde inenin Andiç amcam olduğunu görünce tebessüm ettim ve başımla ufak bir selam verdim. Aynı şekilde karşılık veren Andiç yanımıza doğru ilerledi ve Tunç’un yanında yerini aldı. Bense çoktan önüme dönmüştüm. 
+
+“Nasılsın oğlum?” dedi Andiç amca. Tunç’a konuştuğunu anladım ama helikopterin sesinden iletişim kurmak oldukça verimli değildi. “Sağ olun Albayım, sizi sormalı.” Cevabını verdi Tunç bağırarak ama sesindeki soğukluk beni bile üşüttü. Andiç amca ise bir süre bekledikten sonra “Çok şükür iyiyim.” Dedi ve Tunç’un omuzunu babacan bir tavırla sıktı.  
+
+Subay üniformasının içindeydi. Aynı selamlaşmayı ekibin diğer üyeleriyle de yaptığında Kuzgun timi helikopterden inmeye başlamıştı. Andiç Albay’ın aksine onlar görev üniformaları içinde olduklarından yüzleri seçilmiyordu. Tek tek sırayla sekiz kişi indi helikopterden. Aralarından son inen asker kapıyı çektiğinde helikopter aynı gürültüyle pistten uzaklaştı. Ben en önde, Tunç ve Andiç amca bir adım arkamda, onların bir adım arkasında da Kenan ve Derya olacak şekilde V olarak dizilmiştik. Sekiz özel kuvvet askeri de iki kişi önde olmak üzere aynı V’yi çizmiş şekilde bize doğru ilerliyorlardı.  
+
+Andiç amca az sonra neler olacağını kestiremediğinden olsa gerek üzerinde çok büyük bir gerginlik hissediyordu, ben her şeyden habersiz öylece dikiliyordum. Aramızda bir buçuk metre kalacak kadar yaklaştıktan sonra timin adımları komutanları olduğunu düşündüğüm askerin adımlarının durmasıyla birlikte durdu. Her birinde tek tek gezdirdim gözlerimi. Aralarındaki en kısa kişiye bile kafamı kaldırarak bakmak zorunda kalıyordum. Gözlerimse en çok öndeki askerde oyalanmayı seçmişti.  
+
+Yüzünü, gözlerini, bedenini, bana bir şey hatırlatacak hiçbir şey görmüyordum ama hissettiğim bu duygu beni derin bir korkuya sürüklüyordu. İçimden “saçma sapan şeyleri düşünme” diye geçirirken daha fazla bu saçma bekleyişin sürmemesi nedeniyle sessizliği bozan oldum. 
+
+“Bürküt Hangarına hoş geldiniz arkadaşlar.” Dedim sesimin gür çıkmasına dikkat ederken. 
+
+Her biri belli belirsiz başlarını salladılar. Ardından Andiç amca lafı devraldı.  
+
+“Hoş geldiniz çocuklar!” Dedi Andiç amca. 
+
+Helikopterin sesi bir yana dursun oldukça gür çıkan sesleriyle “Sağ ol!” Diye karşılık verdi tim. Benim kulağıma dolan tınının halüsinasyon olduğunu bildiğimden geçiştirdim. 
+
+“Bu süreçte beraber olacaksınız arkadaşlar. Yeri geldiğinde sizlere kalkan olacaklar.” Ekibe döndü ve baktı ama en çok Tunç’ta kaldı bunları söylerken, ardından time geri döndü.  
+
+“Sizleri tanıştırayım, kimlikleriniz burada gizlemenize lüzum yok. Maskelerinizi çıkarabilirsiniz.” Demesiyle öndeki tek bir kişi hariç hepsi tekrardan başlarıyla onaylayarak maskelerini çıkarmaya başladılar.  
+
+Ben ise onca açılan maskeye rağmen maskesini açmayan tek kişiye dikmiştim bakışlarımı. Aynı şekilde siyah gözlüklerinin ardından onun da bana baktığına emindim nedense. İçimdeki huzursuzluk büyürken dikkatimi ve gözlerimi tim üyelerini tanıtan Andiç amcaya çevirmeye çalıştım. Andiç amca da en arkadan başlayarak herkesi tek tek tanıtmaya başladı: 
+
+“Astsubay Kıdemli Üstçavuş Ömer Harput, 
+Astsubay Kıdemli Üstçavuş Yunus Deniz, 
+Astsubay Kıdemli Başçavuş Barlas Şahin,  
+Astsubay Kıdemli Başçavuş Murat Ahmetoğlu, 
+Teğmen Ali Çalışkantürk, 
+Kıdemli Teğmen Alparslan Kılıç, 
+Üsteğmen Burçe Yıldız.” 
+
+Son ismi de söylemesiyle beraber ekipteki herkes gülümseyerek her birine bir baş selamı iletti. Herkesin adını hızlıca unutmuştum. Birdenbire çok fazla kişiyle tanışınca kafam karışıyordu ki kimseyi diğerinden ayırt edecek bir şey yoktu. Hepsi oldukça heybetli ve sert görünüyordu. Çıkarabileceğim tek kişi Burçe’ydi o an için. Ayrıca aklım da hala maskesini açmayan askerdeydi. Timi tanıtmasının ardından da Andiç amca bu sefer ekibi yani bizi onlara tanıtmaya başladı: 
+
+“Bürküt Uçak Başmühendisi Maral Aydemir 
+Bürküt Yazılım Başmühendisi Tunç Kara 
+Bürküt Uçak yardımcı mühendisi Kenan Dinç 
+Bürküt Yazılım yardımcı mühendisi Derya Güneş Güleryüz.” 
+
+Bu sefer aynı ufak baş selamını tim bize verdi. Herkesin tanışma faslı bittiğindeyse sadece benim değil hepimizin bakışları kalan tek kişiye döndü. Daha fazla merakımı gizleyemediğimden bunu belli eden bir ses tonuyla “Siz kendinizi tanıtmadınız.” Dedim ve Andiç amcaya döndüm. 
+
+Andiç amca ise havada olmayan kuşları izliyormuş gibi yapıyordu. Dünyanın en stratejik hamlelerini komuta eden adamdı ama biraz sonrası için yapılabilecek tek stratejik hamle geride kalmak hatta mümkünse kaçmak olurdu. Bilmiyordum olacakları, nasıl bilebilirdim? 
+
+Daha sonra Tunç’a değen bakışlarım direkt anladı onun bakışlarındaki duyguyu. Korku, sonsuz bir korku… Dört sene, yedi ay, on üç gün önce gözünde yer alan korkunun aynısı. Anladığımı anladı ve başı önüne doğru eğildi. Korkusunu bana devretti. Artık o askerin kim olduğunu biliyordum ama bir kez olsun yanılamaz mıydım? Tunç’u o kadar iyi tanımıyor olamaz mıyım? Yanlış anlamış olayım lütfen.  
+
+Gücümü toplayıp tekrar önüme döndüğümde kim olduğunu anladığım askerin attığı ilk adım maskesinin üzerindeki siyah gözlükleri çıkarmak oldu. Karşı karşıya kaldığım yeşil gözler ise bir iki adım gerilememe yeterli olmuştu. O olamazdı değil mi? Dönmemek üzere gitmişti. Sadece gitmemişti, yok olmuştu. Dünyadaki yeşil gözlü tek adam o değil. Ama bu gözler ona ait nerede görsem tanırım. Tanımam, unuttum ona dair olan her şeyi. Kafamdaki düşünceler susmadan konuşmaya devam etti 
+
+Kimse o an ortamdaki yüksek gerilimin sebebini anlayamıyordu ama o gözler içimde sağanak bir yağmurun başlamasına neden olmuştu. Yeşil gözlerin sahibi geçen yarım dakikanın ardından içinde bulduğu cesaret adına ne varsa toparlayıp maskesini yüzünden aşağı doğru çekti ve tüm yüzünü açıkta bıraktı. O kısacık bir saniye içinde tüm dilek haklarımı tek bir cümleye kullandım: o olmasın, yapamam. 
+
+Hayat benim ne zaman dileklerimi gerçek kıldı ki? Hem güneş doğdu diye kabuslar neden bitsin ki? İki elim birden gördüğüm yüzle beraber sımsıkı yumruk halini aldı. Dik duruşum kamburlaştı, canım yandı, dizlerim acıdı, gözlerim sızladı…  
+
+Aldığı yaşlar nasıl da yer etmiş yüzünde. Gece karası saçları uzamış, üç numaradan oldukça uzaklar. Genç birinden olgun bir adama evrilmiş. Diğerleri bir hiçlik görüyor belki o güzel, yeşilin her tonuna ev sahipli ki yapan gözlerinde ama benim ilk günden beri gördüğüm hüznü duruyor. Uzun boyunun yanında daha da heybetli hale gelmiş. İlk günkü gibi ama o kadar yabancı ki, kimsin sen? 
+
+Ayakta durmak zorlaşırken birinin arkamdan bana yaklaştığını hissettim, Tunç. Destek oluyordu, arkamda olduğunu göstermeye çalışıyordu. Biliyordu, yaklaşan fırtınayı biliyordu. 
+
+İkimiz de gözlerimizi milim bile ayırmadan birbirimize bakıyorduk. Büyükçe yutkundum, dışardan belli olacak şekilde ince boynumdan geçti gitti. Kaşlarım çatılır gibi oldu. Gözlerimi kırpıştırdım birkaç kere. Bu yaşadığım şeyin gerçek olup olmadığını kavrayabilmek için yumruk haline getirdiğim ellerimi birkaç kere açıp kapattım. Bacaklarına dokundum. Görüntü aynıydı, değişen bir şey yoktu. En büyük yaram olağanca görkemiyle karşımda dikilmiş gözlerimin içine bakıyordu.  
+
+Onun yüzündeyse mimik oynamıyordu. Tüm ifadesizliğiyle vaktiyle yeşillerinin toprağı olduğunu söylediği gözlerime bakıyordu. Öyle bakıyordu ki bir an için düşüncelerimi bile gördüğünü hissettim. Vücudum ürperdi, tüm yara izlerim ilk günkü acısıyla varlıklarını hatırlattı.  
+
+Tunç’un alnındaki damar belirmişti. Öfkesi tüm bu hangarı ateşe verirdi ama çaresizliği o kadar büyüktü ki kardeşinin arkasında durmaktan başka bir şey yapamıyordu. Ellerini benim gibi sımsıkı yumruk haline getirmiş kendini dizginlemeye çalışıyordu. Her şeyden bihaber olan Kenan ve Derya ise neler olduğunu anlamaya çalışıyordu. Meraklı gözlerle birbirlerine bakıyorlardı.  
+
+En sonunda kışın uğultulu ayazına rağmen ölüm sessizliğine bürünen ortamı Andiç amca bozmak zorundaymış gibi hissetti ve temkinli bir ses tonuyla zaten tanığımız askeri bize tanıttı. 
+
+“Son olarak da Kıdemli Üsteğmen Kaya Alaz Dinçer."
+    </div>
+
+    <div class="chapter-nav">
+        <a href="huma-giris.html" class="nav-btn">❮ ÖNCEKİ</a>
+        <a href="huma-bolum2.html" class="nav-btn">SONRAKİ ❯</a>
+    </div>
+</div>
+
+<footer>© 2024 CEREN CEYLAN</footer>
+
+<!-- Sayaç Script Bloğu -->
+<!-- GÜNCEL SAYAÇ VE WATTPAD USULÜ CUSDIS YORUM SCRIPT BLOĞU -->
+<!-- AKILLI NICKNAME HAFIZALI CUSDIS SCRIPT BLOĞU -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Okunma Sayacı
+        let currentViews = parseInt(localStorage.getItem("views_huma_bolum1")) || 0;
+        currentViews++;
+        localStorage.setItem("views_huma_bolum1", currentViews);
+
+        // 2. Paragraf Arası Cusdis Yorum Tetikleyici
+        const triggers = document.querySelectorAll('.comment-trigger');
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const wrapper = this.closest('.p-wrapper');
+                const paragraphId = wrapper.getAttribute('data-p-id');
+                
+                // Eğer zaten açık bir yorum kutusu varsa kapat
+                const existingBox = wrapper.querySelector('.paragraph-comment-box');
+                if (existingBox) {
+                    existingBox.remove();
+                    return;
+                }
+                
+                // Ekranda açık olan diğer yorum kutularını temizle
+                document.querySelectorAll('.paragraph-comment-box').forEach(box => box.remove());
+                
+                // Dinamik Yorum Kutusu Oluşturma
+                const commentBox = document.createElement('div');
+                commentBox.className = 'paragraph-comment-box';
+                commentBox.style.cssText = `
+                    background: rgba(10, 10, 10, 0.95);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    padding: 20px;
+                    margin-top: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                `;
+                
+                commentBox.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:0.8rem; color:#888; font-family:sans-serif;">
+                        <span>💬 Bu Paragrafa Ait Yorumlar</span>
+                        <span style="cursor:pointer; color:#fff; font-weight:bold;" onclick="this.closest('.paragraph-comment-box').remove()">Kapat ✕</span>
+                    </div>
+                    <div id="cusdis_thread"
+                      data-host="https://cusdis.com"
+                      data-app-id="2a4b0743-a3ed-45b4-8eb1-96ce01e93637"
+                      data-page-id="${paragraphId}"
+                      data-page-url="${window.location.href}#${paragraphId}"
+                      data-page-title="Hüma Kuşu Bölüm 1 - Paragraf ${paragraphId}"
+                      data-theme="dark"
+                    ></div>
+                `;
+                
+                wrapper.appendChild(commentBox);
+
+                // Cusdis scriptini dinamik olarak yükle veya tetikle
+                if (window.CUSDIS) {
+                    window.CUSDIS.initial();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cusdis.com/js/cusdis.es.js";
+                    script.async = true;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                }
+
+                // 3. Akıllı Hafıza Sistemi: Okur yorum kutusunun içindeki inputları takip eder
+                setTimeout(() => {
+                    const iframe = commentBox.querySelector('iframe');
+                    if (iframe) {
+                        iframe.addEventListener('load', () => {
+                            try {
+                                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                // Cusdis'in isim girdi kutusunu buluyoruz (genellikle input elementidir)
+                                const nameInput = iframeDoc.querySelector('input[type="text"]') || iframeDoc.querySelector('input');
+                                const submitBtn = iframeDoc.querySelector('button[type="submit"]') || iframeDoc.querySelector('button');
+                                
+                                if (nameInput) {
+                                    // Eğer sistemde daha önceden kaydedilmiş bir isim varsa otomatik doldur
+                                    const savedNickname = localStorage.getItem('okur_nickname');
+                                    if (savedNickname) {
+                                        nameInput.value = savedNickname;
+                                        // React/Vue altyapısı için input değişimini simüle et
+                                        nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+                                    }
+
+                                    // Okur yeni bir şey yazdığında veya gönderdiğinde ismi hafızaya al
+                                    if (submitBtn) {
+                                        submitBtn.addEventListener('click', () => {
+                                            if (nameInput.value.trim() !== "") {
+                                                localStorage.setItem('okur_nickname', nameInput.value.trim());
+                                            }
+                                        });
+                                    }
+                                }
+                            } catch (error) {
+                                console.log("Iframe güvenlik politikası kısıtlaması (Localhost'ta çalışırken hata verebilir, siteye yüklendiğinde düzelir):", error);
+                            }
+                        });
+                    }
+                }, 800); // İframe'in oluşması için kısa bir bekleme payı
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
